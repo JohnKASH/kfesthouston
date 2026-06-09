@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Headliners – Korean Festival Houston 2026</title>
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+    * { font-family:'Outfit','Trebuchet MS',sans-serif; }
+
+    .page-hero { background:linear-gradient(135deg,#f0e8ff 0%,#e8f4ff 50%,#fff0f4 100%); padding:3rem 2rem 2.5rem; text-align:center; position:relative; overflow:hidden; }
+    .shape { position:absolute; border-radius:50%; opacity:0.15; pointer-events:none; }
+
+    /* 2026 HEADLINER CARD */
+    .announced-section { padding:3rem 2rem 1rem; max-width:700px; margin:0 auto; }
+    .headliner-card { background:var(--kf-dark); border-radius:20px; padding:2.5rem 2rem; text-align:center; position:relative; overflow:hidden; }
+    .headliner-card::before { content:''; position:absolute; top:-40px; right:-40px; width:150px; height:150px; background:var(--kf-purple); border-radius:50%; opacity:0.2; }
+    .headliner-card::after  { content:''; position:absolute; bottom:-30px; left:-30px; width:100px; height:100px; background:var(--kf-yellow); border-radius:50%; opacity:0.2; }
+    .headliner-year-badge { display:inline-block; background:var(--kf-yellow); color:#111; font-size:15px; font-weight:800; letter-spacing:2px; padding:6px 18px; border-radius:20px; margin-bottom:1rem; position:relative; z-index:1; }
+    .headliner-name { font-size:38px; font-weight:900; color:#fff; margin-bottom:0.4rem; position:relative; z-index:1; }
+    .headliner-sub { font-size:16px; color:rgba(255,255,255,0.65); position:relative; z-index:1; }
+    .headliner-desc { font-size:15px; color:rgba(255,255,255,0.45); margin-top:0.5rem; position:relative; z-index:1; }
+
+    /* NOTIFY */
+    .notify-box { background:var(--kf-light); border-radius:16px; padding:2rem; margin:1.5rem 2rem; max-width:700px; margin-left:auto; margin-right:auto; }
+    .notify-title { font-size:17px; font-weight:700; color:var(--kf-dark); margin-bottom:0.4rem; }
+    .notify-sub { font-size:15px; color:#666; margin-bottom:1.25rem; }
+    .notify-row { display:flex; gap:8px; }
+    .notify-input { flex:1; padding:11px 16px; border-radius:24px; border:2px solid #e0e0e0; font-size:15px; font-family:'Outfit',sans-serif; color:#222; background:#fff; }
+    .notify-btn { background:var(--kf-purple); color:#fff; border:none; border-radius:24px; padding:11px 20px; font-size:15px; font-weight:700; cursor:pointer; font-family:'Outfit',sans-serif; white-space:nowrap; }
+
+    /* PAST HEADLINERS */
+    .past-section { padding:2rem 2rem 3rem; max-width:700px; margin:0 auto; }
+    .past-grid { display:flex; flex-direction:column; gap:8px; }
+    .past-card { display:flex; align-items:center; gap:1rem; background:var(--kf-light); border-radius:12px; padding:0.9rem 1.25rem; border-left:4px solid; }
+    .c1{border-left-color:var(--kf-pink)}  .c2{border-left-color:var(--kf-purple)}
+    .c3{border-left-color:var(--kf-blue)}  .c4{border-left-color:var(--kf-teal)}
+    .c5{border-left-color:var(--kf-yellow)}.c6{border-left-color:var(--kf-pink)}
+    .c7{border-left-color:var(--kf-purple)}.c8{border-left-color:var(--kf-blue)}
+    .c9{border-left-color:var(--kf-teal)}  .c10{border-left-color:var(--kf-yellow)}
+    .c11{border-left-color:var(--kf-pink)} .c12{border-left-color:var(--kf-purple)}
+    .c13{border-left-color:var(--kf-blue)} .c14{border-left-color:var(--kf-teal)}
+    .c15{border-left-color:var(--kf-yellow)}
+    .past-card.unknown { opacity:0.65; border-left-style:dashed; border-left-color:#ccc; }
+
+    .past-year-badge { font-size:13px; font-weight:800; letter-spacing:1px; padding:5px 13px; border-radius:20px; flex-shrink:0; white-space:nowrap; }
+    .bg1{background:var(--kf-pink);color:#fff}   .bg2{background:var(--kf-purple);color:#fff}
+    .bg3{background:var(--kf-blue);color:#fff}   .bg4{background:var(--kf-teal);color:#111}
+    .bg5{background:var(--kf-yellow);color:#111} .bg-grey{background:#ccc;color:#666}
+
+    .past-name { font-size:15px; font-weight:800; color:var(--kf-dark); }
+    .past-desc { font-size:14px; color:#888; margin-top:2px; line-height:1.5; }
+    .multi-badge { display:inline-block; font-size:11px; font-weight:700; background:rgba(0,0,0,0.07); color:#555; padding:2px 8px; border-radius:10px; margin-left:6px; vertical-align:middle; }
+    .venue-badge { display:inline-block; font-size:11px; font-weight:700; background:rgba(254,191,34,0.2); color:#a06800; padding:2px 8px; border-radius:10px; margin-top:3px; }
+    .missing-badge { display:inline-block; font-size:11px; font-weight:700; background:rgba(0,0,0,0.05); color:#aaa; padding:2px 8px; border-radius:10px; font-style:italic; }
+
+    .footnote { font-size:13px; color:#aaa; margin-top:1.25rem; padding:1rem; background:#fafafa; border-radius:8px; border:1px solid #eee; line-height:1.6; }
+
+    .social-cta { background:var(--kf-purple); padding:2rem; text-align:center; }
+    .social-cta p { font-size:16px; font-weight:700; color:#fff; margin-bottom:1rem; }
+    .social-btns { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+    .social-btn { padding:10px 20px; border-radius:20px; font-size:15px; font-weight:700; cursor:pointer; border:none; font-family:'Outfit',sans-serif; text-decoration:none; display:inline-block; }
+    .sb-ig{background:#E1306C;color:#fff} .sb-tw{background:#000;color:#fff} .sb-fb{background:#1877F2;color:#fff}
+  </style>
+</head>
+<body>
+
+<nav class="kf-nav">
+  <a href="index.html"><img src="2026-KFest-Logo-Lockup-Horizontal-Black.png" class="kf-nav-logo" alt="Korean Festival Houston 2026" /></a>
+  <ul class="kf-nav-links">
+    <li><a href="about.html">About</a></li>
+    <li class="active c-purple"><a href="headliners.html">🎤 Headliners</a></li>
+    <li><a href="schedule.html">🏮 Schedule</a></li>
+    <li><a href="vendors.html">🍴 Vendors</a></li>
+    <li><a href="faqs.html">FAQs</a></li>
+  </ul>
+</nav>
+<div class="kf-rainbow"><span style="background:var(--kf-pink)"></span><span style="background:var(--kf-yellow)"></span><span style="background:var(--kf-teal)"></span><span style="background:var(--kf-blue)"></span><span style="background:var(--kf-purple)"></span></div>
+
+<div class="page-hero">
+  <div class="shape" style="width:180px;height:180px;background:var(--kf-purple);top:-60px;right:5%;"></div>
+  <div class="shape" style="width:100px;height:100px;background:var(--kf-yellow);bottom:-20px;left:8%;"></div>
+  <div class="shape" style="width:60px;height:60px;background:var(--kf-pink);top:20px;left:15%;"></div>
+  <div class="kf-eyebrow" style="background:var(--kf-purple);color:#fff;">Featured Artists</div>
+  <div class="page-hero-title">🎤 Headliners</div>
+  <div class="page-hero-sub">17 years of incredible artists on the K-Fest main stage.</div>
+</div>
+
+<!-- 2026 HEADLINER -->
+<div class="announced-section">
+  <div class="headliner-card">
+    <div class="headliner-year-badge">🎉 2026 · 17th Annual</div>
+    <div class="headliner-name">Big Ocean</div>
+    <div class="headliner-sub">This year's headliner · October 10–11, 2026</div>
+    <div class="headliner-desc">Discovery Green · Downtown Houston · Free Admission</div>
+  </div>
+</div>
+
+<div class="notify-box">
+  <div class="notify-title">Stay in the loop</div>
+  <div class="notify-sub">Get updates on the full lineup, fan meet info, and event announcements.</div>
+  <div class="notify-row">
+    <input class="notify-input" type="email" placeholder="your@email.com" />
+    <button class="notify-btn">Subscribe</button>
+  </div>
+</div>
+
+<!-- FULL HISTORY -->
+<div class="past-section">
+  <div class="kf-eyebrow" style="background:var(--kf-yellow);color:#111;">K-Fest Legacy</div>
+  <div class="kf-section-title">Complete Headliner History</div>
+  <div class="past-grid">
+
+    <div class="past-card c1"><div class="past-year-badge bg1">2025</div><div><div class="past-name">Withus &amp; Hohyun <span class="multi-badge">2 Artists</span></div><div class="past-desc">16th Annual</div></div></div>
+
+    <div class="past-card c2"><div class="past-year-badge bg2">2024</div><div><div class="past-name">NCHIVE</div><div class="past-desc">15th Annual</div></div></div>
+
+    <div class="past-card c3"><div class="past-year-badge bg3">2023</div><div><div class="past-name">June</div><div class="past-desc">14th Annual</div></div></div>
+
+    <div class="past-card c4"><div class="past-year-badge bg4">2022</div><div><div class="past-name">Triger &amp; Asome.D <span class="multi-badge">2 Artists</span></div><div class="past-desc">13th Annual</div></div></div>
+
+    <div class="past-card c5"><div class="past-year-badge bg5">2021</div><div><div class="past-name">MUSTB + Vision Music <span class="multi-badge">COVID-modified</span></div><div class="past-desc">12th Annual*<br><span class="venue-badge">📍 White Oak Music Hall</span></div></div></div>
+
+    <div class="past-card c6"><div class="past-year-badge bg1">2019</div><div><div class="past-name">Dabit, JC Park &amp; David Oh <span class="multi-badge">3 Artists</span></div><div class="past-desc">11th Annual</div></div></div>
+
+    <div class="past-card c7"><div class="past-year-badge bg2">2018</div><div><div class="past-name">BAIKAL</div><div class="past-desc">10th Annual</div></div></div>
+
+    <div class="past-card c8"><div class="past-year-badge bg3">2017</div><div><div class="past-name">DANakaDAN &amp; PRISKA <span class="multi-badge">2 Artists</span></div><div class="past-desc">9th Annual</div></div></div>
+
+    <div class="past-card unknown"><div class="past-year-badge bg-grey">2016</div><div><div class="past-name"><span class="missing-badge">Unknown — still researching</span></div><div class="past-desc">8th Annual</div></div></div>
+
+    <div class="past-card c9"><div class="past-year-badge bg4">2015</div><div><div class="past-name">KRNFX</div><div class="past-desc">7th Annual</div></div></div>
+
+    <div class="past-card c10"><div class="past-year-badge bg5">2014</div><div><div class="past-name">DANakaDAN with J.U. / Stephen Jung</div><div class="past-desc">6th Annual</div></div></div>
+
+    <div class="past-card c11"><div class="past-year-badge bg1">2013</div><div><div class="past-name">Dumbfoundead</div><div class="past-desc">5th Annual · Korean-American rapper &amp; artist</div></div></div>
+
+    <div class="past-card c12"><div class="past-year-badge bg2">2012</div><div><div class="past-name">Kim Tae Woo (god / 김태우)</div><div class="past-desc">4th Annual</div></div></div>
+
+    <div class="past-card c13"><div class="past-year-badge bg3">2011</div><div><div class="past-name">Clara C &amp; Dumbfoundead <span class="multi-badge">2 Artists</span></div><div class="past-desc">3rd Annual</div></div></div>
+
+    <div class="past-card c14"><div class="past-year-badge bg4">2010</div><div><div class="past-name">Clara C &amp; The Blessing <span class="multi-badge">2 Artists</span></div><div class="past-desc">2nd Annual · First year at Discovery Green</div></div></div>
+
+    <div class="past-card c15"><div class="past-year-badge bg5">2009</div><div><div class="past-name">Inaugural Community Festival</div><div class="past-desc">1st Annual · No headliner<br><span class="venue-badge">📍 HCC Spring Branch</span></div></div></div>
+
+  </div>
+  <div class="footnote">* 2021's annual count depends on how KASH internally tracks the COVID year — adjust as needed. &nbsp;·&nbsp; 2016 headliner is still unknown. If you can dig it up, we'd love to complete the history!</div>
+</div>
+
+<div class="social-cta">
+  <p>Follow us for the latest K-Fest 2026 updates!</p>
+  <div class="social-btns">
+    <a class="social-btn sb-ig" href="https://instagram.com/kfesthtx" target="_blank">📸 @kfesthtx</a>
+    <a class="social-btn sb-tw" href="https://twitter.com/kfesthtx" target="_blank">𝕏 @kfesthtx</a>
+    <a class="social-btn sb-fb" href="https://facebook.com/kfesthouston" target="_blank">f kfesthouston</a>
+  </div>
+</div>
+
+<footer class="kf-footer">
+  <div class="kf-footer-copy">© 2026 Korean Festival Houston · Presented by Kroger · Organized by KASH</div>
+  <img src="2026-KFest-Logo-Lockup-Horizontal-White.png" class="kf-footer-logo" alt="KFest 2026" />
+  <div class="kf-footer-socials">
+    <a class="kf-social" style="background:var(--kf-pink)" href="https://instagram.com/kfesthtx" target="_blank">IG</a>
+    <a class="kf-social" style="background:var(--kf-blue)" href="https://twitter.com/kfesthtx" target="_blank">𝕏</a>
+    <a class="kf-social" style="background:var(--kf-purple)" href="https://facebook.com/kfesthouston" target="_blank">FB</a>
+  </div>
+</footer>
+</body>
+</html>
