@@ -2,25 +2,44 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a1a] border-t border-[#c9a96e]/20">
+    <footer className="bg-[#faf8f5] border-t border-[#1a1a1a]/8">
+      {/* Festival rainbow accent strip */}
+      <div className="flex h-1">
+        <span className="flex-1 bg-[#FB4E6D]" />
+        <span className="flex-1 bg-[#FBBF24]" />
+        <span className="flex-1 bg-[#10C9AC]" />
+        <span className="flex-1 bg-[#1FAEDB]" />
+        <span className="flex-1 bg-[#8B6FFB]" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="font-['Cormorant_Garamond'] text-white text-lg font-semibold tracking-[0.15em] mb-1">
+            <div className="font-['Cormorant_Garamond'] text-[#1a1a1a] text-lg font-semibold tracking-[0.15em] mb-1">
               KOREAN FESTIVAL
             </div>
-            <div className="text-[#c9a96e] text-[10px] font-medium tracking-[0.4em] font-['Montserrat'] mb-5">
+            <div className="text-[#FB4E6D] text-[10px] font-semibold tracking-[0.4em] font-['Montserrat'] mb-5">
               HOUSTON
             </div>
-            <p className="text-white/40 text-xs leading-relaxed tracking-wide">
+            <p className="text-[#1a1a1a]/50 text-xs leading-relaxed tracking-wide">
               Celebrating Korean culture in the heart of Houston since 2009.
             </p>
             <div className="flex gap-4 mt-6">
-              {['Instagram', 'Facebook', 'TikTok'].map((s) => (
-                <a key={s} href="#" className="text-white/30 hover:text-[#c9a96e] text-[10px] tracking-widest uppercase transition-colors">
-                  {s}
+              {[
+                { label: 'Instagram', href: 'https://instagram.com/kfesthtx', hover: 'hover:text-[#FB4E6D]' },
+                { label: 'Facebook', href: 'https://facebook.com/kfesthouston', hover: 'hover:text-[#1FAEDB]' },
+                { label: 'TikTok', href: 'https://tiktok.com/@kfesthtx', hover: 'hover:text-[#8B6FFB]' },
+              ].map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-[#1a1a1a]/40 text-[10px] tracking-widest uppercase transition-colors ${s.hover}`}
+                >
+                  {s.label}
                 </a>
               ))}
             </div>
@@ -28,7 +47,7 @@ export default function Footer() {
 
           {/* Festival */}
           <div>
-            <h4 className="text-[#c9a96e] text-[10px] font-semibold tracking-[0.3em] uppercase mb-5 font-['Montserrat']">
+            <h4 className="text-[#FB4E6D] text-[10px] font-semibold tracking-[0.3em] uppercase mb-5 font-['Montserrat']">
               Festival
             </h4>
             <ul className="space-y-3">
@@ -40,7 +59,7 @@ export default function Footer() {
                 { label: 'Sponsors', href: '/sponsors' },
               ].map((l) => (
                 <li key={l.label}>
-                  <Link href={l.href} className="text-white/50 hover:text-white text-xs tracking-wide transition-colors">
+                  <Link href={l.href} className="text-[#1a1a1a]/55 hover:text-[#FB4E6D] text-xs tracking-wide transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -50,7 +69,7 @@ export default function Footer() {
 
           {/* About */}
           <div>
-            <h4 className="text-[#c9a96e] text-[10px] font-semibold tracking-[0.3em] uppercase mb-5 font-['Montserrat']">
+            <h4 className="text-[#10C9AC] text-[10px] font-semibold tracking-[0.3em] uppercase mb-5 font-['Montserrat']">
               About
             </h4>
             <ul className="space-y-3">
@@ -64,11 +83,11 @@ export default function Footer() {
               ].map((l) => (
                 <li key={l.label}>
                   {l.external ? (
-                    <a href={l.href} target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white text-xs tracking-wide transition-colors">
+                    <a href={l.href} target="_blank" rel="noopener noreferrer" className="text-[#1a1a1a]/55 hover:text-[#10C9AC] text-xs tracking-wide transition-colors">
                       {l.label} ↗
                     </a>
                   ) : (
-                    <Link href={l.href} className="text-white/50 hover:text-white text-xs tracking-wide transition-colors">
+                    <Link href={l.href} className="text-[#1a1a1a]/55 hover:text-[#10C9AC] text-xs tracking-wide transition-colors">
                       {l.label}
                     </Link>
                   )}
@@ -79,22 +98,22 @@ export default function Footer() {
 
           {/* Event Info */}
           <div>
-            <h4 className="text-[#c9a96e] text-[10px] font-semibold tracking-[0.3em] uppercase mb-5 font-['Montserrat']">
+            <h4 className="text-[#8B6FFB] text-[10px] font-semibold tracking-[0.3em] uppercase mb-5 font-['Montserrat']">
               Event Info
             </h4>
-            <div className="space-y-4 text-xs text-white/50 leading-relaxed tracking-wide">
+            <div className="space-y-4 text-xs text-[#1a1a1a]/55 leading-relaxed tracking-wide">
               <div>
-                <div className="text-white/80 font-medium mb-1">October 10–11, 2026</div>
+                <div className="text-[#1a1a1a] font-semibold mb-1">October 10–11, 2026</div>
                 <div>Sat 10am – 9pm</div>
                 <div>Sun 11am – 8pm</div>
               </div>
               <div>
-                <div className="text-white/80 font-medium mb-1">Discovery Green</div>
+                <div className="text-[#1a1a1a] font-semibold mb-1">Discovery Green</div>
                 <div>1500 McKinney St</div>
                 <div>Houston, TX 77010</div>
               </div>
               <div className="pt-1">
-                <span className="inline-block bg-[#c9a96e]/15 border border-[#c9a96e]/30 text-[#c9a96e] text-[10px] tracking-widest uppercase px-3 py-1.5">
+                <span className="inline-block bg-[#10C9AC]/15 border border-[#10C9AC]/40 text-[#048a6e] text-[10px] font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full">
                   Free Admission
                 </span>
               </div>
@@ -102,11 +121,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-white/25 text-[11px] tracking-wide">
+        <div className="border-t border-[#1a1a1a]/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+          <p className="text-[#1a1a1a]/35 text-[11px] tracking-wide">
             © {new Date().getFullYear()} Korean American Society of Houston. All rights reserved.
           </p>
-          <p className="text-white/25 text-[11px] tracking-wide">
+          <p className="text-[#1a1a1a]/35 text-[11px] tracking-wide">
             A Korean American Society of Houston Production
           </p>
         </div>

@@ -48,13 +48,13 @@ export default function Navbar() {
   return (
     <header className="relative z-50">
       {/* Announcement Bar */}
-      <div className="bg-[#2E4057] text-[#e8d5b0] text-center py-2 px-4 text-xs tracking-widest font-medium">
+      <div className="bg-linear-to-r from-[#FB4E6D] via-[#FB5C8A] to-[#8B6FFB] text-white text-center py-2 px-4 text-xs tracking-widest font-medium">
         Follow{' '}
         <a
           href="https://instagram.com/kfesthtx"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline hover:text-white transition-colors"
+          className="underline font-semibold hover:text-white/80 transition-colors"
         >
           @kfesthtx
         </a>{' '}
@@ -62,7 +62,7 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <nav ref={navRef} className="bg-[#1a1a1a] px-6 lg:px-10">
+      <nav ref={navRef} className="bg-white shadow-sm px-6 lg:px-10">
         <div className="max-w-7xl mx-auto flex items-stretch justify-between">
 
           {/* Logo */}
@@ -77,13 +77,13 @@ export default function Navbar() {
               className="h-10 w-auto shrink-0"
             />
 
-            <div className="w-px h-9 bg-[#c9a96e]/30" />
+            <div className="w-px h-9 bg-[#1a1a1a]/10" />
 
             <div className="leading-tight">
-              <span className="block font-['Cormorant_Garamond'] text-white text-xl font-semibold tracking-[0.15em] group-hover:text-[#c9a96e] transition-colors">
+              <span className="block font-['Cormorant_Garamond'] text-[#1a1a1a] text-xl font-semibold tracking-[0.15em] group-hover:text-[#FB4E6D] transition-colors">
                 KOREAN FESTIVAL
               </span>
-              <span className="block font-['Montserrat'] text-[#c9a96e] text-[10px] font-medium tracking-[0.4em] mt-0.5">
+              <span className="block font-['Montserrat'] text-[#FB4E6D] text-[10px] font-semibold tracking-[0.4em] mt-0.5">
                 HOUSTON
               </span>
             </div>
@@ -101,8 +101,8 @@ export default function Navbar() {
                       onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
                       className={`flex items-center gap-1.5 px-4 whitespace-nowrap text-[11px] font-semibold tracking-[0.1em] uppercase transition-all border-b-2 cursor-pointer
                         ${openDropdown === item.label
-                          ? 'text-[#c9a96e] border-[#c9a96e]'
-                          : 'text-white/70 border-transparent hover:text-[#c9a96e] hover:border-[#c9a96e]'
+                          ? 'text-[#FB4E6D] border-[#FB4E6D]'
+                          : 'text-[#1a1a1a]/70 border-transparent hover:text-[#FB4E6D] hover:border-[#FB4E6D]'
                         }`}
                     >
                       {item.label}
@@ -118,7 +118,7 @@ export default function Navbar() {
                     <div
                       onMouseEnter={() => setOpenDropdown(item.label)}
                       onMouseLeave={() => setOpenDropdown(null)}
-                      className={`absolute top-full left-0 bg-[#1a1a1a] border-t-2 border-[#c9a96e] min-w-[200px] py-2 shadow-2xl
+                      className={`absolute top-full left-0 bg-white border-t-2 border-[#FB4E6D] rounded-b-xl min-w-[200px] py-2 shadow-xl
                         transition-all duration-200 origin-top
                         ${openDropdown === item.label ? 'opacity-100 scale-y-100 pointer-events-auto' : 'opacity-0 scale-y-95 pointer-events-none'}`}
                     >
@@ -126,14 +126,14 @@ export default function Navbar() {
                         <div key={sub.label}>
                           {/* Divider before external links */}
                           {sub.external && i > 0 && (
-                            <div className="h-px bg-white/10 my-1.5 mx-4" />
+                            <div className="h-px bg-[#1a1a1a]/10 my-1.5 mx-4" />
                           )}
                           {sub.external ? (
                             <a
                               href={sub.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-2 px-5 py-2.5 text-[11px] tracking-[0.08em] uppercase font-medium text-white/65 hover:text-[#c9a96e] hover:bg-[#c9a96e]/8 border-l-2 border-transparent hover:border-[#c9a96e] transition-all"
+                              className="flex items-center gap-2 px-5 py-2.5 text-[11px] tracking-[0.08em] uppercase font-medium text-[#1a1a1a]/65 hover:text-[#FB4E6D] hover:bg-[#FB4E6D]/8 border-l-2 border-transparent hover:border-[#FB4E6D] transition-all"
                             >
                               {sub.label}
                               <svg width="9" height="9" viewBox="0 0 9 9" fill="none" className="opacity-50">
@@ -143,7 +143,7 @@ export default function Navbar() {
                           ) : (
                             <Link
                               href={sub.href}
-                              className="block px-5 py-2.5 text-[11px] tracking-[0.08em] uppercase font-medium text-white/65 hover:text-[#c9a96e] hover:bg-[#c9a96e]/8 border-l-2 border-transparent hover:border-[#c9a96e] transition-all"
+                              className="block px-5 py-2.5 text-[11px] tracking-[0.08em] uppercase font-medium text-[#1a1a1a]/65 hover:text-[#FB4E6D] hover:bg-[#FB4E6D]/8 border-l-2 border-transparent hover:border-[#FB4E6D] transition-all"
                               onClick={() => setOpenDropdown(null)}
                             >
                               {sub.label}
@@ -156,7 +156,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={item.href!}
-                    className="flex items-center px-4 whitespace-nowrap text-[11px] font-semibold tracking-[0.1em] uppercase text-white/70 border-b-2 border-transparent hover:text-[#c9a96e] hover:border-[#c9a96e] transition-all"
+                    className="flex items-center px-4 whitespace-nowrap text-[11px] font-semibold tracking-[0.1em] uppercase text-[#1a1a1a]/70 border-b-2 border-transparent hover:text-[#FB4E6D] hover:border-[#FB4E6D] transition-all"
                   >
                     {item.label}
                   </Link>
@@ -168,7 +168,7 @@ export default function Navbar() {
             <li className="flex items-center ml-3">
               <Link
                 href="/faqs"
-                className="bg-[#c9a96e] text-[#1a1a1a] text-[10.5px] font-bold tracking-[0.12em] uppercase whitespace-nowrap px-5 py-2.5 hover:bg-[#e2c080] transition-colors"
+                className="bg-[#FB4E6D] text-white text-[10.5px] font-bold tracking-[0.12em] uppercase whitespace-nowrap px-5 py-2.5 rounded-full hover:bg-[#e23d5c] transition-colors"
               >
                 Plan Your Visit
               </Link>
@@ -181,21 +181,21 @@ export default function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            <span className={`block w-6 h-0.5 bg-[#c9a96e] transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`block w-6 h-0.5 bg-[#c9a96e] transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
-            <span className={`block w-6 h-0.5 bg-[#c9a96e] transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+            <span className={`block w-6 h-0.5 bg-[#1a1a1a] transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`block w-6 h-0.5 bg-[#1a1a1a] transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
+            <span className={`block w-6 h-0.5 bg-[#1a1a1a] transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden border-t border-white/10 overflow-hidden transition-all duration-300 ${mobileOpen ? 'max-h-[600px] pb-4' : 'max-h-0'}`}>
+        <div className={`lg:hidden border-t border-[#1a1a1a]/10 overflow-hidden transition-all duration-300 ${mobileOpen ? 'max-h-[600px] pb-4' : 'max-h-0'}`}>
           {navItems.map((item) => (
             <div key={item.label}>
               {item.dropdown ? (
                 <>
                   <button
                     onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
-                    className="w-full flex items-center justify-between px-4 py-3.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-white/70 hover:text-[#c9a96e] transition-colors"
+                    className="w-full flex items-center justify-between px-4 py-3.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-[#1a1a1a]/70 hover:text-[#FB4E6D] transition-colors"
                   >
                     {item.label}
                     <svg
@@ -213,7 +213,7 @@ export default function Navbar() {
                           href={sub.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 pl-8 pr-4 py-2.5 text-[11px] tracking-widest uppercase text-white/50 hover:text-[#c9a96e] transition-colors"
+                          className="flex items-center gap-2 pl-8 pr-4 py-2.5 text-[11px] tracking-widest uppercase text-[#1a1a1a]/50 hover:text-[#FB4E6D] transition-colors"
                         >
                           {sub.label}
                           <svg width="9" height="9" viewBox="0 0 9 9" fill="none" className="opacity-50">
@@ -224,7 +224,7 @@ export default function Navbar() {
                         <Link
                           key={sub.label}
                           href={sub.href}
-                          className="block pl-8 pr-4 py-2.5 text-[11px] tracking-widest uppercase text-white/50 hover:text-[#c9a96e] transition-colors"
+                          className="block pl-8 pr-4 py-2.5 text-[11px] tracking-widest uppercase text-[#1a1a1a]/50 hover:text-[#FB4E6D] transition-colors"
                           onClick={() => setMobileOpen(false)}
                         >
                           {sub.label}
@@ -236,7 +236,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   href={item.href!}
-                  className="block px-4 py-3.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-white/70 hover:text-[#c9a96e] transition-colors border-t border-white/5"
+                  className="block px-4 py-3.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-[#1a1a1a]/70 hover:text-[#FB4E6D] transition-colors border-t border-[#1a1a1a]/5"
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}
@@ -247,7 +247,7 @@ export default function Navbar() {
           <div className="px-4 pt-3">
             <Link
               href="/faqs"
-              className="block text-center bg-[#c9a96e] text-[#1a1a1a] text-[10.5px] font-bold tracking-[0.12em] uppercase py-3 hover:bg-[#e2c080] transition-colors"
+              className="block text-center bg-[#FB4E6D] text-white text-[10.5px] font-bold tracking-[0.12em] uppercase py-3 rounded-full hover:bg-[#e23d5c] transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               Plan Your Visit
@@ -255,6 +255,15 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+
+      {/* Festival rainbow accent strip */}
+      <div className="flex h-1">
+        <span className="flex-1 bg-[#FB4E6D]" />
+        <span className="flex-1 bg-[#FBBF24]" />
+        <span className="flex-1 bg-[#10C9AC]" />
+        <span className="flex-1 bg-[#1FAEDB]" />
+        <span className="flex-1 bg-[#8B6FFB]" />
+      </div>
     </header>
   )
 }

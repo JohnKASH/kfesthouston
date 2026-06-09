@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendor Application – Korean Festival Houston 2026</title>
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+    * { font-family:'Outfit','Trebuchet MS',sans-serif; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: linear-gradient(135deg,#e0fff8 0%,#fff8e0 60%,#fce8f0 100%);
+      padding: 3rem 2rem 2.5rem; text-align: center;
+    }
+
+    /* ── PRICING STRIP ── */
+    .pricing-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+    }
+    .pricing-block {
+      padding: 1.5rem 1.25rem; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+    .pricing-block:last-child { border-right: none; }
+    .pricing-block:nth-child(1) { background: var(--kf-pink); }
+    .pricing-block:nth-child(2) { background: var(--kf-purple); }
+    .pricing-block:nth-child(3) { background: var(--kf-teal); }
+    .pricing-block:nth-child(4) { background: var(--kf-blue); }
+    .pricing-type { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .pricing-amount { font-size: 22px; font-weight: 900; color: #fff; line-height: 1.1; }
+    .pricing-note { font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+    /* ── FORM WRAPPER ── */
+    .form-wrapper {
+      max-width: 720px; margin: 0 auto; padding: 2.5rem 2rem 4rem;
+    }
+
+    /* ── FORM SECTIONS ── */
+    .form-section {
+      background: var(--kf-light); border-radius: 16px;
+      padding: 1.75rem; margin-bottom: 1.5rem;
+      border-left: 4px solid var(--kf-teal);
+    }
+    .form-section.s-pink   { border-left-color: var(--kf-pink); }
+    .form-section.s-purple { border-left-color: var(--kf-purple); }
+    .form-section.s-blue   { border-left-color: var(--kf-blue); }
+    .form-section.s-yellow { border-left-color: var(--kf-yellow); }
+    .form-section.s-dark   { border-left-color: var(--kf-dark); }
+
+    .form-section-title {
+      font-size: 17px; font-weight: 800; color: var(--kf-dark);
+      margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px;
+    }
+    .form-section-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 800; color: #fff; flex-shrink: 0;
+    }
+
+    /* ── FIELD GROUPS ── */
+    .field-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;
+    }
+    .field-row.single { grid-template-columns: 1fr; }
+    @media (max-width: 560px) { .field-row { grid-template-columns: 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 5px; }
+    .field label {
+      font-size: 14px; font-weight: 700; color: #444;
+    }
+    .field label span.req { color: var(--kf-pink); margin-left: 2px; }
+    .field input, .field select, .field textarea {
+      padding: 11px 14px; border: 2px solid #e0e0e0; border-radius: 10px;
+      font-size: 15px; font-family: 'Outfit', sans-serif; color: var(--kf-dark);
+      background: #fff; transition: border-color 0.15s;
+      outline: none;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--kf-teal);
+    }
+    .field textarea { resize: vertical; min-height: 90px; }
+    .field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23888' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+    .field-hint { font-size: 13px; color: #999; margin-top: -2px; }
+
+    /* ── VENDOR TYPE CARDS ── */
+    .vendor-type-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px; margin-bottom: 1rem;
+    }
+    .vendor-type-card {
+      position: relative;
+    }
+    .vendor-type-card input[type="radio"] {
+      position: absolute; opacity: 0; width: 0; height: 0;
+    }
+    .vendor-type-label {
+      display: block; padding: 1rem; border: 2px solid #e0e0e0; border-radius: 12px;
+      cursor: pointer; text-align: center; transition: all 0.15s; background: #fff;
+    }
+    .vendor-type-icon { font-size: 26px; margin-bottom: 6px; display: block; }
+    .vendor-type-name { font-size: 14px; font-weight: 700; color: var(--kf-dark); display: block; }
+    .vendor-type-price { font-size: 12px; color: #888; margin-top: 4px; display: block; line-height: 1.4; }
+    .vendor-type-card input:checked + .vendor-type-label {
+      border-color: var(--kf-teal); background: rgba(7,203,173,0.06);
+    }
+    .vendor-type-card input:checked + .vendor-type-label .vendor-type-name {
+      color: var(--kf-teal);
+    }
+
+    /* Corporate note */
+    .corporate-note {
+      display: none; background: rgba(28,173,217,0.08);
+      border: 1px solid rgba(28,173,217,0.25); border-radius: 10px;
+      padding: 1rem 1.25rem; font-size: 14px; color: #444; line-height: 1.6;
+    }
+    .corporate-note a { color: var(--kf-blue); font-weight: 600; }
+    .corporate-note.visible { display: block; }
+
+    /* ── DAYS SELECTION ── */
+    .day-options { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1rem; }
+    .day-option { position: relative; }
+    .day-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .day-option-label {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border: 2px solid #e0e0e0; border-radius: 24px;
+      cursor: pointer; font-size: 15px; font-weight: 600; color: #555;
+      background: #fff; transition: all 0.15s;
+    }
+    .day-option input:checked + .day-option-label {
+      border-color: var(--kf-purple); background: rgba(134,105,251,0.08); color: var(--kf-purple);
+    }
+    .single-day-picker {
+      display: none; gap: 10px; margin-top: 0.75rem;
+    }
+    .single-day-picker.visible { display: flex; }
+    .single-day-btn { position: relative; }
+    .single-day-btn input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .single-day-btn-label {
+      display: block; padding: 9px 20px; border: 2px solid #e0e0e0;
+      border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: 600; color: #555;
+      background: #fff; transition: all 0.15s;
+    }
+    .single-day-btn input:checked + .single-day-btn-label {
+      border-color: var(--kf-blue); background: rgba(28,173,217,0.08); color: var(--kf-blue);
+    }
+
+    /* ── SPONSORSHIP TOGGLE ── */
+    .radio-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .radio-pill { position: relative; }
+    .radio-pill input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .radio-pill-label {
+      display: block; padding: 9px 22px; border: 2px solid #e0e0e0;
+      border-radius: 24px; cursor: pointer; font-size: 15px; font-weight: 600; color: #555;
+      background: #fff; transition: all 0.15s;
+    }
+    .radio-pill input:checked + .radio-pill-label {
+      border-color: var(--kf-yellow); background: rgba(254,191,34,0.1); color: #a06800;
+    }
+
+    /* ── ACKNOWLEDGEMENTS ── */
+    .ack-list { display: flex; flex-direction: column; gap: 12px; }
+    .ack-item { display: flex; gap: 12px; align-items: flex-start; }
+    .ack-item input[type="checkbox"] {
+      width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0;
+      accent-color: var(--kf-pink); cursor: pointer;
+    }
+    .ack-item label { font-size: 14px; color: #444; line-height: 1.6; cursor: pointer; }
+
+    /* ── SUBMIT BUTTON ── */
+    .submit-wrap { text-align: center; margin-top: 2rem; }
+    .submit-btn {
+      background: var(--kf-pink); color: #fff; border: none;
+      border-radius: 32px; padding: 16px 48px;
+      font-size: 17px; font-weight: 800; font-family: 'Outfit', sans-serif;
+      cursor: pointer; letter-spacing: 0.5px;
+      box-shadow: 0 4px 16px rgba(254,70,107,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(254,70,107,0.4); }
+    .submit-btn:disabled { background: #ccc; box-shadow: none; cursor: not-allowed; transform: none; }
+    .submit-note { font-size: 13px; color: #aaa; margin-top: 0.75rem; }
+
+    /* ── SUCCESS / ERROR STATES ── */
+    .form-success {
+      display: none; text-align: center; padding: 3rem 2rem;
+      background: var(--kf-light); border-radius: 16px; margin: 2rem;
+    }
+    .form-success.visible { display: block; }
+    .success-icon { font-size: 48px; margin-bottom: 1rem; }
+    .success-title { font-size: 24px; font-weight: 900; color: var(--kf-dark); margin-bottom: 0.5rem; }
+    .success-sub { font-size: 15px; color: #666; line-height: 1.6; }
+
+    .field-error { font-size: 13px; color: var(--kf-pink); margin-top: 3px; display: none; }
+    .field input.invalid, .field select.invalid, .field textarea.invalid { border-color: var(--kf-pink); }
+
+    /* ── REQUIRED NOTICE ── */
+    .required-note { font-size: 13px; color: #aaa; margin-bottom: 1.5rem; }
+    .required-note span { color: var(--kf-pink); }
+  </style>
+</head>
+<body>
+
+<nav class="kf-nav">
+  <a href="index.html"><img src="2026-KFest-Logo-Lockup-Horizontal-Black.png" class="kf-nav-logo" alt="Korean Festival Houston 2026" /></a>
+  <ul class="kf-nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="headliners.html">🎤 Headliners</a></li>
+    <li><a href="schedule.html">🏮 Schedule</a></li>
+    <li class="active c-teal"><a href="vendors.html">🍴 Vendors</a></li>
+    <li><a href="faqs.html">FAQs</a></li>
+  </ul>
+</nav>
+<div class="kf-rainbow"><span style="background:var(--kf-pink)"></span><span style="background:var(--kf-yellow)"></span><span style="background:var(--kf-teal)"></span><span style="background:var(--kf-blue)"></span><span style="background:var(--kf-purple)"></span></div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="kf-eyebrow" style="background:var(--kf-teal);color:#111;">Limited Spots Available</div>
+  <div class="page-hero-title">🛍️ Vendor Application</div>
+  <div class="page-hero-sub">We're looking for vendors to represent Korean culture at Korean Festival Houston 2026. October 10–11 at Discovery Green — apply below!</div>
+</div>
+
+<!-- PRICING STRIP -->
+<div class="pricing-strip">
+  <div class="pricing-block">
+    <div class="pricing-type">Food / Dessert</div>
+    <div class="pricing-amount">$750 – $1,000</div>
+    <div class="pricing-note">+ 25% revenue share<br>Non-refundable</div>
+  </div>
+  <div class="pricing-block">
+    <div class="pricing-type">Merchandise</div>
+    <div class="pricing-amount">$1,500 – $2,000</div>
+    <div class="pricing-note">1 or 2 days<br>Non-refundable</div>
+  </div>
+  <div class="pricing-block">
+    <div class="pricing-type">Non-Profit</div>
+    <div class="pricing-amount">$500 – $750</div>
+    <div class="pricing-note">501(c)(3) required<br>Non-refundable</div>
+  </div>
+  <div class="pricing-block">
+    <div class="pricing-type">Corporate / Promo</div>
+    <div class="pricing-amount">Contact Us</div>
+    <div class="pricing-note">sponsors@kashouston.org</div>
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="form-wrapper">
+  <p class="required-note">Fields marked with <span>*</span> are required.</p>
+
+  <!-- SUCCESS STATE (shown after submit) -->
+  <div class="form-success" id="formSuccess">
+    <div class="success-icon">🎉</div>
+    <div class="success-title">Application Received!</div>
+    <div class="success-sub">Thank you for applying to be a vendor at Korean Festival Houston 2026. A K-Fest Vendor Representative will contact you to confirm your acceptance. Please note that submission of this form does not guarantee acceptance.</div>
+  </div>
+
+  <form id="vendorForm" novalidate>
+
+    <!-- SECTION 1: BUSINESS INFO -->
+    <div class="form-section s-pink">
+      <div class="form-section-title">
+        <span class="form-section-num" style="background:var(--kf-pink)">1</span>
+        Business Information
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="businessName">Business Name <span class="req">*</span></label>
+          <input type="text" id="businessName" name="businessName" placeholder="Your business name" required />
+          <span class="field-error" id="err-businessName">Please enter your business name.</span>
+        </div>
+        <div class="field">
+          <label for="ownerName">Owner / Representative Name <span class="req">*</span></label>
+          <input type="text" id="ownerName" name="ownerName" placeholder="Full name" required />
+          <span class="field-error" id="err-ownerName">Please enter the owner or representative name.</span>
+        </div>
+      </div>
+      <div class="field-row single">
+        <div class="field">
+          <label for="address">Business Address <span class="req">*</span></label>
+          <input type="text" id="address" name="address" placeholder="Street address, city, state, ZIP" required />
+          <span class="field-error" id="err-address">Please enter your business address.</span>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="you@yourbusiness.com" required />
+          <span class="field-error" id="err-email">Please enter a valid email address.</span>
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number <span class="req">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required />
+          <span class="field-error" id="err-phone">Please enter your phone number.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: VENDOR TYPE -->
+    <div class="form-section s-purple">
+      <div class="form-section-title">
+        <span class="form-section-num" style="background:var(--kf-purple)">2</span>
+        Vendor Type <span style="color:var(--kf-pink);font-size:14px;font-weight:600">*</span>
+      </div>
+      <div class="vendor-type-grid">
+        <div class="vendor-type-card">
+          <input type="radio" name="vendorType" id="vt-food" value="Food/Dessert" required />
+          <label class="vendor-type-label" for="vt-food">
+            <span class="vendor-type-icon">🍜</span>
+            <span class="vendor-type-name">Food / Dessert</span>
+            <span class="vendor-type-price">1 Day: $750<br>2 Days: $1,000<br>+ 25% revenue share</span>
+          </label>
+        </div>
+        <div class="vendor-type-card">
+          <input type="radio" name="vendorType" id="vt-merch" value="Merchandise" />
+          <label class="vendor-type-label" for="vt-merch">
+            <span class="vendor-type-icon">🛍️</span>
+            <span class="vendor-type-name">Merchandise</span>
+            <span class="vendor-type-price">1 Day: $1,500<br>2 Days: $2,000</span>
+          </label>
+        </div>
+        <div class="vendor-type-card">
+          <input type="radio" name="vendorType" id="vt-nonprofit" value="Non-Profit (Promotional)" />
+          <label class="vendor-type-label" for="vt-nonprofit">
+            <span class="vendor-type-icon">🤝</span>
+            <span class="vendor-type-name">Non-Profit</span>
+            <span class="vendor-type-price">1 Day: $500<br>2 Days: $750<br>501(c)(3) required</span>
+          </label>
+        </div>
+        <div class="vendor-type-card">
+          <input type="radio" name="vendorType" id="vt-corporate" value="Promotional/Corporate" />
+          <label class="vendor-type-label" for="vt-corporate">
+            <span class="vendor-type-icon">🏢</span>
+            <span class="vendor-type-name">Corporate / Promo</span>
+            <span class="vendor-type-price">Contact us for fee details</span>
+          </label>
+        </div>
+      </div>
+      <span class="field-error" id="err-vendorType" style="display:none">Please select a vendor type.</span>
+
+      <!-- Corporate contact note (shown when Corporate is selected) -->
+      <div class="corporate-note" id="corporateNote">
+        Corporate and Promotional vendors — please reach out directly to discuss sponsorship and fee details: <a href="mailto:sponsors@kashouston.org">sponsors@kashouston.org</a>. You're still welcome to submit this form and we'll follow up!
+      </div>
+    </div>
+
+    <!-- SECTION 3: ITEMS FOR SALE -->
+    <div class="form-section s-teal">
+      <div class="form-section-title">
+        <span class="form-section-num" style="background:var(--kf-teal);color:#111">3</span>
+        Items for Sale / Offered
+      </div>
+      <div class="field-row single">
+        <div class="field">
+          <label for="items">Describe the items or services you'll be offering <span class="req">*</span></label>
+          <textarea id="items" name="items" placeholder="e.g. Korean BBQ, tteokbokki, boba drinks — or handmade jewelry, K-beauty products, etc." required></textarea>
+          <span class="field-error" id="err-items">Please describe your items or services.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: AVAILABILITY -->
+    <div class="form-section s-blue">
+      <div class="form-section-title">
+        <span class="form-section-num" style="background:var(--kf-blue)">4</span>
+        Availability
+      </div>
+      <p style="font-size:15px;color:#555;margin-bottom:1rem;line-height:1.6;">Korean Festival Houston takes place <strong>October 10 (Saturday)</strong> and <strong>October 11 (Sunday), 2026</strong>. Vendors who can participate both days will be given preference.</p>
+      <label style="font-size:14px;font-weight:700;color:#444;display:block;margin-bottom:8px;">Can you attend both days? <span style="color:var(--kf-pink)">*</span></label>
+      <div class="day-options">
+        <div class="day-option">
+          <input type="radio" name="availability" id="avail-both" value="Both days" required />
+          <label class="day-option-label" for="avail-both">✅ Both days (preferred)</label>
+        </div>
+        <div class="day-option">
+          <input type="radio" name="availability" id="avail-one" value="One day only" />
+          <label class="day-option-label" for="avail-one">📅 One day only</label>
+        </div>
+      </div>
+      <span class="field-error" id="err-availability">Please select your availability.</span>
+
+      <!-- Single day picker — shown if "One day only" selected -->
+      <div class="single-day-picker" id="singleDayPicker">
+        <label style="font-size:14px;font-weight:700;color:#444;width:100%;display:block;margin-bottom:6px;">Which day? <span style="color:var(--kf-pink)">*</span></label>
+        <div class="single-day-btn">
+          <input type="radio" name="singleDay" id="day-sat" value="Saturday Oct 10" />
+          <label class="single-day-btn-label" for="day-sat">Saturday, Oct 10</label>
+        </div>
+        <div class="single-day-btn">
+          <input type="radio" name="singleDay" id="day-sun" value="Sunday Oct 11" />
+          <label class="single-day-btn-label" for="day-sun">Sunday, Oct 11</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: SPONSORSHIP INTEREST -->
+    <div class="form-section s-yellow">
+      <div class="form-section-title">
+        <span class="form-section-num" style="background:var(--kf-yellow);color:#111">5</span>
+        Sponsorship Interest
+      </div>
+      <p style="font-size:15px;color:#555;margin-bottom:1rem;">Are you interested in learning about sponsorship opportunities with Korean Festival Houston?</p>
+      <div class="radio-row">
+        <div class="radio-pill">
+          <input type="radio" name="sponsorship" id="sp-yes" value="Yes" />
+          <label class="radio-pill-label" for="sp-yes">Yes, tell me more</label>
+        </div>
+        <div class="radio-pill">
+          <input type="radio" name="sponsorship" id="sp-no" value="No" />
+          <label class="radio-pill-label" for="sp-no">No thanks</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 6: ACKNOWLEDGEMENTS -->
+    <div class="form-section s-dark">
+      <div class="form-section-title">
+        <span class="form-section-num" style="background:var(--kf-dark)">6</span>
+        Acknowledgements <span style="color:var(--kf-pink);font-size:14px;font-weight:600">*</span>
+      </div>
+      <p style="font-size:14px;color:#666;margin-bottom:1.25rem;">Please read and check each box to proceed.</p>
+      <div class="ack-list">
+        <div class="ack-item">
+          <input type="checkbox" id="ack1" name="ack1" required />
+          <label for="ack1">I acknowledge that submission of this online form <strong>does not guarantee acceptance</strong> as a Korean Festival Vendor for 2026.</label>
+        </div>
+        <div class="ack-item">
+          <input type="checkbox" id="ack2" name="ack2" required />
+          <label for="ack2">I understand a <strong>KFest Vendor Representative will contact me</strong> to confirm my acceptance.</label>
+        </div>
+        <div class="ack-item">
+          <input type="checkbox" id="ack3" name="ack3" required />
+          <label for="ack3">I understand that <strong>all vendor fees are non-refundable</strong>.</label>
+        </div>
+      </div>
+      <span class="field-error" id="err-acks" style="display:none;margin-top:0.75rem;">Please check all acknowledgements to proceed.</span>
+    </div>
+
+    <div class="submit-wrap">
+      <button type="submit" class="submit-btn" id="submitBtn">Submit Application</button>
+      <p class="submit-note">Questions? Email <a href="mailto:vendors@kashouston.org" style="color:var(--kf-blue);font-weight:600">vendors@kashouston.org</a></p>
+    </div>
+
+  </form>
+</div>
+
+<footer class="kf-footer">
+  <div class="kf-footer-copy">© 2026 Korean Festival Houston · Presented by Kroger · Organized by KASH</div>
+  <img src="2026-KFest-Logo-Lockup-Horizontal-White.png" class="kf-footer-logo" alt="KFest 2026" />
+  <div class="kf-footer-socials">
+    <a class="kf-social" style="background:var(--kf-pink)" href="https://instagram.com/kfesthtx" target="_blank">IG</a>
+    <a class="kf-social" style="background:var(--kf-blue)" href="https://twitter.com/kfesthtx" target="_blank">𝕏</a>
+    <a class="kf-social" style="background:var(--kf-purple)" href="https://facebook.com/kfesthouston" target="_blank">FB</a>
+  </div>
+</footer>
+
+<script>
+  /* ============================================================
+     GOOGLE SHEETS INTEGRATION
+     ============================================================
+     SETUP INSTRUCTIONS FOR YOUR DEVELOPER:
+
+     1. Open Google Sheets and create a new spreadsheet.
+        Name the columns in row 1:
+        Timestamp | Business Name | Owner Name | Address | Email | Phone |
+        Vendor Type | Items | Availability | Single Day | Sponsorship Interest |
+        Ack 1 | Ack 2 | Ack 3
+
+     2. In the spreadsheet, go to Extensions > Apps Script.
+
+     3. Paste this Apps Script code and save as "KFest Vendor Form":
+
+        function doPost(e) {
+          var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+          var data = JSON.parse(e.postData.contents);
+          sheet.appendRow([
+            new Date(),
+            data.businessName, data.ownerName, data.address,
+            data.email, data.phone, data.vendorType, data.items,
+            data.availability, data.singleDay || "N/A",
+            data.sponsorship || "Not answered",
+            data.ack1, data.ack2, data.ack3
+          ]);
+          return ContentService
+            .createTextOutput(JSON.stringify({ result: "success" }))
+            .setMimeType(ContentService.MimeType.JSON);
+        }
+
+        function doGet(e) {
+          return ContentService.createTextOutput("OK");
+        }
+
+     4. Click Deploy > New Deployment > Web App.
+        - Execute as: Me
+        - Who has access: Anyone
+        - Click Deploy and copy the Web App URL.
+
+     5. Replace the GOOGLE_SCRIPT_URL value below with your Web App URL.
+
+     ============================================================ */
+
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzkvJ3kNa92n4SKOWT-Fr5rr_GwkIAOd5bn-7OHO0ooebatLiq03wq-kT17abioiOj7jA/exec";
+
+  /* ── UI INTERACTIONS ── */
+
+  // Show corporate note when Corporate/Promo is selected
+  document.querySelectorAll('input[name="vendorType"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+      const note = document.getElementById('corporateNote');
+      note.classList.toggle('visible', this.value === 'Promotional/Corporate');
+    });
+  });
+
+  // Show single day picker when "One day only" is selected
+  document.querySelectorAll('input[name="availability"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+      const picker = document.getElementById('singleDayPicker');
+      picker.classList.toggle('visible', this.value === 'One day only');
+    });
+  });
+
+  /* ── FORM VALIDATION ── */
+  function showError(id, show) {
+    const el = document.getElementById('err-' + id);
+    if (el) el.style.display = show ? 'block' : 'none';
+  }
+  function markField(id, invalid) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('invalid', invalid);
+  }
+
+  function validate() {
+    let valid = true;
+
+    // Text fields
+    ['businessName','ownerName','address','phone','items'].forEach(id => {
+      const val = document.getElementById(id).value.trim();
+      const empty = !val;
+      showError(id, empty); markField(id, empty);
+      if (empty) valid = false;
+    });
+
+    // Email
+    const email = document.getElementById('email').value.trim();
+    const badEmail = !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    showError('email', badEmail); markField('email', badEmail);
+    if (badEmail) valid = false;
+
+    // Vendor type
+    const vtSelected = document.querySelector('input[name="vendorType"]:checked');
+    document.getElementById('err-vendorType').style.display = vtSelected ? 'none' : 'block';
+    if (!vtSelected) valid = false;
+
+    // Availability
+    const avail = document.querySelector('input[name="availability"]:checked');
+    showError('availability', !avail);
+    if (!avail) valid = false;
+
+    // Single day required if one day selected
+    if (avail && avail.value === 'One day only') {
+      const singleDay = document.querySelector('input[name="singleDay"]:checked');
+      if (!singleDay) { valid = false; }
+    }
+
+    // Acknowledgements
+    const acks = ['ack1','ack2','ack3'].every(id => document.getElementById(id).checked);
+    document.getElementById('err-acks').style.display = acks ? 'none' : 'block';
+    if (!acks) valid = false;
+
+    return valid;
+  }
+
+  /* ── FORM SUBMISSION ── */
+  document.getElementById('vendorForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    if (!validate()) return;
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    const avail = document.querySelector('input[name="availability"]:checked');
+    const singleDay = document.querySelector('input[name="singleDay"]:checked');
+
+    const payload = {
+      businessName: document.getElementById('businessName').value.trim(),
+      ownerName:    document.getElementById('ownerName').value.trim(),
+      address:      document.getElementById('address').value.trim(),
+      email:        document.getElementById('email').value.trim(),
+      phone:        document.getElementById('phone').value.trim(),
+      vendorType:   document.querySelector('input[name="vendorType"]:checked')?.value || '',
+      items:        document.getElementById('items').value.trim(),
+      availability: avail?.value || '',
+      singleDay:    singleDay?.value || '',
+      sponsorship:  document.querySelector('input[name="sponsorship"]:checked')?.value || 'Not answered',
+      ack1: 'Acknowledged',
+      ack2: 'Acknowledged',
+      ack3: 'Acknowledged'
+    };
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      // no-cors means we can't read the response, but if no error thrown, treat as success
+      document.getElementById('vendorForm').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Submit Application';
+      alert('Something went wrong. Please try again or email vendors@kashouston.org directly.');
+    }
+  });
+</script>
+
+</body>
+</html>

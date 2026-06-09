@@ -2,10 +2,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // ─── Stat Card ────────────────────────────────────────────────────────────────
-function StatCard({ number, label }: { number: string; label: string }) {
+function StatCard({ number, label, accent }: { number: string; label: string; accent: string }) {
   return (
-    <div className="text-center px-8 py-6 border border-[#c9a96e]/25 bg-white/40 backdrop-blur-sm">
-      <div className="font-['Cormorant_Garamond'] text-5xl font-semibold text-[#1a1a1a] leading-none mb-2">
+    <div
+      className="text-center px-6 py-8 bg-white rounded-2xl border-t-4 shadow-sm"
+      style={{ borderTopColor: accent }}
+    >
+      <div
+        className="font-['Cormorant_Garamond'] text-5xl font-semibold leading-none mb-2"
+        style={{ color: accent }}
+      >
         {number}
       </div>
       <div className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[#1a1a1a]/50 font-['Montserrat']">
@@ -33,27 +39,36 @@ function FeatureCard({
   title,
   description,
   href,
+  accent,
 }: {
   icon: React.ReactNode
   title: string
   description: string
   href: string
+  accent: string
 }) {
   return (
     <Link
       href={href}
-      className="group block bg-white border border-[#1a1a1a]/8 p-8 hover:border-[#c9a96e] hover:shadow-lg transition-all duration-300"
+      className="group block bg-white rounded-2xl border border-[#1a1a1a]/8 border-t-4 p-8 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+      style={{ borderTopColor: accent }}
     >
-      <div className="text-[#c9a96e] mb-5 group-hover:scale-110 transition-transform duration-300">
+      <div
+        className="mb-5 group-hover:scale-110 transition-transform duration-300"
+        style={{ color: accent }}
+      >
         {icon}
       </div>
-      <h3 className="font-['Cormorant_Garamond'] text-2xl font-semibold text-[#1a1a1a] mb-3 group-hover:text-[#c9a96e] transition-colors">
+      <h3 className="font-['Cormorant_Garamond'] text-2xl font-semibold text-[#1a1a1a] mb-3">
         {title}
       </h3>
       <p className="text-[#1a1a1a]/55 text-sm leading-relaxed tracking-wide mb-5">
         {description}
       </p>
-      <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#c9a96e] flex items-center gap-2">
+      <span
+        className="text-[10px] font-semibold tracking-[0.2em] uppercase flex items-center gap-2"
+        style={{ color: accent }}
+      >
         Explore
         <svg width="14" height="10" viewBox="0 0 14 10" fill="none" className="group-hover:translate-x-1 transition-transform">
           <path d="M1 5h12M8 1l5 4-5 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -76,7 +91,7 @@ export default function HomePage() {
             alt="Korean Festival Houston performer dancing in hanbok"
             fill
             preload
-            className="object-cover object-center opacity-75"
+            className="object-cover object-center opacity-95"
           />
           {/* Gradient overlay — keeps left side readable, lets color show on the right */}
           <div className="absolute inset-0 bg-linear-to-r from-[#1a1a1a]/85 via-[#2E4057]/55 to-transparent" />
@@ -142,13 +157,13 @@ export default function HomePage() {
       </section>
 
       {/* ── STATS BAND ───────────────────────────────────────────────────── */}
-      <section className="bg-[#f5f0eb] border-y border-[#1a1a1a]/8">
+      <section className="bg-kf-pastel border-y border-[#1a1a1a]/8 py-14">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#1a1a1a]/8">
-            <StatCard number="85K+" label="Visitors Each Year" />
-            <StatCard number="17" label="Years Running" />
-            <StatCard number="2009" label="Est. in Houston" />
-            <StatCard number="Free" label="Admission Always" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <StatCard number="85K+" label="Visitors Each Year" accent="#FB4E6D" />
+            <StatCard number="17" label="Years Running" accent="#8B6FFB" />
+            <StatCard number="2009" label="Est. in Houston" accent="#1FAEDB" />
+            <StatCard number="Free" label="Admission Always" accent="#10C9AC" />
           </div>
         </div>
       </section>
@@ -228,6 +243,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <FeatureCard
               href="/headliners"
+              accent="#FB4E6D"
               title="Headliners"
               description="World-class K-pop and Korean traditional performers take the main stage for unforgettable live performances."
               icon={
@@ -238,6 +254,7 @@ export default function HomePage() {
             />
             <FeatureCard
               href="/schedule"
+              accent="#8B6FFB"
               title="Performance Schedule"
               description="Two full days of cultural performances, dance showcases, and traditional arts on multiple stages."
               icon={
@@ -248,6 +265,7 @@ export default function HomePage() {
             />
             <FeatureCard
               href="/vendors/food"
+              accent="#10C9AC"
               title="Food Vendors"
               description="Authentic Korean street food and cuisine — from tteokbokki and bibimbap to Korean BBQ and beyond."
               icon={
@@ -258,6 +276,7 @@ export default function HomePage() {
             />
             <FeatureCard
               href="/vendors/non-food"
+              accent="#1FAEDB"
               title="Non-Food Vendors"
               description="Korean crafts, beauty, fashion, and cultural goods from local artisans and international brands."
               icon={
@@ -268,6 +287,7 @@ export default function HomePage() {
             />
             <FeatureCard
               href="/sponsors"
+              accent="#FB4E6D"
               title="Our Sponsors"
               description="Proudly supported by Kroger and dozens of global and local partners who make this free event possible."
               icon={
@@ -278,6 +298,7 @@ export default function HomePage() {
             />
             <FeatureCard
               href="/faqs"
+              accent="#8B6FFB"
               title="FAQs"
               description="Everything you need to know about parking, accessibility, sensory friendly hours, and getting the most out of your visit."
               icon={
@@ -318,13 +339,15 @@ export default function HomePage() {
       </section>
 
       {/* ── NEWSLETTER ───────────────────────────────────────────────────── */}
-      <section className="bg-[#2E4057] py-20">
+      <section className="bg-linear-to-br from-[#FB4E6D] via-[#FB5C8A] to-[#8B6FFB] py-20">
         <div className="max-w-2xl mx-auto px-6 text-center">
-          <SectionLabel>Stay in the Loop</SectionLabel>
+          <span className="inline-block text-[10px] font-semibold tracking-[0.3em] uppercase text-white/90 font-['Montserrat'] mb-4">
+            ✨ Stay in the Loop
+          </span>
           <h2 className="font-['Cormorant_Garamond'] text-4xl md:text-5xl font-semibold text-white mb-4">
             Don&apos;t Miss an Update
           </h2>
-          <p className="text-white/55 text-sm leading-relaxed tracking-wide mb-10">
+          <p className="text-white/75 text-sm leading-relaxed tracking-wide mb-10">
             Sign up to receive announcements, headliner reveals, vendor spotlights,
             and festival news directly in your inbox.
           </p>

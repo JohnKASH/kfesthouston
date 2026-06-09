@@ -159,9 +159,6 @@ const individualSupporters = ['Sue & Randy Sim', 'Thuy & John Kim']
 function SponsorLogo({ sponsor, className = '' }: { sponsor: Sponsor; className?: string }) {
   return (
     <div className={`relative flex items-center justify-center ${className}`}>
-      <span className="absolute inset-0 flex items-center justify-center px-3 text-center font-['Cormorant_Garamond'] text-lg font-semibold text-[#1a1a1a]/20 select-none leading-tight">
-        {sponsor.name}
-      </span>
       <Image
         src={`/assets/sponsors/${sponsor.slug}.png`}
         alt={sponsor.name}
@@ -191,15 +188,26 @@ function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
   )
 }
 
-function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
+function SectionHeading({
+  eyebrow,
+  title,
+  accent = '#c9a96e',
+}: {
+  eyebrow: string
+  title: string
+  accent?: string
+}) {
   return (
     <div className="text-center mb-14">
       <div className="flex items-center justify-center gap-4 mb-4">
-        <div className="w-8 h-px bg-[#c9a96e]" />
-        <span className="text-[10px] font-semibold tracking-[0.3em] uppercase text-[#c9a96e] font-['Montserrat']">
+        <div className="w-8 h-px" style={{ backgroundColor: accent }} />
+        <span
+          className="text-[10px] font-semibold tracking-[0.3em] uppercase font-['Montserrat']"
+          style={{ color: accent }}
+        >
           {eyebrow}
         </span>
-        <div className="w-8 h-px bg-[#c9a96e]" />
+        <div className="w-8 h-px" style={{ backgroundColor: accent }} />
       </div>
       <h2 className="font-['Cormorant_Garamond'] text-4xl md:text-5xl font-semibold text-[#1a1a1a]">
         {title}
@@ -212,25 +220,20 @@ export default function Page() {
   return (
     <>
       {/* ── PAGE HEADER ──────────────────────────────────────────────────── */}
-      <section className="relative bg-[#1a1a1a] overflow-hidden">
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-linear-to-l from-[#2E4057]/40 to-transparent hidden lg:block" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-20 md:py-28">
-          <div className="flex items-center gap-4 mb-5">
-            <div className="w-8 h-px bg-[#c9a96e]" />
-            <span className="text-[10px] font-semibold tracking-[0.3em] uppercase text-[#c9a96e] font-['Montserrat']">
-              Partners · 2025
-            </span>
-          </div>
-          <h1 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.05] tracking-tight max-w-3xl">
-            To Our Generous <em className="not-italic text-[#c9a96e]">2025 Sponsors</em>
+      <section className="bg-kf-pastel">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-20 text-center">
+          <span className="inline-block bg-[#FB4E6D] text-white text-[10px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full mb-5">
+            Partners · 2025
+          </span>
+          <h1 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl lg:text-7xl font-semibold text-[#1a1a1a] leading-[1.05] tracking-tight">
+            To Our Generous <em className="not-italic text-[#FB4E6D]">2025 Sponsors</em>
           </h1>
-          <p className="text-white/55 text-[15px] leading-relaxed tracking-wide max-w-2xl mt-6">
+          <p className="text-[#1a1a1a]/60 text-[15px] leading-relaxed tracking-wide max-w-2xl mx-auto mt-6">
             We’re grateful for the support we receive from our sponsors and media
             partners — both new and continuing! Every year, our festival has the
             chance to grow bigger because of your partnership. Our festival
             wouldn’t be possible without you.
           </p>
-          <div className="w-16 h-px bg-[#c9a96e] mt-8" />
         </div>
       </section>
 
@@ -254,7 +257,7 @@ export default function Page() {
       {/* ── GLOBAL SPONSORS ──────────────────────────────────────────────── */}
       <section className="bg-[#f5f0eb] py-24 border-t border-[#1a1a1a]/8">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <SectionHeading eyebrow="With Support From" title="Global Sponsors" />
+          <SectionHeading eyebrow="With Support From" title="Global Sponsors" accent="#FB4E6D" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {globalSponsors.map((s) => (
               <SponsorCard key={s.slug} sponsor={s} />
@@ -266,7 +269,7 @@ export default function Page() {
       {/* ── OFFICIAL SPONSORS ────────────────────────────────────────────── */}
       <section className="bg-[#faf8f5] py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <SectionHeading eyebrow="Proudly Partnered With" title="Official Sponsors" />
+          <SectionHeading eyebrow="Proudly Partnered With" title="Official Sponsors" accent="#10C9AC" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {officialSponsors.map((s) => (
               <SponsorCard key={s.slug} sponsor={s} />
@@ -306,7 +309,7 @@ export default function Page() {
       {/* ── COMMUNITY SPONSORS ───────────────────────────────────────────── */}
       <section className="bg-[#f5f0eb] py-24 border-t border-[#1a1a1a]/8">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <SectionHeading eyebrow="Rooted in Community" title="Community Sponsors" />
+          <SectionHeading eyebrow="Rooted in Community" title="Community Sponsors" accent="#8B6FFB" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {communitySponsors.map((s) => (
               <SponsorCard key={s.slug} sponsor={s} />
@@ -336,26 +339,23 @@ export default function Page() {
       </section>
 
       {/* ── BECOME A SPONSOR CTA ─────────────────────────────────────────── */}
-      <section className="bg-[#1a1a1a] py-20">
+      <section className="bg-linear-to-br from-[#FBBF24] via-[#FB4E6D] to-[#8B6FFB] py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="flex items-center justify-center gap-4 mb-5">
-            <div className="w-8 h-px bg-[#c9a96e]" />
-            <span className="text-[10px] font-semibold tracking-[0.3em] uppercase text-[#c9a96e] font-['Montserrat']">
-              Partner With Us
-            </span>
-            <div className="w-8 h-px bg-[#c9a96e]" />
-          </div>
+          <div className="text-3xl mb-4">🤝</div>
+          <span className="inline-block text-[10px] font-semibold tracking-[0.3em] uppercase text-white/90 font-['Montserrat'] mb-4">
+            Partner With Us
+          </span>
           <h2 className="font-['Cormorant_Garamond'] text-4xl md:text-5xl font-semibold text-white mb-4">
             Interested in Sponsoring?
           </h2>
-          <p className="text-white/55 text-[15px] leading-relaxed tracking-wide max-w-xl mx-auto mb-9">
+          <p className="text-white/85 text-[15px] leading-relaxed tracking-wide max-w-xl mx-auto mb-9">
             Join us in celebrating Korean culture in the heart of Houston. We’d
             love to explore a partnership that fits your organization — reach out
             and our team will be in touch.
           </p>
           <a
             href={`mailto:${SPONSOR_EMAIL}?subject=Korean%20Festival%20Houston%20Sponsorship%20Inquiry`}
-            className="inline-block bg-[#c9a96e] text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-8 py-4 hover:bg-[#e2c080] transition-colors"
+            className="inline-block bg-white text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-8 py-4 rounded-full hover:bg-white/90 transition-colors"
           >
             Email {SPONSOR_EMAIL}
           </a>

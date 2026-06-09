@@ -155,19 +155,7 @@ function StaffMember({ person, flip }: { person: Person; flip: boolean }) {
     .toUpperCase()
 
   return (
-    <div>
-      <div className="absolute inset-0">
-        <Image
-          src="/assets/staff/team.jpg"
-          alt="Korean Festival Houston performer dancing in hanbok"
-          fill
-          preload
-          className="object-cover object-center opacity-75"
-        />
-        {/* Gradient overlay — keeps left side readable, lets color show on the right */}
-        <div className="absolute inset-0 bg-linear-to-r from-[#1a1a1a]/85 via-[#2E4057]/55 to-transparent" />
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center">
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center">
         {/* Headshot */}
         <div className={`lg:col-span-2 ${flip ? 'lg:order-2' : ''}`}>
           <div className="relative aspect-square overflow-hidden border border-[#1a1a1a]/8 bg-linear-to-br from-[#2E4057] to-[#1a1a1a]">
@@ -221,7 +209,6 @@ function StaffMember({ person, flip }: { person: Person; flip: boolean }) {
           )}
         </div>
       </div>
-    </div>
   )
 }
 
@@ -241,25 +228,35 @@ export default function Page() {
   return (
     <>
       {/* ── PAGE HEADER ──────────────────────────────────────────────────── */}
-      <section className="relative bg-[#1a1a1a] overflow-hidden">
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-linear-to-l from-[#2E4057]/40 to-transparent hidden lg:block" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-20 md:py-28">
-          <div className="flex items-center gap-4 mb-5">
+      <section className="relative bg-[#1a1a1a] overflow-hidden flex items-center min-h-[340px] md:min-h-[460px]">
+        <div className="absolute inset-0">
+          <Image
+            src="/assets/staff/team.jpg"
+            alt="The Korean Festival Houston volunteer team"
+            fill
+            preload
+            sizes="100vw"
+            className="object-cover object-[50%_50%]"
+          />
+          {/* Left-anchored gradient keeps the heading readable */}
+          <div className="absolute inset-0 bg-linear-to-r from-[#1a1a1a] via-[#1a1a1a]/30 to-[#1a1a1a]/10" />
+        </div>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 py-12">
+          <div className="flex items-center gap-4 mb-4">
             <div className="w-8 h-px bg-[#c9a96e]" />
             <span className="text-[10px] font-semibold tracking-[0.3em] uppercase text-[#c9a96e] font-['Montserrat']">
               About · Our Team
             </span>
           </div>
-          <h1 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.05] tracking-tight">
+          <h1 className="font-['Cormorant_Garamond'] text-4xl md:text-5xl font-semibold text-white leading-[1.05] tracking-tight">
             Meet the <em className="not-italic text-[#c9a96e]">Team</em>
           </h1>
-          <p className="text-white/55 text-[15px] leading-relaxed tracking-wide max-w-2xl mt-6">
+          <p className="text-white/60 text-[14px] leading-relaxed tracking-wide max-w-2xl mt-4">
             Korean Festival Houston is powered by the volunteers of the
             Korean-American Society of Houston (KASH) — a group of friends and
             neighbors who give their time year-round to celebrate Korean culture
             in our city.
           </p>
-          <div className="w-16 h-px bg-[#c9a96e] mt-8" />
         </div>
       </section>
 
@@ -288,19 +285,20 @@ export default function Page() {
       </section>
 
       {/* ── CTA BAND ─────────────────────────────────────────────────────── */}
-      <section className="bg-[#2E4057] py-16">
+      <section className="bg-linear-to-br from-[#10C9AC] via-[#1FAEDB] to-[#8B6FFB] py-16">
         <div className="max-w-5xl mx-auto px-6 text-center">
+          <div className="text-3xl mb-3">🎉</div>
           <h2 className="font-['Cormorant_Garamond'] text-4xl md:text-5xl font-semibold text-white mb-4">
             Want to Join the Team?
           </h2>
-          <p className="text-white/60 text-[15px] leading-relaxed tracking-wide max-w-2xl mx-auto mb-8">
+          <p className="text-white/85 text-[15px] leading-relaxed tracking-wide max-w-2xl mx-auto mb-8">
             Whether you love K-dramas, Korean food, music, or simply want to meet
             great people, there’s a place for you at KASH. It only takes one small
             “yes.”
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-[#c9a96e] text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-8 py-4 hover:bg-[#e2c080] transition-colors"
+            className="inline-block bg-white text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-8 py-4 rounded-full hover:bg-white/90 transition-colors"
           >
             Get Involved
           </Link>

@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @tailwind utilities;
 
+/* Festival palette — usable as bg-kf-coral, text-kf-teal, from-kf-sky, border-kf-gold/30, etc. */
+@theme {
+  --color-kf-coral: #fb4e6d;
+  --color-kf-gold: #fbbf24;
+  --color-kf-teal: #10c9ac;
+  --color-kf-sky: #1faedb;
+  --color-kf-purple: #8b6ffb;
+  --color-kf-dark: #1a1a1a;
+}
+
 :root {
   --gold: #c9a96e;
   --gold-light: #e2c080;
@@ -8,6 +18,15 @@
   --dark: #1a1a1a;
   --cream: #f5f0eb;
   --warm-white: #faf8f5;
+
+  /* Festival pastel gradient (mint → cream → blush) */
+  --kf-pastel: linear-gradient(135deg, #e0fff8 0%, #fff8e0 60%, #fce8f0 100%);
+}
+
+@layer utilities {
+  .bg-kf-pastel {
+    background: var(--kf-pastel);
+  }
 }
 
 @layer base {

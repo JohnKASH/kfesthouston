@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule – Korean Festival Houston 2026</title>
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+    * { font-family: 'Outfit', 'Trebuchet MS', sans-serif; }
+    .kf-nav-links a { text-decoration: none; color: inherit; }
+    .page-hero { background: linear-gradient(135deg,#e0f7ff 0%,#fff8e0 100%); }
+    .date-strip { display: flex; }
+    .date-card { flex: 1; padding: 1.25rem; text-align: center; }
+    .date-card:nth-child(1){background:var(--kf-blue)} .date-card:nth-child(2){background:#0e7aaa}
+    .date-card-day { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.75); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+    .date-card-date { font-size: 18px; font-weight: 900; color: #fff; }
+    .date-card-hours { font-size: 15px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+    .sched-content { padding: 2rem; max-width: 720px; margin: 0 auto; }
+    .sched-notice { background: var(--kf-light); border-radius: 12px; padding: 1.25rem 1.5rem; border-left: 4px solid var(--kf-yellow); margin-bottom: 2rem; }
+    .sched-notice-title { font-size: 15px; font-weight: 700; color: var(--kf-dark); margin-bottom: 4px; }
+    .sched-notice-text { font-size: 15px; color: #666; line-height: 1.6; }
+
+    .expect-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 10px; margin-bottom: 2rem; }
+    .expect-card { background: var(--kf-light); border-radius: 12px; padding: 1rem; display: flex; align-items: center; gap: 10px; }
+    .expect-icon { font-size: 26px; flex-shrink: 0; }
+    .expect-title { font-size: 15px; font-weight: 700; color: var(--kf-dark); }
+    .expect-desc { font-size: 15px; color: #777; margin-top: 2px; }
+
+    .stage-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .stage-chip { flex: 1; min-width: 200px; border-radius: 12px; padding: 1rem 1.25rem; }
+    .stage-chip:nth-child(1){background:linear-gradient(135deg,rgba(134,105,251,0.1),rgba(254,70,107,0.08));border:2px solid rgba(134,105,251,0.25)}
+    .stage-chip:nth-child(2){background:linear-gradient(135deg,rgba(7,203,173,0.1),rgba(28,173,217,0.08));border:2px solid rgba(7,203,173,0.25)}
+    .stage-name { font-size: 15px; font-weight: 800; color: var(--kf-dark); margin-bottom: 4px; }
+    .stage-desc { font-size: 15px; color: #666; line-height: 1.5; }
+    .stage-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 8px; margin-top: 6px; }
+    .sb-main{background:rgba(134,105,251,0.15);color:var(--kf-purple)} .sb-culture{background:rgba(7,203,173,0.15);color:#048a6e}
+
+    .audition-cta { background: var(--kf-pink); border-radius: 16px; padding: 1.5rem; text-align: center; margin-bottom: 2rem; }
+    .audition-cta h3 { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .audition-cta p { font-size: 15px; color: rgba(255,255,255,0.85); margin-bottom: 1rem; }
+    .audition-btn { background: #fff; color: var(--kf-pink); border: none; border-radius: 20px; padding: 9px 22px; font-size: 15px; font-weight: 800; cursor: pointer; text-decoration: none; display: inline-block; }
+    .contact-line { text-align: center; font-size: 15px; color: #777; padding-bottom: 2rem; }
+    .contact-line a { color: var(--kf-blue); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<nav class="kf-nav">
+  <a href="index.html"><img src="2026-KFest-Logo-Lockup-Horizontal-Black.png" class="kf-nav-logo" alt="Korean Festival Houston 2026" /></a>
+  <ul class="kf-nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="headliners.html">🎤 Headliners</a></li>
+    <li class="active c-blue"><a href="schedule.html">🏮 Schedule</a></li>
+    <li><a href="vendors.html">🍴 Vendors</a></li>
+    <li><a href="faqs.html">FAQs</a></li>
+  </ul>
+</nav>
+<div class="kf-rainbow"><span style="background:var(--kf-pink)"></span><span style="background:var(--kf-yellow)"></span><span style="background:var(--kf-teal)"></span><span style="background:var(--kf-blue)"></span><span style="background:var(--kf-purple)"></span></div>
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow" style="background:var(--kf-blue)">2026 Program</div>
+  <div class="page-hero-title">🏮 Performance Schedule</div>
+  <div class="page-hero-sub">A vibrant celebration of traditional and contemporary Korean culture, featuring captivating performances across two stages in the heart of Downtown Houston.</div>
+</div>
+
+<div class="date-strip">
+  <div class="date-card"><div class="date-card-day">Saturday</div><div class="date-card-date">October 10, 2026</div><div class="date-card-hours">10:00 AM – 9:00 PM</div></div>
+  <div class="date-card"><div class="date-card-day">Sunday</div><div class="date-card-date">October 11, 2026</div><div class="date-card-hours">11:00 AM – 8:00 PM</div></div>
+</div>
+
+<div class="sched-content">
+  <div class="sched-notice">
+    <div class="sched-notice-title">Full schedule coming soon!</div>
+    <div class="sched-notice-text">The complete 2026 performance lineup is being finalized. Stay tuned to our social media pages for important announcements about Performance Auditions and Dance Competition Applications!</div>
+  </div>
+
+  <div class="kf-eyebrow" style="background:var(--kf-teal);color:#111;">What to expect</div>
+  <div class="kf-section-title" style="margin-top:0.5rem">Entertainment for everyone</div>
+  <div class="expect-grid">
+    <div class="expect-card"><div class="expect-icon">🎤</div><div><div class="expect-title">K-pop Headliners</div><div class="expect-desc">World-class artists on the main stage</div></div></div>
+    <div class="expect-card"><div class="expect-icon">💃</div><div><div class="expect-title">K-pop Cover Groups</div><div class="expect-desc">Local &amp; regional dance crews compete</div></div></div>
+    <div class="expect-card"><div class="expect-icon">🥁</div><div><div class="expect-title">Traditional Performances</div><div class="expect-desc">Drumming, fan dance, taekwondo</div></div></div>
+    <div class="expect-card"><div class="expect-icon">🌶️</div><div><div class="expect-title">Kimchi Eating Contest</div><div class="expect-desc">A K-Fest crowd favorite!</div></div></div>
+  </div>
+
+  <div style="font-size:18px;font-weight:800;color:var(--kf-dark);margin-bottom:1rem;">Two Stages</div>
+  <div class="stage-row">
+    <div class="stage-chip"><div class="stage-name">Main Stage</div><div class="stage-desc">Headliner performances, K-pop showcase, and major cultural acts for the full festival crowd.</div><span class="stage-badge sb-main">K-pop · Headliners</span></div>
+    <div class="stage-chip"><div class="stage-name">Culture Stage</div><div class="stage-desc">Traditional Korean arts, community performances, dance competitions, and interactive programs.</div><span class="stage-badge sb-culture">Culture · Dance · Kids</span></div>
+  </div>
+
+  <div class="audition-cta">
+    <h3>Want to perform at K-Fest 2026?</h3>
+    <p>Performance Auditions and Dance Competition Applications opening soon!</p>
+    <a href="https://instagram.com/kfesthtx" class="audition-btn" target="_blank">Follow for Updates</a>
+  </div>
+
+  <div class="contact-line">Questions? Contact <a href="mailto:Stage@kashouston.org">Stage@kashouston.org</a></div>
+</div>
+
+<footer class="kf-footer">
+  <div class="kf-footer-copy">© 2026 Korean Festival Houston · Presented by Kroger · Organized by KASH</div>
+  <img src="2026-KFest-Logo-Lockup-Horizontal-White.png" class="kf-footer-logo" alt="KFest 2026" />
+  <div class="kf-footer-socials">
+    <a class="kf-social" style="background:var(--kf-pink)" href="https://instagram.com/kfesthtx" target="_blank">IG</a>
+    <a class="kf-social" style="background:var(--kf-blue)" href="https://twitter.com/kfesthtx" target="_blank">𝕏</a>
+    <a class="kf-social" style="background:var(--kf-purple)" href="https://facebook.com/kfesthouston" target="_blank">FB</a>
+  </div>
+</footer>
+</body>
+</html>

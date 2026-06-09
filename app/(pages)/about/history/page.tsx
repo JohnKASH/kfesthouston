@@ -12,15 +12,20 @@ export const metadata: Metadata = {
 function PurposeCard({
   icon,
   title,
+  accent,
   children,
 }: {
   icon: React.ReactNode
   title: string
+  accent: string
   children: React.ReactNode
 }) {
   return (
-    <div className="bg-white border border-[#1a1a1a]/8 p-8 hover:border-[#c9a96e] hover:shadow-lg transition-all duration-300">
-      <div className="text-[#c9a96e] mb-5">{icon}</div>
+    <div
+      className="bg-white rounded-2xl border border-[#1a1a1a]/8 border-t-4 p-8 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+      style={{ borderTopColor: accent }}
+    >
+      <div className="mb-5" style={{ color: accent }}>{icon}</div>
       <h3 className="font-['Cormorant_Garamond'] text-2xl font-semibold text-[#1a1a1a] mb-3">
         {title}
       </h3>
@@ -42,12 +47,13 @@ export default function Page() {
             alt="Korean Festival Houston performer dancing in hanbok"
             fill
             preload
-            className="object-cover object-center opacity-75"
+            className="object-cover object-[50%_30%] opacity-95"
           />
-          {/* Gradient overlay — keeps left side readable, lets color show on the right */}
-          <div className="absolute inset-0 bg-linear-to-r from-[#1a1a1a]/85 via-[#2E4057]/55 to-transparent" />
+          {/* Left-anchored gradient for legibility */}
+          <div className="absolute inset-0 bg-linear-to-r from-[#1a1a1a] via-[#1a1a1a]/70 to-[#1a1a1a]/10" />
+          {/* Top + bottom vignette for depth */}
+          <div className="absolute inset-0 bg-linear-to-t from-[#1a1a1a]/80 via-transparent to-[#1a1a1a]/40" />
         </div>
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-linear-to-l from-[#2E4057]/40 to-transparent hidden lg:block" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-20 md:py-28">
           <div className="flex items-center gap-4 mb-5">
             <div className="w-8 h-px bg-[#c9a96e]" />
@@ -168,6 +174,7 @@ export default function Page() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <PurposeCard
               title="Raise Cultural Awareness"
+              accent="#FB4E6D"
               icon={
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -180,6 +187,7 @@ export default function Page() {
 
             <PurposeCard
               title="Promote Community Growth"
+              accent="#10C9AC"
               icon={
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
@@ -192,6 +200,7 @@ export default function Page() {
 
             <PurposeCard
               title="Bridge Our Communities"
+              accent="#8B6FFB"
               icon={
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M2 17h20" /><path d="M2 17a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6" /><path d="M6 17v-3" /><path d="M18 17v-3" /><path d="M12 11V7" />
@@ -207,9 +216,9 @@ export default function Page() {
       </section>
 
       {/* ── CTA BAND ─────────────────────────────────────────────────────── */}
-      <section className="bg-[#2E4057] py-16">
+      <section className="bg-linear-to-br from-[#1FAEDB] via-[#8B6FFB] to-[#FB4E6D] py-16">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-white/70 text-[15px] leading-relaxed tracking-wide max-w-2xl mx-auto mb-8">
+          <p className="text-white/85 text-[15px] leading-relaxed tracking-wide max-w-2xl mx-auto mb-8">
             Korean Festival Houston is organized by the Korean-American Society of
             Houston (KASH), a volunteer-driven nonprofit dedicated to celebrating
             Korean culture in our city.
@@ -219,13 +228,13 @@ export default function Page() {
               href="https://kashouston.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#c9a96e] text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-8 py-4 hover:bg-[#e2c080] transition-colors"
+              className="bg-white text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-8 py-4 rounded-full hover:bg-white/90 transition-colors"
             >
               Learn About KASH
             </a>
             <Link
               href="/schedule"
-              className="border border-white/30 text-white text-[11px] font-semibold tracking-[0.15em] uppercase px-8 py-4 hover:border-[#c9a96e] hover:text-[#c9a96e] transition-all"
+              className="border border-white/40 text-white text-[11px] font-semibold tracking-[0.15em] uppercase px-8 py-4 rounded-full hover:bg-white/10 transition-all"
             >
               View Schedule
             </Link>

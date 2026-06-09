@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendors – Korean Festival Houston 2026</title>
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+    * { font-family: 'Outfit', 'Trebuchet MS', sans-serif; }
+    .kf-nav-links a { text-decoration: none; color: inherit; }
+    .page-hero { background: linear-gradient(135deg,#e0fff8 0%,#fff8e0 100%); }
+
+    .vendor-notice { background: var(--kf-dark); color: #fff; border-radius: 16px; padding: 2rem; text-align: center; margin-bottom: 2rem; }
+    .vendor-notice h3 { font-size: 20px; font-weight: 900; margin-bottom: 0.5rem; }
+    .vendor-notice p { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 1.25rem; line-height: 1.6; }
+    .vendor-apply-btn { background: var(--kf-teal); color: #111; border: none; border-radius: 24px; padding: 11px 26px; font-size: 15px; font-weight: 800; cursor: pointer; text-decoration: none; display: inline-block; }
+    .vendor-email { font-size: 15px; color: rgba(255,255,255,0.55); margin-top: 0.75rem; }
+    .vendor-email a { color: var(--kf-teal); }
+
+    .food-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 10px; margin-bottom: 2rem; }
+    .food-card { background: var(--kf-light); border-radius: 14px; padding: 1.25rem 1rem; text-align: center; }
+    .food-card:nth-child(1){border-top:3px solid var(--kf-pink)}  .food-card:nth-child(2){border-top:3px solid var(--kf-yellow)}
+    .food-card:nth-child(3){border-top:3px solid var(--kf-teal)}  .food-card:nth-child(4){border-top:3px solid var(--kf-purple)}
+    .food-card:nth-child(5){border-top:3px solid var(--kf-blue)}  .food-card:nth-child(6){border-top:3px solid var(--kf-pink)}
+    .food-card:nth-child(7){border-top:3px solid var(--kf-yellow)}.food-card:nth-child(8){border-top:3px solid var(--kf-teal)}
+    .food-icon { font-size: 28px; margin-bottom: 0.5rem; }
+    .food-name { font-size: 15px; font-weight: 700; color: var(--kf-dark); }
+    .food-desc { font-size: 15px; color: #777; margin-top: 3px; }
+
+    .nonfood-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 10px; }
+    .nonfood-card { background: var(--kf-light); border-radius: 12px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 12px; }
+    .nonfood-icon { font-size: 26px; flex-shrink: 0; }
+    .nonfood-name { font-size: 15px; font-weight: 700; color: var(--kf-dark); }
+    .nonfood-desc { font-size: 15px; color: #777; margin-top: 2px; }
+
+    .sponsor-feature { background: linear-gradient(135deg,rgba(254,191,34,0.12),rgba(7,203,173,0.08)); border: 2px solid rgba(254,191,34,0.3); border-radius: 14px; padding: 1.25rem; display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .sponsor-feature img { height: 44px; object-fit: contain; flex-shrink: 0; }
+    .sponsor-feature-text { font-size: 15px; color: #555; line-height: 1.5; }
+    .sponsor-feature-text strong { color: var(--kf-dark); display: block; margin-bottom: 3px; }
+
+    .section-divider { border: none; border-top: 2px solid #eee; margin: 2rem 0; }
+  </style>
+</head>
+<body>
+
+<nav class="kf-nav">
+  <a href="index.html"><img src="2026-KFest-Logo-Lockup-Horizontal-Black.png" class="kf-nav-logo" alt="Korean Festival Houston 2026" /></a>
+  <ul class="kf-nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="headliners.html">🎤 Headliners</a></li>
+    <li><a href="schedule.html">🏮 Schedule</a></li>
+    <li class="active c-teal"><a href="vendors.html">🍴 Vendors</a></li>
+    <li><a href="faqs.html">FAQs</a></li>
+  </ul>
+</nav>
+<div class="kf-rainbow"><span style="background:var(--kf-pink)"></span><span style="background:var(--kf-yellow)"></span><span style="background:var(--kf-teal)"></span><span style="background:var(--kf-blue)"></span><span style="background:var(--kf-purple)"></span></div>
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow" style="background:var(--kf-teal);color:#111;">Taste of Korea</div>
+  <div class="page-hero-title">🍴 Vendors</div>
+  <div class="page-hero-sub">Authentic Korean food, drinks, and unique finds from local &amp; global vendors.</div>
+</div>
+
+<section class="kf-section">
+  <div class="vendor-notice">
+    <h3>Vendor Applications Opening Soon!</h3>
+    <p>We're currently accepting interest from food and non-food vendors for KFest 2026. Join us at Discovery Green on October 10–11 and bring your business to 65,000+ festival-goers!</p>
+    <a href="vendor-apply.html" class="vendor-apply-btn">Apply to Vendor</a>
+    <div class="vendor-email">Questions? <a href="mailto:vendors@kashouston.org">vendors@kashouston.org</a></div>
+  </div>
+
+  <!-- FOOD -->
+  <div class="kf-eyebrow" style="background:var(--kf-teal);color:#111;">Food Vendors</div>
+  <div class="kf-section-title" style="margin-top:0.5rem">What to expect at the food court</div>
+  <div class="food-grid">
+    <div class="food-card"><div class="food-icon">🥩</div><div class="food-name">Korean BBQ</div><div class="food-desc">Galbi, bulgogi &amp; more</div></div>
+    <div class="food-card"><div class="food-icon">🍡</div><div class="food-name">Tteokbokki</div><div class="food-desc">Spicy rice cakes</div></div>
+    <div class="food-card"><div class="food-icon">🍜</div><div class="food-name">Jjajangmyeon</div><div class="food-desc">Black bean noodles</div></div>
+    <div class="food-card"><div class="food-icon">🍦</div><div class="food-name">Bingsu</div><div class="food-desc">Korean shaved ice</div></div>
+    <div class="food-card"><div class="food-icon">🧋</div><div class="food-name">Boba &amp; Drinks</div><div class="food-desc">Bubble tea &amp; more</div></div>
+    <div class="food-card"><div class="food-icon">🥘</div><div class="food-name">Bibimbap</div><div class="food-desc">Mixed rice bowls</div></div>
+    <div class="food-card"><div class="food-icon">🍗</div><div class="food-name">Korean Fried Chicken</div><div class="food-desc">Crispy &amp; saucy</div></div>
+    <div class="food-card"><div class="food-icon">🥟</div><div class="food-name">Mandu</div><div class="food-desc">Korean dumplings</div></div>
+  </div>
+
+  <div class="sponsor-feature">
+    <img src="https://images.squarespace-cdn.com/content/v1/59305f4df7e0ab8a82c43c7a/bb27f24d-bc40-4c2e-aa11-1f5645a39650/2024+Jinro+Logo.png" alt="JINRO" />
+    <div class="sponsor-feature-text">
+      <strong>Official Beverage Sponsor: JINRO</strong>
+      World's #1 selling spirit brand — enjoy JINRO soju at the festival's official beverage stations.
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- NON-FOOD -->
+  <div class="kf-eyebrow" style="background:var(--kf-purple);color:#fff;">Non-Food Vendors</div>
+  <div class="kf-section-title" style="margin-top:0.5rem">Shop &amp; explore</div>
+  <div class="nonfood-grid">
+    <div class="nonfood-card"><div class="nonfood-icon">👘</div><div><div class="nonfood-name">Hanbok &amp; Fashion</div><div class="nonfood-desc">Traditional Korean dress</div></div></div>
+    <div class="nonfood-card"><div class="nonfood-icon">🎨</div><div><div class="nonfood-name">Fine Art &amp; Prints</div><div class="nonfood-desc">Korean-inspired artwork</div></div></div>
+    <div class="nonfood-card"><div class="nonfood-icon">💄</div><div><div class="nonfood-name">K-Beauty</div><div class="nonfood-desc">Skincare &amp; cosmetics</div></div></div>
+    <div class="nonfood-card"><div class="nonfood-icon">📿</div><div><div class="nonfood-name">Jewelry &amp; Accessories</div><div class="nonfood-desc">Handmade &amp; boutique</div></div></div>
+    <div class="nonfood-card"><div class="nonfood-icon">🧸</div><div><div class="nonfood-name">Gifts &amp; Collectibles</div><div class="nonfood-desc">K-pop merch &amp; novelties</div></div></div>
+    <div class="nonfood-card"><div class="nonfood-icon">📚</div><div><div class="nonfood-name">Books &amp; Media</div><div class="nonfood-desc">Korean culture resources</div></div></div>
+  </div>
+</section>
+
+<footer class="kf-footer">
+  <div class="kf-footer-copy">© 2026 Korean Festival Houston · Presented by Kroger · Organized by KASH</div>
+  <img src="2026-KFest-Logo-Lockup-Horizontal-White.png" class="kf-footer-logo" alt="KFest 2026" />
+  <div class="kf-footer-socials">
+    <a class="kf-social" style="background:var(--kf-pink)" href="https://instagram.com/kfesthtx" target="_blank">IG</a>
+    <a class="kf-social" style="background:var(--kf-blue)" href="https://twitter.com/kfesthtx" target="_blank">𝕏</a>
+    <a class="kf-social" style="background:var(--kf-purple)" href="https://facebook.com/kfesthouston" target="_blank">FB</a>
+  </div>
+</footer>
+</body>
+</html>
