@@ -1,0 +1,102 @@
+/* Swinging Korean paper lanterns — decorative, hangs from the top of a section.
+   Ported from the designer's artifact, recolored to the festival palette. */
+
+.row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 1.5rem;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.lantern {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+}
+
+.lantern:nth-child(1) { animation: sway 3.2s ease-in-out infinite; }
+.lantern:nth-child(2) { animation: sway 2.8s ease-in-out infinite 0.5s; }
+.lantern:nth-child(3) { animation: sway 3.5s ease-in-out infinite 1s; }
+.lantern:nth-child(4) { animation: sway 2.6s ease-in-out infinite 0.3s; }
+.lantern:nth-child(5) { animation: sway 3.8s ease-in-out infinite 0.8s; }
+.lantern:nth-child(6) { animation: sway 3.0s ease-in-out infinite 1.4s; }
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50%      { transform: rotate(5deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lantern { animation: none !important; }
+}
+
+.string { width: 1.5px; }
+
+.body {
+  border-radius: 40% 40% 45% 45%;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+.body::after {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 55%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.45);
+}
+
+.top,
+.bottom {
+  width: 60%;
+  height: 5px;
+  border-radius: 3px;
+}
+.top { margin-bottom: -2px; }
+.bottom { margin-top: -2px; }
+
+.tassel { width: 1.5px; height: 16px; }
+
+/* ── Sizes ─────────────────────────────────────────────── */
+.lg .string { height: 64px; }
+.lg .body { width: 32px; height: 48px; }
+.md .string { height: 48px; }
+.md .body { width: 26px; height: 38px; }
+.sm .string { height: 40px; }
+.sm .body { width: 20px; height: 30px; }
+
+/* ── Colors ────────────────────────────────────────────────
+   String lightened vs. the artifact so it reads on the dark hero. */
+.pink .string { background: rgba(255, 255, 255, 0.3); }
+.pink .top, .pink .bottom { background: #c2184a; }
+.pink .body { background: #fe466b; }
+.pink .tassel { background: #c2184a; }
+
+.yellow .string { background: rgba(255, 255, 255, 0.3); }
+.yellow .top, .yellow .bottom { background: #c47f00; }
+.yellow .body { background: #febf22; }
+.yellow .tassel { background: #c47f00; }
+
+.teal .string { background: rgba(255, 255, 255, 0.3); }
+.teal .top, .teal .bottom { background: #048a6e; }
+.teal .body { background: #07cbad; }
+.teal .tassel { background: #048a6e; }
+
+.blue .string { background: rgba(255, 255, 255, 0.3); }
+.blue .top, .blue .bottom { background: #0e7aaa; }
+.blue .body { background: #1cadd9; }
+.blue .tassel { background: #0e7aaa; }
+
+.purple .string { background: rgba(255, 255, 255, 0.3); }
+.purple .top, .purple .bottom { background: #5534c8; }
+.purple .body { background: #8669fb; }
+.purple .tassel { background: #5534c8; }

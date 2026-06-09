@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Lanterns from '@/app/components/Lanterns'
 
 // ─── Stat Card ────────────────────────────────────────────────────────────────
 function StatCard({ number, label, accent }: { number: string; label: string; accent: string }) {
@@ -84,6 +85,9 @@ export default function HomePage() {
     <>
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#1a1a1a]">
+        {/* Swinging lanterns hanging from the top of the hero */}
+        <Lanterns />
+
         {/* Hero background image */}
         <div className="absolute inset-0">
           <Image
