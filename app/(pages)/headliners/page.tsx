@@ -124,7 +124,7 @@ export default function Page() {
                 🎉 2026 · 17th Annual
               </span>
               <h2 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl font-semibold text-white mb-2">
-                Big Ocean
+                Top secret... for now ✨
               </h2>
               <p className="text-white/65 text-[15px] tracking-wide">
                 This year’s headliner · October 10–11, 2026
