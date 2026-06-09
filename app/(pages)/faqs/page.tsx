@@ -1,0 +1,12 @@
+import type { Metadata } from 'next'
+import PagePlaceholder from '@/app/components/PagePlaceholder'
+
+export const metadata: Metadata = {
+  title: 'FAQs · Korean Festival Houston',
+}
+
+export default function Page() {
+  return (
+    <PagePlaceholder eyebrow="Help" title="Frequently Asked Questions" />
+  )
+}

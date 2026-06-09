@@ -104,10 +104,10 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-white/25 text-[11px] tracking-wide">
-            © {new Date().getFullYear()} Korean Festival Houston. All rights reserved.
+            © {new Date().getFullYear()} Korean American Society of Houston. All rights reserved.
           </p>
           <p className="text-white/25 text-[11px] tracking-wide">
-            A KASH Houston Production
+            A Korean American Society of Houston Production
           </p>
         </div>
       </div>

@@ -72,7 +72,7 @@ export default function HomePage() {
         {/* Hero background image */}
         <div className="absolute inset-0">
           <Image
-            src="/assets/logos/HomepageImages/Dancing.png"
+            src="/assets/HomepageImages/hero.jpg"
             alt="Korean Festival Houston performer dancing in hanbok"
             fill
             preload
@@ -145,7 +145,7 @@ export default function HomePage() {
       <section className="bg-[#f5f0eb] border-y border-[#1a1a1a]/8">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#1a1a1a]/8">
-            <StatCard number="65K+" label="Visitors Each Year" />
+            <StatCard number="85K+" label="Visitors Each Year" />
             <StatCard number="17" label="Years Running" />
             <StatCard number="2009" label="Est. in Houston" />
             <StatCard number="Free" label="Admission Always" />
@@ -190,23 +190,23 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Image grid placeholder */}
+            {/* Image grid */}
             <div className="grid grid-cols-2 gap-3">
               <div className="aspect-3/4 bg-[#1a1a1a]/8 overflow-hidden">
                 <Image
-                  src="/images/about-1.jpg"
-                  alt="Korean Festival performer"
-                  width={400}
-                  height={533}
+                  src="/assets/HomepageImages/Drummers.png"
+                  alt="Korean Festival traditional drummers performing"
+                  width={2500}
+                  height={1667}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="aspect-3/4 bg-[#1a1a1a]/8 mt-10 overflow-hidden">
                 <Image
-                  src="/images/about-2.jpg"
-                  alt="Korean Festival crowd"
-                  width={400}
-                  height={533}
+                  src="/assets/HomepageImages/Singer.png"
+                  alt="Korean Festival singer performing on stage"
+                  width={2500}
+                  height={1667}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -296,13 +296,13 @@ export default function HomePage() {
           <p className="text-[10px] font-semibold tracking-[0.35em] uppercase text-[#1a1a1a]/35 font-['Montserrat'] mb-8">
             Proudly Presented by
           </p>
-          {/* Kroger logo placeholder — replace with actual <Image> */}
-          <div className="flex justify-center items-center gap-12 flex-wrap opacity-60 hover:opacity-100 transition-opacity">
+          {/* Kroger — presenting sponsor */}
+          <div className="flex justify-center items-center gap-12 flex-wrap">
             <Image
-              src="/images/sponsor-kroger.png"
+              src="/assets/HomepageImages/Kroger.png"
               alt="Kroger — Texas Proud for Over 70 Years"
-              width={220}
-              height={80}
+              width={800}
+              height={77}
               className="object-contain"
             />
           </div>
