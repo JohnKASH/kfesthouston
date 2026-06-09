@@ -11,7 +11,7 @@ const STAGE_EMAIL = 'stage@kashouston.org'
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const expect = [
   { emoji: '🎤', title: 'K-pop Headliners', desc: 'World-class artists on the main stage', accent: '#FB4E6D' },
-  { emoji: '💃', title: 'K-pop Cover Groups', desc: 'Local & regional dance crews compete', accent: '#8B6FFB' },
+  { emoji: '💃', title: 'K-showcase & K-Pop Dance Competition', desc: 'Local & regional exhibitionand competitive crews', accent: '#8B6FFB' },
   { emoji: '🥁', title: 'Traditional Performances', desc: 'Drumming, fan dance, taekwondo', accent: '#10C9AC' },
   { emoji: '🌶️', title: 'Kimchi Eating Contest', desc: 'A K-Fest crowd favorite!', accent: '#FBBF24' },
 ]
@@ -115,11 +115,10 @@ export default function Page() {
             <div className="rounded-2xl p-6 bg-linear-to-br from-[#10C9AC]/12 to-[#1FAEDB]/10 border-2 border-[#10C9AC]/25">
               <div className="text-2xl mb-2">🪭</div>
               <div className="font-['Cormorant_Garamond'] text-2xl font-semibold text-[#1a1a1a] mb-2">
-                Culture Stage
+                Community Stage
               </div>
               <p className="text-[#1a1a1a]/60 text-sm leading-relaxed tracking-wide mb-4">
-                Traditional Korean arts, community performances, dance competitions,
-                and interactive programs.
+                Traditional Korean arts, community performances, dance exhibitions, and interactive programs.
               </p>
               <span className="inline-block text-[10px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full bg-[#10C9AC]/15 text-[#048A6E]">
                 Culture · Dance · Kids

@@ -33,6 +33,7 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
+  const [bannerIdx, setBannerIdx] = useState(0)
   const navRef = useRef<HTMLDivElement>(null)
 
   // Close dropdown when clicking outside
@@ -46,20 +47,46 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClick)
   }, [])
 
+  // Rotate the announcement bar between messages
+  useEffect(() => {
+    const id = setInterval(() => setBannerIdx((i) => (i + 1) % 2), 6000)
+    return () => clearInterval(id)
+  }, [])
+
+  const banners = [
+    <>
+      🎓 Applications for the{' '}
+      <a
+        href="https://www.kashouston.org/Scholarship"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline font-semibold hover:text-white/80 transition-colors"
+      >
+        KASH Scholarships
+      </a>{' '}
+      are open now!
+    </>,
+    <>
+      Follow{' '}
+      <a
+        href="https://instagram.com/kfesthtx"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline font-semibold hover:text-white/80 transition-colors"
+      >
+        @kfesthtx
+      </a>{' '}
+      on Instagram, Facebook and TikTok for festival news!
+    </>,
+  ]
+
   return (
     <header className="relative z-50">
-      {/* Announcement Bar */}
+      {/* Announcement Bar (rotates between messages) */}
       <div className="bg-linear-to-r from-[#FB4E6D] via-[#FB5C8A] to-[#8B6FFB] text-white text-center py-2 px-4 text-xs tracking-widest font-medium">
-        Follow{' '}
-        <a
-          href="https://instagram.com/kfesthtx"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline font-semibold hover:text-white/80 transition-colors"
-        >
-          @kfesthtx
-        </a>{' '}
-        on Instagram, Facebook and TikTok for exclusive announcements and festival news!
+        <span key={bannerIdx} className="inline-block" style={{ animation: 'kf-fade 0.5s ease' }}>
+          {banners[bannerIdx]}
+        </span>
       </div>
 
       {/* Main Navbar */}
