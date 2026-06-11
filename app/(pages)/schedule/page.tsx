@@ -11,9 +11,83 @@ const STAGE_EMAIL = 'stage@kashouston.org'
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const expect = [
   { emoji: '🎤', title: 'K-pop Headliners', desc: 'World-class artists on the main stage', accent: '#FB4E6D' },
-  { emoji: '💃', title: 'K-showcase & K-Pop Dance Competition', desc: 'Local & regional exhibitionand competitive crews', accent: '#8B6FFB' },
+  { emoji: '💃', title: 'K-Showcase & K-Pop Dance Competition', desc: 'Local & regional exhibition and competitive crews', accent: '#8B6FFB' },
   { emoji: '🥁', title: 'Traditional Performances', desc: 'Drumming, fan dance, taekwondo', accent: '#10C9AC' },
   { emoji: '🌶️', title: 'Kimchi Eating Contest', desc: 'A K-Fest crowd favorite!', accent: '#FBBF24' },
+]
+
+// ─── Stage programming ──────────────────────────────────────────────────────
+type Program = {
+  emoji: string
+  title: string
+  accent: string
+  host?: string
+  body: React.ReactNode[]
+  when: string
+  link?: string
+  linkTBA?: boolean
+  opens?: string
+  closes?: string
+}
+
+const programs: Program[] = [
+  {
+    emoji: '🥁',
+    title: 'Traditional Performances',
+    accent: '#10C9AC',
+    body: [
+      "Experience the beauty and energy of Korea's traditional performing arts in the heart of Houston. Our mission is to showcase and promote Korea's rich cultural heritage through dynamic performances and community engagement. We welcome performance groups specializing in traditional Korean arts such as 사물놀이 (samulnori), pungmul, 부채춤 (fan dance), 탈춤 (talchum mask dance), taekwondo demonstrations, and other cultural performances.",
+      <>
+        Groups interested in performing on the Kroger Stage or Community Stage are
+        invited to contact us at{' '}
+        <a href={`mailto:${STAGE_EMAIL}`} className="text-[#1FAEDB] font-semibold hover:underline">
+          {STAGE_EMAIL}
+        </a>{' '}
+        with the following information: group name, type of performance, and a
+        video sample or performance link.
+      </>,
+      'Please note that submitting an inquiry does not guarantee participation. All submissions are reviewed by our programming team, and selected groups will receive an official invitation to perform.',
+    ],
+    when: 'October 10 & 11, before 4:00 PM',
+  },
+  {
+    emoji: '🎭',
+    title: 'K-Showcase',
+    accent: '#8B6FFB',
+    body: [
+      'As part of our mission to share and celebrate Korean culture with the greater Houston community, the K-Showcase offers a platform for performers of all backgrounds to showcase their creativity and passion. Whether through music, dance, comedy, poetry, or other unique talents, this is your chance to take the stage and be part of something special.',
+      'Join us in creating an unforgettable showcase that brings people together through art and performance — singing, dancing, instrumental, magic, and more. Dancers: we accept covers, non-competitive choreography, and exhibition performances for this showcase. Singers: we accept covers; original works are subject to approval.',
+    ],
+    when: 'Kroger Stage — Sat, Oct 10 · Community Stage — Sat, Oct 10 · Community Stage — Sun, Oct 11',
+    link: 'https://forms.gle/uCzAeDCybSorq9Ez6',
+    opens: 'June 15, 2026',
+    closes: 'July 15, 2026 · 8:00 PM CST',
+  },
+  {
+    emoji: '💃',
+    title: 'K-Pop Dance Competition',
+    accent: '#FB4E6D',
+    host: 'Hosted by Soundbox Dance Studios and the Korean-American Society of Houston. Generously sponsored by the Consulate General of the Republic of Korea and Kroger, and funded in part by the City of Houston through Houston Arts Alliance.',
+    body: [
+      'Soundbox & KASH are teaming up to create a one-of-a-kind K-Pop Dance Competition on October 11, 2026, at Discovery Green Park during K-Fest. Those interested in participating must apply for the preliminary round of auditions via the Google form and submit a video audition.',
+    ],
+    when: '5:00 PM at the Kroger Stage',
+    link: 'https://forms.gle/MdnQjo1gVDVMMnho9',
+    opens: 'June 1, 2026',
+    closes: 'July 20, 2026 · 8:00 PM CST',
+  },
+  {
+    emoji: '🌶️',
+    title: 'Kimchi Eating Contest',
+    accent: '#FBBF24',
+    body: [
+      'The annual Kimchi Eating Contest is a crowd favorite! Get ready for some spicy fun as volunteers race to finish their bowl of this delicious Korean side dish. Stay tuned for more details.',
+    ],
+    when: 'October 10, Community Stage',
+    linkTBA: true,
+    opens: 'September 2026',
+    closes: 'TBA',
+  },
 ]
 
 export default function Page() {
@@ -63,11 +137,27 @@ export default function Page() {
               Full schedule coming soon!
             </div>
             <p className="text-[#1a1a1a]/60 text-sm leading-relaxed tracking-wide">
-              The complete 2026 performance lineup is being finalized. Stay tuned
-              to our social media pages for important announcements about
-              Performance Auditions and Dance Competition Applications!
+              The complete 2026 performance lineup is being finalized. In the
+              meantime, applications to perform are now open — apply below, and
+              follow our social media pages for the full schedule announcement!
             </p>
           </div>
+
+          {/* About stage programming */}
+          <h2 className="font-['Cormorant_Garamond'] text-4xl font-semibold text-[#1a1a1a] mb-5">
+            About Stage Programming
+          </h2>
+          <p className="text-[#1a1a1a]/65 text-sm leading-relaxed tracking-wide mb-16">
+            Korean Festival Houston is a vibrant celebration of traditional and
+            modern Korean culture. Our festival features captivating cultural
+            performances and a wide array of entertaining programs on two stages
+            located in the heart of Downtown Houston. This lively festival aims to
+            embrace the essence of tradition and the excitement of new trends,
+            drawing in a diverse crowd of all ages and ethnicities. Visitors can
+            look forward to immersing themselves in Korea&apos;s rich cultural
+            heritage while enjoying an eclectic mix of performances that
+            beautifully reflect Korea&apos;s profound influence on the world.
+          </p>
 
           {/* What to expect */}
           <div className="mb-5">
@@ -126,24 +216,94 @@ export default function Page() {
             </div>
           </div>
 
-          {/* Audition CTA */}
-          <div className="rounded-3xl bg-linear-to-br from-[#FB4E6D] to-[#FF7E5F] px-8 py-10 text-center shadow-sm mb-10">
-            <div className="text-3xl mb-3">✨</div>
-            <h3 className="font-['Cormorant_Garamond'] text-3xl font-semibold text-white mb-2">
-              Want to perform at K-Fest 2026?
-            </h3>
-            <p className="text-white/85 text-sm leading-relaxed tracking-wide max-w-md mx-auto mb-7">
-              Performance Auditions and Dance Competition Applications are opening
-              soon — follow along so you don’t miss the announcement!
-            </p>
-            <a
-              href="https://instagram.com/kfesthtx"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-white text-[#FB4E6D] text-[11px] font-bold tracking-[0.15em] uppercase px-7 py-3.5 rounded-full hover:bg-white/90 transition-colors"
-            >
-              Follow for Updates
-            </a>
+          {/* Programs */}
+          <div className="mb-5">
+            <span className="inline-block bg-[#FB4E6D] text-white text-[10px] font-bold tracking-[0.25em] uppercase px-3 py-1.5 rounded-full">
+              Get Involved
+            </span>
+          </div>
+          <h2 className="font-['Cormorant_Garamond'] text-4xl font-semibold text-[#1a1a1a] mb-2">
+            Stage Programs
+          </h2>
+          <p className="text-[#1a1a1a]/60 text-sm leading-relaxed tracking-wide mb-8">
+            Want to be part of K-Fest 2026? Explore the programs below — some take
+            applications via the forms listed, while others are arranged by
+            invitation. Apply before each deadline.
+          </p>
+          <div className="space-y-6 mb-10">
+            {programs.map((p) => (
+              <article
+                key={p.title}
+                className="bg-white rounded-2xl border-t-4 shadow-sm px-6 py-7 md:px-8 md:py-8"
+                style={{ borderTopColor: p.accent }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-3xl leading-none">{p.emoji}</span>
+                  <h3 className="font-['Cormorant_Garamond'] text-2xl md:text-3xl font-semibold text-[#1a1a1a]">
+                    {p.title}
+                  </h3>
+                </div>
+
+                {p.host && (
+                  <p className="text-[#1a1a1a]/50 text-[13px] italic leading-relaxed tracking-wide mb-4">
+                    {p.host}
+                  </p>
+                )}
+
+                <div className="space-y-3 text-[#1a1a1a]/65 text-sm leading-relaxed tracking-wide">
+                  {p.body.map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
+
+                <div className="mt-6 pt-5 border-t border-[#1a1a1a]/8 grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#1a1a1a]/45 mb-1">
+                      When
+                    </div>
+                    <div className="text-[#1a1a1a] text-sm font-medium leading-relaxed">{p.when}</div>
+                  </div>
+                  {(p.opens || p.closes) && (
+                    <div>
+                      <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#1a1a1a]/45 mb-1">
+                        Application
+                      </div>
+                      <div className="space-y-0.5 text-sm text-[#1a1a1a]">
+                        {p.opens && (
+                          <div>
+                            <span className="text-[#1a1a1a]/50">Opens:</span>{' '}
+                            <span className="font-medium">{p.opens}</span>
+                          </div>
+                        )}
+                        {p.closes && (
+                          <div>
+                            <span className="text-[#1a1a1a]/50">Closes:</span>{' '}
+                            <span className="font-medium">{p.closes}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {p.link && (
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-block text-center text-white text-[11px] font-bold tracking-[0.15em] uppercase px-7 py-3.5 rounded-full hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: p.accent }}
+                  >
+                    Apply Now
+                  </a>
+                )}
+                {p.linkTBA && (
+                  <span className="mt-5 inline-block bg-[#1a1a1a]/8 text-[#1a1a1a]/50 text-[11px] font-bold tracking-[0.15em] uppercase px-7 py-3.5 rounded-full">
+                    Application Link — Coming Soon
+                  </span>
+                )}
+              </article>
+            ))}
           </div>
 
           {/* Contact */}
