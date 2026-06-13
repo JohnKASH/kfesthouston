@@ -8,8 +8,6 @@ export const metadata: Metadata = {
     'Authentic Korean food and drinks at Korean Festival Houston 2026 — from Korean BBQ and tteokbokki to bingsu and boba. Vendor applications opening soon.',
 }
 
-const VENDOR_EMAIL = 'vendors@kashouston.org'
-
 const foodCategories = [
   { emoji: '🥩', name: 'Korean BBQ', desc: 'Galbi, bulgogi & more', accent: '#FB4E6D' },
   { emoji: '🍡', name: 'Tteokbokki', desc: 'Spicy rice cakes', accent: '#FBBF24' },
@@ -53,12 +51,12 @@ export default function Page() {
               at Discovery Green on October 10–11 and share your business with tens
               of thousands of festival-goers!
             </p>
-            <a
-              href={`mailto:${VENDOR_EMAIL}?subject=Korean%20Festival%20Houston%20Food%20Vendor%20Inquiry`}
+            <Link
+              href="/vendors/apply"
               className="inline-block bg-white text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-7 py-3.5 rounded-full hover:bg-white/90 transition-colors"
             >
-              Email {VENDOR_EMAIL}
-            </a>
+              Apply to Vend →
+            </Link>
           </div>
         </div>
       </section>

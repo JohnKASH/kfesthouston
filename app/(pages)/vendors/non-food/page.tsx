@@ -7,8 +7,6 @@ export const metadata: Metadata = {
     'Korean crafts, beauty, fashion, and cultural goods at Korean Festival Houston 2026 — from hanbok and K-beauty to art and collectibles. Vendor applications opening soon.',
 }
 
-const VENDOR_EMAIL = 'vendors@kashouston.org'
-
 const categories = [
   { emoji: '👘', name: 'Hanbok & Fashion', desc: 'Traditional Korean dress', accent: '#FB4E6D' },
   { emoji: '🎨', name: 'Fine Art & Prints', desc: 'Korean-inspired artwork', accent: '#FBBF24' },
@@ -50,12 +48,12 @@ export default function Page() {
               us at Discovery Green on October 10–11 and share your work with tens
               of thousands of festival-goers!
             </p>
-            <a
-              href={`mailto:${VENDOR_EMAIL}?subject=Korean%20Festival%20Houston%20Non-Food%20Vendor%20Inquiry`}
+            <Link
+              href="/vendors/apply"
               className="inline-block bg-white text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-7 py-3.5 rounded-full hover:bg-white/90 transition-colors"
             >
-              Email {VENDOR_EMAIL}
-            </a>
+              Apply to Vend →
+            </Link>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'FAQs · Korean Festival Houston',
@@ -89,10 +90,10 @@ const categories: Category[] = [
           <>
             If you’re interested in becoming a sponsor, please send an inquiry to{' '}
             <a
-              href="mailto:info@kashouston.org?subject=Korean%20Festival%20Houston%20Sponsorship%20Inquiry"
+              href="mailto:sponsors@kashouston.org?subject=Korean%20Festival%20Houston%20Sponsorship%20Inquiry"
               className="text-[#1FAEDB] font-semibold hover:underline"
             >
-              info@kashouston.org
+              sponsors@kashouston.org
             </a>{' '}
             and our team will be in touch.
           </>
@@ -102,10 +103,19 @@ const categories: Category[] = [
   },
 ]
 
-const contacts = [
-  { label: 'General & Sponsorship', email: 'info@kashouston.org', accent: '#FB4E6D' },
+type Contact = {
+  label: string
+  accent: string
+  email?: string
+  href?: string
+  value?: string
+}
+
+const contacts: Contact[] = [
+  { label: 'General Inquiries', email: 'info@kashouston.org', accent: '#FB4E6D' },
+  { label: 'Sponsorship', email: 'sponsors@kashouston.org', accent: '#FBBF24' },
   { label: 'Performances & Stage', email: 'stage@kashouston.org', accent: '#8B6FFB' },
-  { label: 'Vendor Applications', email: 'vendors@kashouston.org', accent: '#10C9AC' },
+  { label: 'Vendor Applications', href: '/vendors/apply', value: 'Apply online →', accent: '#10C9AC' },
 ]
 
 // ─── Components ───────────────────────────────────────────────────────────────
@@ -235,13 +245,23 @@ export default function Page() {
                 <div className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#1a1a1a]/45 mb-2">
                   {c.label}
                 </div>
-                <a
-                  href={`mailto:${c.email}`}
-                  className="text-sm font-semibold break-words hover:underline"
-                  style={{ color: c.accent }}
-                >
-                  {c.email}
-                </a>
+                {c.href ? (
+                  <Link
+                    href={c.href}
+                    className="text-sm font-semibold break-words hover:underline"
+                    style={{ color: c.accent }}
+                  >
+                    {c.value}
+                  </Link>
+                ) : (
+                  <a
+                    href={`mailto:${c.email}`}
+                    className="text-sm font-semibold break-words hover:underline"
+                    style={{ color: c.accent }}
+                  >
+                    {c.email}
+                  </a>
+                )}
               </div>
             ))}
           </div>

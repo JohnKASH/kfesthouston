@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 // Submission endpoint — set NEXT_PUBLIC_VENDOR_FORM_ENDPOINT in your environment
 // (Vercel → Project Settings → Environment Variables). Works with a Formspree
@@ -266,8 +267,8 @@ export default function VendorApplyForm() {
         {status === 'error' && (
           <p className="text-sm text-[#FB4E6D] mb-4">
             {ENDPOINT
-              ? 'Something went wrong. Please try again, or email vendors@kashouston.org directly.'
-              : 'This form isn’t connected to a submission service yet. Please email vendors@kashouston.org and we’ll get you set up!'}
+              ? 'Something went wrong. Please try again in a moment.'
+              : 'This form isn’t connected to a submission service yet — please check back soon!'}
           </p>
         )}
         <button
@@ -278,8 +279,8 @@ export default function VendorApplyForm() {
           {status === 'submitting' ? 'Submitting…' : 'Submit Application'}
         </button>
         <p className="text-[13px] text-[#1a1a1a]/45 mt-3">
-          Questions? Email{' '}
-          <a href="mailto:vendors@kashouston.org" className="text-[#1FAEDB] font-semibold">vendors@kashouston.org</a>
+          Questions?{' '}
+          <Link href="/contact" className="text-[#1FAEDB] font-semibold hover:underline">Get in touch</Link>
         </p>
       </div>
     </form>

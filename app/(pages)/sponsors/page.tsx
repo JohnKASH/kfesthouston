@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Korean Festival Houston is made possible by our generous 2025 sponsors, media partners, and community supporters. Thank you for your partnership.',
 }
 
-const SPONSOR_EMAIL = 'info@kashouston.org'
+const SPONSOR_EMAIL = 'sponsors@kashouston.org'
 
 type Sponsor = {
   name: string
