@@ -95,7 +95,7 @@ export default function HomePage() {
             alt="Korean Festival Houston performer dancing in hanbok"
             fill
             preload
-            className="object-cover object-center opacity-95"
+            className="object-cover object-[50%_30%] opacity-95"
           />
           {/* Gradient overlay — keeps left side readable, lets color show on the right */}
           <div className="absolute inset-0 bg-linear-to-r from-[#1a1a1a]/85 via-[#2E4057]/55 to-transparent" />
@@ -181,7 +181,7 @@ export default function HomePage() {
               <h2 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl font-semibold text-[#1a1a1a] leading-tight mb-6">
                 One Weekend.
                 <br />
-                <span className="text-[#c9a96e]">65,000 Visitors.</span>
+                <span className="text-[#c9a96e]">85,000 Visitors.</span>
               </h2>
               <div className="w-12 h-px bg-[#c9a96e] mb-8" />
               <div className="space-y-5 text-[#1a1a1a]/65 text-[15px] leading-relaxed tracking-wide">
