@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'FAQs · Korean Festival Houston',
+  alternates: { canonical: '/faqs' },
   description:
     'Everything you need to plan your visit to Korean Festival Houston 2026 — dates, hours, parking, admission, accessibility, and how to get in touch.',
 }

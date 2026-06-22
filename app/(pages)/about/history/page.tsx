@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Festival History · Korean Festival Houston',
+  alternates: { canonical: '/about/history' },
   description:
     'The story of Korean Festival Houston — from its 2009 inaugural event organized by the Korean-American Society of Houston (KASH) to its home at Discovery Green.',
 }

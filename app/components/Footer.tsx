@@ -28,9 +28,9 @@ export default function Footer() {
             </p>
             <div className="flex gap-4 mt-6">
               {[
-                { label: 'Instagram', href: 'https://instagram.com/kfesthtx', hover: 'hover:text-[#FB4E6D]' },
-                { label: 'Facebook', href: 'https://facebook.com/kfesthouston', hover: 'hover:text-[#1FAEDB]' },
-                { label: 'TikTok', href: 'https://tiktok.com/@kfesthtx', hover: 'hover:text-[#8B6FFB]' },
+                { label: 'Instagram', href: 'https://www.instagram.com/kfesthtx/', hover: 'hover:text-[#FB4E6D]' },
+                { label: 'Facebook', href: 'https://www.facebook.com/kfesthouston/', hover: 'hover:text-[#1FAEDB]' },
+                { label: 'TikTok', href: 'https://www.tiktok.com/@kfesthtx', hover: 'hover:text-[#8B6FFB]' },
               ].map((s) => (
                 <a
                   key={s.label}
@@ -76,6 +76,7 @@ export default function Footer() {
               {[
                 { label: 'Festival History', href: '/about/history' },
                 { label: 'Our Staff', href: '/about/staff' },
+                { label: 'Volunteer', href: '/about/volunteer' },
                 { label: 'KASH', href: 'https://kashouston.org', external: true },
                 { label: 'News & Blog', href: '/news' },
                 { label: 'Contact Us', href: '/contact' },

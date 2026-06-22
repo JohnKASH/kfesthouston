@@ -1,6 +1,50 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Lanterns from '@/app/components/Lanterns'
+import { SITE_URL } from '@/app/lib/links'
+
+// Event structured data — lets Google show rich results (dates, venue, free admission).
+const eventJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Festival',
+  name: 'Korean Festival Houston 2026',
+  startDate: '2026-10-10T10:00:00-05:00',
+  endDate: '2026-10-11T20:00:00-05:00',
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  description:
+    'The 17th annual Korean Festival Houston — two days of K-pop, traditional performances, Korean food, and culture at Discovery Green. Free admission.',
+  image: [`${SITE_URL}/assets/HomepageImages/Drummers.png`],
+  location: {
+    '@type': 'Place',
+    name: 'Discovery Green',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '1500 McKinney St',
+      addressLocality: 'Houston',
+      addressRegion: 'TX',
+      postalCode: '77010',
+      addressCountry: 'US',
+    },
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    url: SITE_URL,
+  },
+  organizer: {
+    '@type': 'Organization',
+    name: 'Korean American Society of Houston',
+    url: 'https://www.kashouston.org/',
+    sameAs: [
+      'https://www.kashouston.org/',
+      'https://www.facebook.com/kfesthouston/',
+      'https://www.instagram.com/kfesthtx/',
+    ],
+  },
+}
 
 // ─── Stat Card ────────────────────────────────────────────────────────────────
 function StatCard({ number, label, accent }: { number: string; label: string; accent: string }) {
@@ -83,6 +127,11 @@ function FeatureCard({
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
+      />
+
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#1a1a1a]">
         {/* Swinging lanterns hanging from the top of the hero */}

@@ -3,6 +3,47 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { VOLUNTEER_FORM_URL } from '../lib/links'
+
+// Rotating announcement bar messages (scholarship → Instagram → volunteer).
+const banners = [
+  <>
+    🎓 Applications for the{' '}
+    <a
+      href="https://www.kashouston.org/Scholarship"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline font-semibold hover:text-white/80 transition-colors"
+    >
+      KASH Scholarships
+    </a>{' '}
+    are open now!
+  </>,
+  <>
+    Follow{' '}
+    <a
+      href="https://instagram.com/kfesthtx"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline font-semibold hover:text-white/80 transition-colors"
+    >
+      @kfesthtx
+    </a>{' '}
+    on Instagram, Facebook and TikTok for festival news!
+  </>,
+  <>
+    🙌 Want to help out?{' '}
+    <a
+      href={VOLUNTEER_FORM_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline font-semibold hover:text-white/80 transition-colors"
+    >
+      Apply to volunteer
+    </a>{' '}
+    at K-Fest 2026!
+  </>,
+]
 
 const navItems = [
   {
@@ -10,6 +51,7 @@ const navItems = [
     dropdown: [
       { label: 'Festival History', href: '/about/history' },
       { label: 'Our Staff', href: '/about/staff' },
+      { label: 'Volunteer with K-Fest', href: '/about/volunteer' },
       { label: 'KASH', href: 'https://kashouston.org', external: true },
       { label: 'News & Blog', href: '/news' },
       { label: 'Contact Us', href: '/contact' },
@@ -49,36 +91,9 @@ export default function Navbar() {
 
   // Rotate the announcement bar between messages
   useEffect(() => {
-    const id = setInterval(() => setBannerIdx((i) => (i + 1) % 2), 6000)
+    const id = setInterval(() => setBannerIdx((i) => (i + 1) % banners.length), 6000)
     return () => clearInterval(id)
   }, [])
-
-  const banners = [
-    <>
-      🎓 Applications for the{' '}
-      <a
-        href="https://www.kashouston.org/Scholarship"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="underline font-semibold hover:text-white/80 transition-colors"
-      >
-        KASH Scholarships
-      </a>{' '}
-      are open now!
-    </>,
-    <>
-      Follow{' '}
-      <a
-        href="https://instagram.com/kfesthtx"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="underline font-semibold hover:text-white/80 transition-colors"
-      >
-        @kfesthtx
-      </a>{' '}
-      on Instagram, Facebook and TikTok for festival news!
-    </>,
-  ]
 
   return (
     <header className="relative z-50">

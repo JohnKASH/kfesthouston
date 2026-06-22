@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Performance Schedule · Korean Festival Houston',
+  alternates: { canonical: '/schedule' },
   description:
     'The 2026 Korean Festival Houston performance schedule — two days of K-pop headliners, traditional performances, dance competitions, and more across two stages at Discovery Green.',
 }

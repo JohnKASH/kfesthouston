@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Sponsors · Korean Festival Houston',
+  alternates: { canonical: '/sponsors' },
   description:
     'Korean Festival Houston is made possible by our generous 2025 sponsors, media partners, and community supporters. Thank you for your partnership.',
 }

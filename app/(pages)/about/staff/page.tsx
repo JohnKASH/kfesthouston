@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Meet the Team · Korean Festival Houston',
+  alternates: { canonical: '/about/staff' },
   description:
     'Meet the volunteer leaders and committee directors of the Korean-American Society of Houston (KASH) who bring Korean Festival Houston to life each year.',
 }
@@ -297,10 +298,10 @@ export default function Page() {
             “yes.”
           </p>
           <Link
-            href="/contact"
+            href="/about/volunteer"
             className="inline-block bg-white text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-8 py-4 rounded-full hover:bg-white/90 transition-colors"
           >
-            Get Involved
+            Volunteer With Us
           </Link>
         </div>
       </section>

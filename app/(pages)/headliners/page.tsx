@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Headliners · Korean Festival Houston',
+  alternates: { canonical: '/headliners' },
   description:
     'Meet the 2026 Korean Festival Houston headliner and explore 17 years of incredible artists on the K-Fest main stage.',
 }

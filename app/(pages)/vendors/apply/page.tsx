@@ -3,6 +3,7 @@ import VendorApplyForm from './VendorApplyForm'
 
 export const metadata: Metadata = {
   title: 'Vendor Application · Korean Festival Houston',
+  alternates: { canonical: '/vendors/apply' },
   description:
     'Apply to be a vendor at Korean Festival Houston 2026 — October 10–11 at Discovery Green. Food, merchandise, non-profit, and corporate vendor spots available.',
 }

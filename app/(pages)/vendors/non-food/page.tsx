@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Non-Food Vendors · Korean Festival Houston',
+  alternates: { canonical: '/vendors/non-food' },
   description:
     'Korean crafts, beauty, fashion, and cultural goods at Korean Festival Houston 2026 — from hanbok and K-beauty to art and collectibles. Vendor applications opening soon.',
 }

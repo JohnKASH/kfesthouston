@@ -3,6 +3,7 @@ import ContactForm from './ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact Us · Korean Festival Houston',
+  alternates: { canonical: '/contact' },
   description:
     'Get in touch with Korean Festival Houston and the Korean-American Society of Houston (KASH). Questions, partnerships, and general inquiries welcome.',
 }
