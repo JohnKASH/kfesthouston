@@ -176,8 +176,14 @@ export default function Page() {
               ready to be part of something exciting. Sign up on your own or bring
               friends, classmates, or a whole group for an even more enjoyable
               experience. <strong className="text-[#1a1a1a]/75">Morning,
-              afternoon, and evening</strong> shifts are available, so you can find
+                afternoon, and evening</strong> shifts are available, so you can find
               a time that works for you.
+            </p>
+            <p className="text-[#1a1a1a]/60 text-sm leading-relaxed tracking-wide mt-4">
+              Please note that the form to volunteer will <strong className="text-[#1a1a1a]/75">
+                close on September 18 at 11:45 PM CST</strong> to allow our
+              team time to process volunteer assignments and finalize the schedule. There will be no
+              exceptions to this deadline. Thank you!
             </p>
           </div>
         </div>
