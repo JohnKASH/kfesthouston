@@ -20,14 +20,14 @@ type Past = {
 
 const pastHeadliners: Past[] = [
   { year: '2025', annual: '16th Annual', name: 'Withus & Hohyun', tag: '2 Artists' },
-  { year: '2024', annual: '15th Annual', name: 'NCHIVE' },
-  { year: '2023', annual: '14th Annual', name: 'June' },
+  { year: '2024', annual: '15th Annual', name: 'NCHIVE', },
+  { year: '2023', annual: '14th Annual', name: 'June', tag: 'Solo Artist' },
   { year: '2022', annual: '13th Annual', name: 'Triger & Asome.D', tag: '2 Artists' },
   { year: '2021', annual: '12th Annual*', name: 'MUSTB + Vision Music', tag: 'COVID-modified', venue: 'White Oak Music Hall' },
   { year: '2019', annual: '11th Annual', name: 'Dabit, JC Park & David Oh', tag: '3 Artists' },
   { year: '2018', annual: '10th Annual', name: 'BAIKAL' },
   { year: '2017', annual: '9th Annual', name: 'DANakaDAN & PRISKA', tag: '2 Artists' },
-  { year: '2016', annual: '8th Annual', name: null, unknown: true },
+  { year: '2016', annual: '8th Annual', name: "ARRIVALS Jason Chu and Joe Kye", tag: '2 artists' },
   { year: '2015', annual: '7th Annual', name: 'KRNFX' },
   { year: '2014', annual: '6th Annual', name: 'DANakaDAN with J.U. / Stephen Jung' },
   { year: '2013', annual: '5th Annual', name: 'Dumbfoundead', note: 'Korean-American rapper & artist' },
