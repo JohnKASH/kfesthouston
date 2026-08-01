@@ -9,6 +9,48 @@ export const metadata: Metadata = {
     'Authentic Korean food and drinks at Korean Festival Houston 2026 — from Korean BBQ and tteokbokki to bingsu and boba. Vendor applications opening soon.',
 }
 
+const typeStyles: Record<string, { bg: string; text: string }> = {
+  Food: { bg: '#10C9AC', text: '#0a4f40' },
+  Dessert: { bg: '#FB4E6D', text: '#ffffff' },
+  Beverage: { bg: '#1FAEDB', text: '#ffffff' },
+}
+
+const foodVendors = [
+  {
+    name: 'Fresh & Furious',
+    type: 'Food',
+    items: ['Korean corndog', 'Hamburger', 'Cheese burger'],
+  },
+  {
+    name: 'OhMyGogi!',
+    type: 'Food',
+    items: ['OMG fries', 'Kimchi quesadillas', 'Gogi tacos', 'Fried dumplings'],
+  },
+  {
+    name: 'Popfancy Dessert Bar',
+    type: 'Dessert',
+    items: [
+      'Ah Boong fish waffle with ice cream — $11',
+      'Assorted Asian-flavored popsicles — $5',
+    ],
+  },
+  {
+    name: 'Royal Tea Bubble',
+    type: 'Beverage',
+    items: [
+      'Milk tea w/ tapioca — small $9, large $13',
+      'Flavor tea (strawberry, mango)',
+      'Flavor lemonade (strawberry, mango)',
+      'Handmade fresh lemon tea — $13',
+    ],
+  },
+  {
+    name: 'St. Andrew Kim Church',
+    type: 'Food',
+    items: ['Tteokbokki', 'Bulgogi tacos', 'Kimchi french fries', 'Fried dumplings'],
+  },
+]
+
 const foodCategories = [
   { emoji: '🥩', name: 'Korean BBQ', desc: 'Galbi, bulgogi & more', accent: '#FB4E6D' },
   { emoji: '🍡', name: 'Tteokbokki', desc: 'Spicy rice cakes', accent: '#FBBF24' },
@@ -58,6 +100,53 @@ export default function Page() {
             >
               Apply to Vend →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── VENDOR LINEUP ────────────────────────────────────────────────── */}
+      <section className="bg-[#faf8f5] pb-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <h2 className="font-['Cormorant_Garamond'] text-4xl font-semibold text-[#1a1a1a]">
+              2026 Food Vendor Lineup
+            </h2>
+            <p className="text-[#1a1a1a]/55 text-sm tracking-wide mt-2">
+              Confirmed so far — more vendors announced as they’re added.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {foodVendors.map((v) => {
+              const style = typeStyles[v.type]
+              return (
+                <div
+                  key={v.name}
+                  className="bg-white rounded-2xl shadow-sm px-6 py-5 border border-[#1a1a1a]/6"
+                >
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <h3 className="font-semibold text-[#1a1a1a] text-[17px] leading-tight">
+                      {v.name}
+                    </h3>
+                    <span
+                      className="shrink-0 text-[10px] font-bold tracking-[0.15em] uppercase px-2.5 py-1 rounded-full"
+                      style={{ backgroundColor: style.bg, color: style.text }}
+                    >
+                      {v.type}
+                    </span>
+                  </div>
+                  <ul className="space-y-1.5">
+                    {v.items.map((item) => (
+                      <li
+                        key={item}
+                        className="text-[#1a1a1a]/60 text-sm leading-relaxed tracking-wide pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-[#10C9AC]"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
