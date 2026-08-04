@@ -117,7 +117,7 @@ const contacts: Contact[] = [
   { label: 'Sponsorship', email: 'sponsors@kashouston.org', accent: '#FBBF24' },
   { label: 'Performances & Stage', email: 'stage@kashouston.org', accent: '#8B6FFB' },
   { label: 'Scholarship & Volunteers', email: 'John@kashouston.org', accent: '#1FAEDB' },
-  { label: 'Vendor Applications', href: '/vendors/apply', value: 'Apply online →', accent: '#10C9AC' },
+  { label: 'Vendor Applications', href: '/vendors/apply', value: 'Closed for 2026 →', accent: '#10C9AC' },
 ]
 
 // ─── Components ───────────────────────────────────────────────────────────────

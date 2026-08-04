@@ -64,7 +64,6 @@ const navItems = [
     dropdown: [
       { label: 'Food Vendors', href: '/vendors/food' },
       { label: 'Non-Food Vendors', href: '/vendors/non-food' },
-      { label: 'Apply to be a Vendor!', href: '/vendors/apply' },
     ],
   },
   { label: 'Sponsors', href: '/sponsors' },

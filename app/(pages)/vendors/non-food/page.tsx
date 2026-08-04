@@ -123,25 +123,23 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── APPLY BANNER ─────────────────────────────────────────────────── */}
+      {/* ── APPLICATIONS CLOSED BANNER ───────────────────────────────────── */}
       <section className="bg-[#faf8f5] py-16">
         <div className="max-w-3xl mx-auto px-6">
           <div className="rounded-3xl bg-linear-to-br from-[#8B6FFB] to-[#FB4E6D] px-8 py-10 text-center shadow-sm">
-            <div className="text-3xl mb-3">🪧</div>
+            <div className="text-3xl mb-3">📋</div>
             <h2 className="font-['Cormorant_Garamond'] text-3xl md:text-4xl font-semibold text-white mb-3">
-              Vendor Applications Opening Soon!
+              Vendor Applications Closed for 2026
             </h2>
-            <p className="text-white/85 text-sm leading-relaxed tracking-wide max-w-xl mx-auto mb-7">
-              We’re accepting interest from non-food vendors for KFest 2026 — join
-              us at Discovery Green on October 10–11 and share your work with tens
-              of thousands of festival-goers!
+            <p className="text-white/85 text-sm leading-relaxed tracking-wide max-w-xl mx-auto">
+              Thank you to everyone who applied! Our non-food vendor lineup for
+              KFest 2026 is now set. Follow us for news on 2027 applications, or
+              reach out at{' '}
+              <a href="mailto:info@kashouston.org" className="underline hover:text-white">
+                info@kashouston.org
+              </a>{' '}
+              with any questions.
             </p>
-            <Link
-              href="/vendors/apply"
-              className="inline-block bg-white text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-7 py-3.5 rounded-full hover:bg-white/90 transition-colors"
-            >
-              Apply to Vend →
-            </Link>
           </div>
         </div>
       </section>
