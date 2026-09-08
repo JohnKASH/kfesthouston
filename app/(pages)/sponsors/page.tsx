@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Sponsors · Korean Festival Houston',
   alternates: { canonical: '/sponsors' },
   description:
-    'Korean Festival Houston is made possible by our generous 2025 sponsors, media partners, and community supporters. Thank you for your partnership.',
+    'Korean Festival Houston is made possible by our generous 2026 sponsors, media partners, and community supporters. Thank you for your partnership.',
 }
 
 const SPONSOR_EMAIL = 'sponsors@kashouston.org'
@@ -26,132 +26,132 @@ const titleSponsor: Sponsor = {
     'As a leading grocery retailer, Kroger has a longstanding tradition of community involvement and philanthropy. This sponsorship underscores Kroger’s dedication to fostering inclusivity and celebrating cultural diversity within the Houston area.',
 }
 
-const globalSponsors: Sponsor[] = [
+const platinumSponsors: Sponsor[] = [
+  {
+    name: 'Hyundai',
+    slug: 'hyundai',
+    designation: 'Platinum Sponsor',
+    description:
+      'Hyundai has grown from a single Korean automaker into one of the world’s most recognized mobility brands — and its commitment to the communities it serves runs just as deep. We’re proud to have Hyundai alongside us as we celebrate Korean culture in the heart of Houston.',
+  },
   {
     name: 'Consulate General of the Republic of Korea',
     slug: 'consulate-general-korea',
-    designation: 'Global Sponsor',
+    designation: 'Platinum Sponsor',
     description:
       'Our festival’s success greatly relies on the support from the Consulate General of the Republic of Korea. Their contribution to our festival and the Korean-American community has played a crucial role in creating a significant impact.',
   },
-  {
-    name: 'aT America',
-    slug: 'at-america',
-    designation: 'Global Sponsor',
-    description:
-      'aT America is the U.S. regional headquarters of Korea Agro-Fisheries & Food Trade Corporation, with branch offices in New York and Los Angeles. Founded in 1967, the government agency is entrusted with promoting the trade, exportation, and marketing of Korean foods and beverages around the world.',
-  },
 ]
 
-const officialSponsors: Sponsor[] = [
+const goldSponsors: Sponsor[] = [
   {
-    name: 'Chariot Energy',
-    slug: 'chariot-energy',
-    designation: 'Official Sponsor',
+    name: 'Ben & Jerry’s',
+    slug: 'ben-and-jerrys',
+    designation: 'Gold Sponsor',
     description:
-      'Chariot Energy serves the residential, commercial, and industrial electricity market with a unique wholesale supply strategy that benefits its customers.',
-  },
-  {
-    name: 'Big Star Honda',
-    slug: 'big-star-honda',
-    designation: 'Official Car Dealership',
-    description:
-      'Big Star Honda is known for its knowledgeable sales team and exceptional customer service. With an extensive inventory of Honda cars, trucks, SUVs, and vans, they offer competitive pricing and flexible financing to meet every driver’s needs — and proudly support the local community through initiatives like their sponsorship of the Korean Festival.',
+      'Ben & Jerry’s has been making euphoric ice cream — and standing up for the communities it serves — since 1978. We’re thrilled to have them join the festival and bring a few scoops of joy to Discovery Green.',
   },
   {
     name: 'JINRO',
     slug: 'jinro',
-    designation: 'Beverage Sponsor',
+    designation: 'Gold Sponsor',
     description:
       'JINRO is a world No.1 selling spirit brand. According to the International Wine and Spirits Research (IWSR), JINRO has topped Drinks International’s Millionaire Club as the world’s largest spirit brand by volume for 20 consecutive years.',
   },
   {
-    name: 'SNOWFOX',
-    slug: 'snowfox',
-    designation: 'Official Sponsor',
+    name: 'aT America',
+    slug: 'at-america',
+    designation: 'Gold Sponsor',
     description:
-      'SNOWFOX sushi products can be found in grocery stores across the country — convenient choices like cooked and raw sushi, as well as party platters. These ready-to-eat items are ideal for quick meals, social gatherings, and dining on the go, guaranteeing quality and freshness in every bite.',
+      'aT America is the U.S. regional headquarters of Korea Agro-Fisheries & Food Trade Corporation, with branch offices in New York and Los Angeles. Founded in 1967, the government agency is entrusted with promoting the trade, exportation, and marketing of Korean foods and beverages around the world.',
   },
   {
     name: 'Seoulside Wings',
     slug: 'seoulside-wings',
-    designation: 'Official Pocha Sponsor',
+    designation: 'Gold Sponsor',
     description:
       'Seoulside Wings is a vibrant Korean street food spot in Houston known for bold flavors and crispy double-fried chicken wings. Founded by Jane Lim and her brothers, it blends Korean culinary traditions with Houston’s diverse food scene — from spicy Hotbokki wings to loaded Kimchi Fries and Bulgogi Cupbap bowls — now serving dine-in at the Conservatory Galleria.',
   },
+]
+
+const silverSponsors: Sponsor[] = [
   {
-    name: 'American Furniture Warehouse',
-    slug: 'american-furniture-warehouse',
-    designation: 'Official Furniture Store',
-    description:
-      'We’re excited to partner with American Furniture Warehouse as the official furniture store of our festival! VIP festival-goers will get to enjoy their comfortable, luxurious furniture in our VIP tent.',
-  },
-  {
-    name: 'BUBBL’R',
-    slug: 'bubblr',
-    designation: 'Beverage Sponsor',
-    description:
-      'BUBBL’R makes delicious antioxidant sparkling water featuring natural flavors and colors, no artificial sweeteners, and naturally sourced caffeine. We’re excited for festival-goers to try these delightful, refreshing drinks!',
-  },
-  {
-    name: 'SWNB',
+    name: 'Southwestern National Bank',
     slug: 'swnb',
-    designation: 'Official Sponsor',
+    designation: 'Silver Sponsor',
     description:
-      'SWNB strives to be the premier business bank through innovative financial solutions, dedicated relationship management, cutting-edge technology, and a deep understanding of its customers’ evolving needs.',
+      'Southwestern National Bank strives to be the premier business bank through innovative financial solutions, dedicated relationship management, cutting-edge technology, and a deep understanding of its customers’ evolving needs.',
+  },
+]
+
+const scholarshipSponsors: Sponsor[] = [
+  {
+    name: 'SNOWFOX',
+    slug: 'snowfox',
+    designation: 'Scholarship Sponsor',
+    description:
+      'SNOWFOX sushi products can be found in grocery stores across the country — convenient choices like cooked and raw sushi, as well as party platters. These ready-to-eat items are ideal for quick meals, social gatherings, and dining on the go, guaranteeing quality and freshness in every bite.',
   },
   {
-    name: 'AARP',
-    slug: 'aarp',
-    designation: 'Official Sponsor',
+    name: 'Retail Sports Management',
+    slug: 'retail-sports-management',
+    designation: 'Scholarship Sponsor',
     description:
-      'AARP is a nonprofit, nonpartisan organization that empowers people to choose how they live as they age.',
-  },
-  {
-    name: 'Capital Vacations',
-    slug: 'capital-vacations',
-    designation: 'Official Sponsor',
-    description:
-      'Capital Vacations is reimagining the travel experience by connecting independent resorts with travelers through exclusive, value-add services, technology platforms, and vacation products. They service more than one million travelers a year with a hyperfocus on the owner, member, and guest experience.',
-  },
-  {
-    name: 'American First National Bank',
-    slug: 'american-first-national-bank',
-    designation: 'Official Sponsor',
-    description:
-      'American First National Bank aspires to become the leading Asian-American owned financial institution in the United States — committed to the highest ethical standards, operating safely and soundly, and complying with laws and regulations.',
-  },
-  {
-    name: 'PromiseOne Bank',
-    slug: 'promiseone-bank',
-    designation: 'Official Sponsor',
-    description:
-      'PromiseOne Bank was established by a group of individuals who shared a vision to create a true community bank serving our community and its diverse population — committed to products and services that meet the banking needs of their customers.',
-  },
-  {
-    name: 'Golden Minds Insurance Group',
-    slug: 'golden-minds-insurance',
-    designation: 'Official Sponsor',
-    description:
-      'Golden Minds Insurance Group has built its reputation on exceptional coverage that protects what matters most. Their experienced agents serve Houston and surrounding communities with personalized solutions — because insurance isn’t just about policies, it’s about security, managing risk, and the right protection when the unexpected occurs.',
+      'Retail Sports Management backs our scholarship program, helping us invest directly in the next generation of Korean-American students in the Houston area. Their support turns a weekend celebration into something that lasts well beyond October.',
   },
 ]
 
 const communitySponsors: Sponsor[] = [
   {
-    name: 'Houston Public Library',
-    slug: 'houston-public-library',
+    name: 'American First National Bank',
+    slug: 'american-first-national-bank',
     designation: 'Community Sponsor',
     description:
-      'Houston Public Library is a valued community partner who brings the beauty of Korean culture to life through books and reading. The magic they bring to our interactive Korean Village through Korean Story Readings is a treasured part of our festival — a tradition we hope to carry on for many years to come.',
+      'American First National Bank aspires to become the leading Asian-American owned financial institution in the United States — committed to the highest ethical standards, operating safely and soundly, and complying with laws and regulations.',
   },
   {
-    name: 'Soundbox',
-    slug: 'soundbox',
-    designation: 'Community & Performance Arts Sponsor',
+    name: 'Publicom Graphics Printing',
+    slug: 'publicom-graphics-printing',
+    designation: 'In-Kind Partner',
     description:
-      'Soundbox is a Houston-based dance studio offering classes in Hip-Hop, Jazz, Jazz Funk, Contemporary, and more. Their instructors emphasize foundational techniques, retention hacks, and musicality while empowering students to feel confident in their dance skills.',
+      'Publicom Graphics Printing produces the signage, banners, and printed materials that guide tens of thousands of visitors through the festival grounds. If you can find your way around K-Fest, you have Publicom to thank.',
   },
+  {
+    name: 'American Furniture Warehouse',
+    slug: 'american-furniture-warehouse',
+    designation: 'In-Kind Partner',
+    description:
+      'We’re excited to partner with American Furniture Warehouse as the official furniture store of our festival! VIP festival-goers will get to enjoy their comfortable, luxurious furniture in our VIP tent.',
+  },
+]
+
+const entertainmentPartners: Sponsor[] = [
+  {
+    name: 'KorUS Entertainment',
+    slug: 'korus-entertainment',
+    designation: 'Entertainment Partner',
+    description:
+      'KorUS Entertainment brings Korean artists to stages across the United States. They’re the team behind our headline programming, working year-round to put world-class talent on the K-Fest main stage.',
+  },
+  {
+    name: 'Parastar Entertainment',
+    slug: 'parastar-entertainment',
+    designation: 'Entertainment Partner',
+    description:
+      'Parastar Entertainment is a Seoul-based agency dedicated to artists with disabilities — building a world, in their words, where disability is no longer a barrier to the stage. We’re honored to feature their artists at K-Fest.',
+  },
+]
+
+const pastSupporters: Sponsor[] = [
+  { name: 'Chariot Energy', slug: 'chariot-energy' },
+  { name: 'Big Star Honda', slug: 'big-star-honda' },
+  { name: 'BUBBL’R', slug: 'bubblr' },
+  { name: 'AARP', slug: 'aarp' },
+  { name: 'Capital Vacations', slug: 'capital-vacations' },
+  { name: 'PromiseOne Bank', slug: 'promiseone-bank' },
+  { name: 'Golden Minds Insurance Group', slug: 'golden-minds-insurance' },
+  { name: 'Houston Public Library', slug: 'houston-public-library' },
+  { name: 'Soundbox', slug: 'soundbox' },
 ]
 
 const individualSupporters = ['Sue & Randy Sim', 'Thuy & John Kim']
@@ -224,10 +224,10 @@ export default function Page() {
       <section className="bg-kf-pastel">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-20 text-center">
           <span className="inline-block bg-[#FB4E6D] text-white text-[10px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full mb-5">
-            Partners · 2025
+            Partners · 2026
           </span>
           <h1 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl lg:text-7xl font-semibold text-[#1a1a1a] leading-[1.05] tracking-tight">
-            To Our Generous <em className="not-italic text-[#FB4E6D]">2025 Sponsors</em>
+            To Our Generous <em className="not-italic text-[#FB4E6D]">2026 Sponsors</em>
           </h1>
           <p className="text-[#1a1a1a]/60 text-[15px] leading-relaxed tracking-wide max-w-2xl mx-auto mt-6">
             We’re grateful for the support we receive from our sponsors and media
@@ -239,40 +239,71 @@ export default function Page() {
       </section>
 
       {/* ── TITLE SPONSOR ────────────────────────────────────────────────── */}
-      <section className="bg-[#faf8f5] py-24">
+      <section className="bg-[#faf8f5] py-24 md:py-28">
         <div className="max-w-5xl mx-auto px-6 lg:px-10">
-          <div className="text-center">
-            <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#c9a96e] font-['Montserrat']">
-              {titleSponsor.designation}
-            </span>
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-5 mb-5">
+              <div className="w-12 md:w-20 h-px bg-[#c9a96e]" />
+              <span className="text-[11px] font-bold tracking-[0.35em] uppercase text-[#c9a96e] font-['Montserrat']">
+                Presented By
+              </span>
+              <div className="w-12 md:w-20 h-px bg-[#c9a96e]" />
+            </div>
+            <h2 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl font-bold text-[#1a1a1a] leading-[1.05] tracking-tight">
+              Our <em className="not-italic text-[#c9a96e]">{titleSponsor.designation}</em>
+            </h2>
           </div>
-          <div className="mt-8 bg-white border border-[#c9a96e]/30 shadow-sm p-10 md:p-14 flex flex-col items-center text-center">
-            <SponsorLogo sponsor={titleSponsor} className="h-24 w-full max-w-md mb-8" />
-            <p className="text-[#1a1a1a]/65 text-[16px] leading-relaxed tracking-wide max-w-2xl">
+          <div className="bg-white border-2 border-[#c9a96e]/40 shadow-xl p-12 md:p-16 flex flex-col items-center text-center">
+            <SponsorLogo sponsor={titleSponsor} className="h-28 md:h-36 w-full max-w-lg mb-10" />
+            <p className="text-[#1a1a1a]/65 text-[16px] md:text-[17px] leading-relaxed tracking-wide max-w-2xl">
               {titleSponsor.description}
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── GLOBAL SPONSORS ──────────────────────────────────────────────── */}
+      {/* ── PLATINUM SPONSORS ────────────────────────────────────────────── */}
       <section className="bg-[#f5f0eb] py-24 border-t border-[#1a1a1a]/8">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <SectionHeading eyebrow="With Support From" title="Global Sponsors" accent="#FB4E6D" />
+          <SectionHeading eyebrow="With Support From" title="Platinum Sponsors" accent="#FB4E6D" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {globalSponsors.map((s) => (
+            {platinumSponsors.map((s) => (
               <SponsorCard key={s.slug} sponsor={s} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── OFFICIAL SPONSORS ────────────────────────────────────────────── */}
+      {/* ── GOLD SPONSORS ────────────────────────────────────────────────── */}
       <section className="bg-[#faf8f5] py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <SectionHeading eyebrow="Proudly Partnered With" title="Official Sponsors" accent="#10C9AC" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-            {officialSponsors.map((s) => (
+          <SectionHeading eyebrow="Proudly Partnered With" title="Gold Sponsors" accent="#c9a96e" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            {goldSponsors.map((s) => (
+              <SponsorCard key={s.slug} sponsor={s} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SILVER SPONSORS ──────────────────────────────────────────────── */}
+      <section className="bg-[#f5f0eb] py-24 border-t border-[#1a1a1a]/8">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <SectionHeading eyebrow="Proudly Partnered With" title="Silver Sponsors" accent="#10C9AC" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {silverSponsors.map((s) => (
+              <SponsorCard key={s.slug} sponsor={s} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SCHOLARSHIP SPONSORS ─────────────────────────────────────────── */}
+      <section className="bg-[#faf8f5] py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <SectionHeading eyebrow="Investing in Our Students" title="Scholarship Sponsors" accent="#8B6FFB" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            {scholarshipSponsors.map((s) => (
               <SponsorCard key={s.slug} sponsor={s} />
             ))}
           </div>
@@ -307,12 +338,28 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── COMMUNITY SPONSORS ───────────────────────────────────────────── */}
+      {/* ── COMMUNITY & IN-KIND ──────────────────────────────────────────── */}
       <section className="bg-[#f5f0eb] py-24 border-t border-[#1a1a1a]/8">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <SectionHeading eyebrow="Rooted in Community" title="Community Sponsors" accent="#8B6FFB" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <SectionHeading
+            eyebrow="Rooted in Community"
+            title="Community & In-Kind Partners"
+            accent="#FBBF24"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {communitySponsors.map((s) => (
+              <SponsorCard key={s.slug} sponsor={s} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ENTERTAINMENT PARTNERS ───────────────────────────────────────── */}
+      <section className="bg-[#faf8f5] py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <SectionHeading eyebrow="Bringing the Stage to Life" title="Entertainment Partners" accent="#FB4E6D" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            {entertainmentPartners.map((s) => (
               <SponsorCard key={s.slug} sponsor={s} />
             ))}
           </div>
@@ -334,6 +381,34 @@ export default function Page() {
               >
                 {name}
               </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PAST SUPPORTERS ──────────────────────────────────────────────── */}
+      <section className="bg-[#f5f0eb] py-20 border-t border-[#1a1a1a]/8">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-12">
+            <span className="text-[10px] font-semibold tracking-[0.3em] uppercase text-[#1a1a1a]/40 font-['Montserrat']">
+              With Gratitude
+            </span>
+            <h2 className="font-['Cormorant_Garamond'] text-3xl md:text-4xl font-semibold text-[#1a1a1a] mt-3">
+              Past Festival Supporters
+            </h2>
+            <p className="text-[#1a1a1a]/50 text-[14px] leading-relaxed tracking-wide max-w-xl mx-auto mt-4">
+              K-Fest is built on years of partnership. We’re grateful to every
+              organization that has helped bring the festival to Houston.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {pastSupporters.map((s) => (
+              <div
+                key={s.slug}
+                className="bg-white/70 border border-[#1a1a1a]/8 p-5 hover:bg-white transition-colors duration-300"
+              >
+                <SponsorLogo sponsor={s} className="h-12 opacity-60 hover:opacity-100 transition-opacity duration-300" />
+              </div>
             ))}
           </div>
         </div>
