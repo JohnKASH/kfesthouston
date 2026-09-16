@@ -30,18 +30,18 @@ const foodVendors = [
     name: 'Popfancy Dessert Bar',
     type: 'Dessert',
     items: [
-      'Ah Boong fish waffle with ice cream — $11',
-      'Assorted Asian-flavored popsicles — $5',
+      'Ah Boong fish waffle with ice cream',
+      'Assorted Asian-flavored popsicles',
     ],
   },
   {
     name: 'Royal Tea Bubble',
     type: 'Beverage',
     items: [
-      'Milk tea w/ tapioca — small $9, large $13',
+      'Milk tea w/ tapioca — small or large',
       'Flavor tea (strawberry, mango)',
       'Flavor lemonade (strawberry, mango)',
-      'Handmade fresh lemon tea — $13',
+      'Handmade fresh lemon tea',
     ],
   },
   {
