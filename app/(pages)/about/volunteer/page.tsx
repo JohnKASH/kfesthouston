@@ -1,12 +1,11 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { VOLUNTEER_FORM_URL } from '@/app/lib/links'
 
 export const metadata: Metadata = {
   title: 'Volunteer with K-Fest · Korean Festival Houston',
   description:
-    'Join the Korean Festival Houston volunteer team. Make new friends, earn service hours, get behind-the-scenes festival access, and help celebrate Korean culture in Houston. Apply today!',
+    'Volunteer applications for Korean Festival Houston 2026 are now closed. See what volunteering with K-Fest is like — make new friends, get behind-the-scenes festival access, and join us for 2027.',
   alternates: { canonical: '/about/volunteer' },
 }
 
@@ -91,20 +90,36 @@ export default function Page() {
             cultural celebrations to life — no experience needed.
           </p>
           <div className="mt-7">
-            <a
-              href={VOLUNTEER_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#FB4E6D] text-white text-[11px] font-bold tracking-[0.15em] uppercase px-8 py-4 rounded-full hover:bg-[#e23d5c] transition-colors"
-            >
-              Apply to Volunteer →
-            </a>
+            <span className="inline-block bg-white/10 border border-white/25 text-white text-[11px] font-bold tracking-[0.15em] uppercase px-8 py-4 rounded-full">
+              Applications Closed for 2026
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* ── APPLICATIONS CLOSED BANNER ───────────────────────────────────── */}
+      <section className="bg-[#faf8f5] py-16">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="rounded-3xl bg-linear-to-br from-[#FB4E6D] to-[#8B6FFB] px-8 py-10 text-center shadow-sm">
+            <div className="text-3xl mb-3">🙌</div>
+            <h2 className="font-['Cormorant_Garamond'] text-3xl md:text-4xl font-semibold text-white mb-3">
+              Volunteer Applications Closed for 2026
+            </h2>
+            <p className="text-white/85 text-sm leading-relaxed tracking-wide max-w-xl mx-auto">
+              Thank you to everyone who signed up! Our volunteer team for KFest
+              2026 is now set, and assignments are going out by email. Follow us
+              for news on 2027 sign-ups, or reach out at{' '}
+              <a href="mailto:John@kashouston.org" className="underline hover:text-white">
+                John@kashouston.org
+              </a>{' '}
+              with any questions.
+            </p>
           </div>
         </div>
       </section>
 
       {/* ── WHY VOLUNTEER ────────────────────────────────────────────────── */}
-      <section className="bg-[#faf8f5] py-20 md:py-24">
+      <section className="bg-[#faf8f5] pb-20 md:pb-24">
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="inline-block bg-[#8B6FFB] text-white text-[10px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full mb-5">
@@ -171,49 +186,53 @@ export default function Page() {
               Who Can Volunteer?
             </h3>
             <p className="text-[#1a1a1a]/60 text-sm leading-relaxed tracking-wide">
-              We’re looking for friendly, dependable volunteers{' '}
+              We look for friendly, dependable volunteers{' '}
               <strong className="text-[#1a1a1a]/75">aged 16 and up</strong> who are
-              ready to be part of something exciting. Sign up on your own or bring
+              ready to be part of something exciting. You can sign up on your own or bring
               friends, classmates, or a whole group for an even more enjoyable
               experience. <strong className="text-[#1a1a1a]/75">Morning,
-                afternoon, and evening</strong> shifts are available, so you can find
-              a time that works for you.
+                afternoon, and evening</strong> shifts are available, so there’s
+              a time that works for just about everyone.
             </p>
             <p className="text-[#1a1a1a]/60 text-sm leading-relaxed tracking-wide mt-4">
-              Please note that the form to volunteer will <strong className="text-[#1a1a1a]/75">
-                close on September 18 at 11:45 PM CST</strong> to allow our
-              team time to process volunteer assignments and finalize the schedule. There will be no
-              exceptions to this deadline. Thank you!
+              <strong className="text-[#1a1a1a]/75">Applications for 2026 are now
+                closed.</strong> The form shut on September 18 so our team could
+              process assignments and finalize the schedule. Keep an eye on this
+              page and our social media — sign-ups for 2027 will open here first.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── APPLY CTA ────────────────────────────────────────────────────── */}
+      {/* ── NEXT YEAR CTA ────────────────────────────────────────────────── */}
       <section className="bg-linear-to-br from-[#FB4E6D] via-[#FB5C8A] to-[#8B6FFB] py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="text-3xl mb-4">🙌</div>
+          <div className="text-3xl mb-4">💌</div>
           <h2 className="font-['Cormorant_Garamond'] text-4xl md:text-5xl font-semibold text-white mb-4">
-            Ready to Join the Team?
+            Want to Join Us in 2027?
           </h2>
           <p className="text-white/85 text-[15px] leading-relaxed tracking-wide max-w-xl mx-auto mb-9">
-            Fill out the K-Fest Volunteer Application and our volunteer team will
-            reach out with next steps, shift options, and everything you need to
-            know. It only takes a few minutes!
+            Applications for K-Fest 2026 have closed, but we’d still love to hear
+            from you. Follow{' '}
+            <a
+              href="https://instagram.com/kfesthtx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline font-semibold hover:text-white transition-colors"
+            >
+              @kfesthtx
+            </a>{' '}
+            and watch this page — next year’s volunteer sign-ups will be posted
+            here as soon as they open.
           </p>
-          <a
-            href={VOLUNTEER_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
             className="inline-block bg-white text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-8 py-4 rounded-full hover:bg-white/90 transition-colors"
           >
-            Apply to Volunteer →
-          </a>
+            Get in Touch →
+          </Link>
           <p className="text-white/70 text-[13px] tracking-wide mt-6">
-            Questions about volunteering?{' '}
-            <Link href="/contact" className="underline font-semibold hover:text-white transition-colors">
-              Get in touch
-            </Link>
+            Already signed up? Watch your email for your shift assignment.
           </p>
         </div>
       </section>

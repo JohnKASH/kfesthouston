@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { VOLUNTEER_FORM_URL } from '../lib/links'
 
 // Rotating announcement bar messages (scholarship → Instagram → volunteer).
 const banners = [
@@ -17,7 +16,7 @@ const banners = [
     >
       KASH Scholarships
     </a>{' '}
-    are open now!
+    are now closed — thank you to everyone who applied!
   </>,
   <>
     Follow{' '}
@@ -32,16 +31,14 @@ const banners = [
     on Instagram, Facebook and TikTok for festival news!
   </>,
   <>
-    🙌 Want to help out?{' '}
-    <a
-      href={VOLUNTEER_FORM_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+    🙌{' '}
+    <Link
+      href="/about/volunteer"
       className="underline font-semibold hover:text-white/80 transition-colors"
     >
-      Apply to volunteer
-    </a>{' '}
-    at K-Fest 2026!
+      Volunteer applications
+    </Link>{' '}
+    are closed for K-Fest 2026 — thank you to everyone who signed up!
   </>,
 ]
 

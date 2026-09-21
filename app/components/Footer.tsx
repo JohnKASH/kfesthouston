@@ -56,6 +56,7 @@ export default function Footer() {
                 { label: 'Performance Schedule', href: '/schedule' },
                 { label: 'Food Vendors', href: '/vendors/food' },
                 { label: 'Non-Food Vendors', href: '/vendors/non-food' },
+                { label: 'Festival Map', href: '/festival-map' },
                 { label: 'Sponsors', href: '/sponsors' },
               ].map((l) => (
                 <li key={l.label}>

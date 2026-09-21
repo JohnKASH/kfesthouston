@@ -14,6 +14,7 @@ const routes: {
   { path: '/vendors/food', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/vendors/non-food', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/vendors/apply', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/festival-map', changeFrequency: 'weekly', priority: 0.8 },
   { path: '/sponsors', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/about/history', changeFrequency: 'yearly', priority: 0.6 },
   { path: '/about/staff', changeFrequency: 'monthly', priority: 0.6 },
