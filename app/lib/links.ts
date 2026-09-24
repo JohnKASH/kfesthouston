@@ -4,6 +4,13 @@
 export const SITE_URL = 'https://kfesthouston.org'
 
 /**
+ * K-Fest ticketing (Humanitix). Covers both the free general-admission
+ * registration and the paid VIP Tent packages, so link here any time we say
+ * "tickets" — the page itself explains the difference.
+ */
+export const TICKETS_URL = 'https://events.humanitix.com/koreanfestival2026'
+
+/**
  * K-Fest volunteer application (JotForm).
  *
  * Applications closed on September 18, 2026, so nothing links to this right now

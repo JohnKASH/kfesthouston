@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import TicketsBand from '@/app/components/TicketsBand'
 
 export const metadata: Metadata = {
   title: 'Performance Schedule · Korean Festival Houston',
@@ -128,6 +129,13 @@ export default function Page() {
           <div className="text-white/75 text-sm mt-1">11:00 AM – 8:00 PM</div>
         </div>
       </section>
+
+      {/* ── TICKETS ──────────────────────────────────────────────────────── */}
+      <TicketsBand
+        title="Watch From the VIP Tent"
+        body="Every performance is free to watch. If you want a guaranteed seat with a clear view of the main stage all day, the VIP Tent is available as a one-day or full-weekend upgrade."
+        label="Get Tickets & VIP Passes →"
+      />
 
       {/* ── CONTENT ──────────────────────────────────────────────────────── */}
       <section className="bg-[#faf8f5] py-16 md:py-20">

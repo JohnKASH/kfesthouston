@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Lanterns from '@/app/components/Lanterns'
-import { SITE_URL } from '@/app/lib/links'
+import TicketsBand from '@/app/components/TicketsBand'
+import { SITE_URL, TICKETS_URL } from '@/app/lib/links'
 
 // Event structured data — lets Google show rich results (dates, venue, free admission).
 const eventJsonLd = {
@@ -29,10 +30,11 @@ const eventJsonLd = {
   },
   offers: {
     '@type': 'Offer',
+    name: 'Free Admission',
     price: '0',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
-    url: SITE_URL,
+    url: TICKETS_URL,
   },
   organizer: {
     '@type': 'Organization',
@@ -186,9 +188,17 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-wrap gap-4">
+              <a
+                href={TICKETS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#c9a96e] text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-8 py-4 hover:bg-[#e2c080] transition-colors"
+              >
+                🎟️ Get Your Tickets
+              </a>
               <Link
                 href="/schedule"
-                className="bg-[#c9a96e] text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-8 py-4 hover:bg-[#e2c080] transition-colors"
+                className="border border-white/30 text-white text-[11px] font-semibold tracking-[0.15em] uppercase px-8 py-4 hover:border-[#c9a96e] hover:text-[#c9a96e] transition-all"
               >
                 View Schedule
               </Link>
@@ -199,6 +209,9 @@ export default function HomePage() {
                 About The Festival
               </Link>
             </div>
+            <p className="text-white/45 text-[12px] tracking-wide mt-5">
+              Admission is free — reserve a free ticket, or upgrade to the VIP Tent.
+            </p>
           </div>
         </div>
 
@@ -220,6 +233,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── TICKETS ──────────────────────────────────────────────────────── */}
+      <TicketsBand
+        title="Get Your K-Fest 2026 Tickets"
+        body="Admission is free, as it always has been — reserve your free ticket so we know you're coming. Want the best seat in the house? Upgrade to the VIP Tent for reserved seating right by the main stage, available for one day or the full weekend."
+      />
 
       {/* ── ABOUT ────────────────────────────────────────────────────────── */}
       <section className="bg-[#faf8f5] py-24">

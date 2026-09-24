@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import TicketsBand from '@/app/components/TicketsBand'
 
 export const metadata: Metadata = {
   title: 'Festival Map · Korean Festival Houston',
@@ -251,6 +252,13 @@ export default function Page() {
           </p>
         </div>
       </section>
+
+      {/* ── TICKETS ──────────────────────────────────────────────────────── */}
+      <TicketsBand
+        title="Already Here? Upgrade Your Day"
+        body="Admission is free, so come as you are. If you'd rather watch the main stage from a reserved seat in the shade, VIP Tent passes are available online for today or the full weekend."
+        label="See Ticket Options →"
+      />
 
       {/* ── HELP CTA ─────────────────────────────────────────────────────── */}
       <section className="bg-linear-to-br from-[#8B6FFB] via-[#FB5C8A] to-[#FB4E6D] py-16">

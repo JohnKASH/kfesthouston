@@ -3,9 +3,22 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { TICKETS_URL } from '../lib/links'
 
-// Rotating announcement bar messages (scholarship → Instagram → volunteer).
+// Rotating announcement bar messages (tickets → scholarship → Instagram → volunteer).
 const banners = [
+  <>
+    🎟️ K-Fest 2026 tickets are live —{' '}
+    <a
+      href={TICKETS_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline font-semibold hover:text-white/80 transition-colors"
+    >
+      reserve free admission or upgrade to VIP
+    </a>
+    !
+  </>,
   <>
     🎓 Applications for the{' '}
     <a
@@ -203,14 +216,16 @@ export default function Navbar() {
               </li>
             ))}
 
-            {/* CTA */}
+            {/* CTA — tickets live on Humanitix, so this is an external link */}
             <li className="flex items-center ml-3">
-              <Link
-                href="/faqs"
+              <a
+                href={TICKETS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#FB4E6D] text-white text-[10.5px] font-bold tracking-[0.12em] uppercase whitespace-nowrap px-5 py-2.5 rounded-full hover:bg-[#e23d5c] transition-colors"
               >
-                Plan Your Visit
-              </Link>
+                🎟️ Get Tickets
+              </a>
             </li>
           </ul>
 
@@ -283,10 +298,19 @@ export default function Navbar() {
               )}
             </div>
           ))}
-          <div className="px-4 pt-3">
+          <div className="px-4 pt-3 space-y-2">
+            <a
+              href={TICKETS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center bg-[#FB4E6D] text-white text-[10.5px] font-bold tracking-[0.12em] uppercase py-3 rounded-full hover:bg-[#e23d5c] transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              🎟️ Get Tickets
+            </a>
             <Link
               href="/faqs"
-              className="block text-center bg-[#FB4E6D] text-white text-[10.5px] font-bold tracking-[0.12em] uppercase py-3 rounded-full hover:bg-[#e23d5c] transition-colors"
+              className="block text-center border border-[#1a1a1a]/15 text-[#1a1a1a]/70 text-[10.5px] font-bold tracking-[0.12em] uppercase py-3 rounded-full hover:border-[#FB4E6D] hover:text-[#FB4E6D] transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               Plan Your Visit

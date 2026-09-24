@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { TICKETS_URL } from '../lib/links'
 
 export default function Footer() {
   return (
@@ -118,6 +119,16 @@ export default function Footer() {
                 <span className="inline-block bg-[#10C9AC]/15 border border-[#10C9AC]/40 text-[#048a6e] text-[10px] font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full">
                   Free Admission
                 </span>
+              </div>
+              <div className="pt-1">
+                <a
+                  href={TICKETS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#FB4E6D] text-white text-[10px] font-bold tracking-widest uppercase px-4 py-2.5 rounded-full hover:bg-[#e23d5c] transition-colors"
+                >
+                  🎟️ Get Tickets
+                </a>
               </div>
             </div>
           </div>

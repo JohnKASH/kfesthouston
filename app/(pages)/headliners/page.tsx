@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import TicketsBand from '@/app/components/TicketsBand'
 
 export const metadata: Metadata = {
   title: 'Headliners · Korean Festival Houston',
@@ -181,6 +182,12 @@ export default function Page() {
           </p>
         </div>
       </section>
+
+      {/* ── TICKETS ──────────────────────────────────────────────────────── */}
+      <TicketsBand
+        title="Be There for the Main Stage"
+        body="Headliner performances are free and open to everyone — reserve a free ticket so we can plan for the crowd, or grab a VIP Tent pass for reserved seating right up front."
+      />
 
       {/* ── SOCIAL CTA ───────────────────────────────────────────────────── */}
       <section className="bg-linear-to-br from-[#8B6FFB] via-[#FB4E6D] to-[#1FAEDB] py-16">

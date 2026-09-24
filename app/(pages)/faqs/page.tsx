@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
+import TicketsBand from '@/app/components/TicketsBand'
+import { TICKETS_URL } from '@/app/lib/links'
 
 export const metadata: Metadata = {
   title: 'FAQs · Korean Festival Houston',
@@ -15,7 +17,7 @@ const quickFacts = [
   { emoji: '📅', label: 'Dates', value: 'Oct 10–11, 2026', accent: '#8B6FFB' },
   { emoji: '🕙', label: 'Saturday', value: '10 AM – 9 PM', accent: '#1FAEDB' },
   { emoji: '🕚', label: 'Sunday', value: '11 AM – 8 PM', accent: '#10C9AC' },
-  { emoji: '🎟️', label: 'Admission', value: 'Free', accent: '#FBBF24' },
+  { emoji: '🎟️', label: 'Admission', value: 'Free · VIP Available', accent: '#FBBF24' },
 ]
 
 // ─── FAQ data ─────────────────────────────────────────────────────────────────
@@ -30,7 +32,42 @@ const categories: Category[] = [
     items: [
       {
         q: 'Do I need to purchase a ticket to enter the festival?',
-        a: 'Nope — entry is completely free and open to the public. No ticket required!',
+        a: (
+          <>
+            Nope — general admission is completely free and open to the public. We
+            do ask that you{' '}
+            <a
+              href={TICKETS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#FB4E6D] font-semibold hover:underline"
+            >
+              reserve a free ticket online
+            </a>{' '}
+            so we can plan for the crowd, but nobody will be turned away at the
+            gate.
+          </>
+        ),
+      },
+      {
+        q: 'What is the VIP Tent, and how do I get in?',
+        a: (
+          <>
+            The VIP Tent is a shaded, reserved seating area with the best view of
+            the main stage — ideal if you want a guaranteed seat for the headliner
+            performances. Passes are available for Saturday, Sunday, or the full
+            weekend, and group packages are offered as well.{' '}
+            <a
+              href={TICKETS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#FB4E6D] font-semibold hover:underline"
+            >
+              See VIP options and pricing
+            </a>
+            .
+          </>
+        ),
       },
       {
         q: 'Where will the Korean Festival be held?',
@@ -198,6 +235,9 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      {/* ── TICKETS ──────────────────────────────────────────────────────── */}
+      <TicketsBand />
 
       {/* ── LOCATION / MAP ───────────────────────────────────────────────── */}
       <section className="bg-[#f5f0eb] py-16 border-t border-[#1a1a1a]/8">
