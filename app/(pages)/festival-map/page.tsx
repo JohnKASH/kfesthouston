@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import TicketsBand from '@/app/components/TicketsBand'
+import SensoryBand from '@/app/components/SensoryBand'
 
 export const metadata: Metadata = {
   title: 'Festival Map · Korean Festival Houston',
@@ -177,6 +178,13 @@ export default function Page() {
           )}
         </div>
       </section>
+
+      {/* ── SENSORY ACTIVATION ───────────────────────────────────────────── */}
+      <SensoryBand
+        title="Help Fund Our Sensory Activation"
+        body="K-Fest is officially sensory-inclusive certified through KultureCity, so guests with autism, PTSD, and other sensory needs can enjoy the festival comfortably. The activation is funded entirely by donations — if the festival has been good to you, this is the best way to pay it forward."
+        label="💙 Donate to KultureCity →"
+      />
 
       {/* ── FIND YOUR WAY ────────────────────────────────────────────────── */}
       <section className="bg-[#f5f0eb] py-16 md:py-20 border-t border-[#1a1a1a]/8">

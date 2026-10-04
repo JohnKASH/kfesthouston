@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { TICKETS_URL } from '../lib/links'
+import { TICKETS_URL, KULTURECITY_DONATE_URL } from '../lib/links'
 
 export default function Footer() {
   return (
@@ -80,6 +80,7 @@ export default function Footer() {
                 { label: 'Our Staff', href: '/about/staff' },
                 { label: 'Volunteer', href: '/about/volunteer' },
                 { label: 'KASH', href: 'https://kashouston.org', external: true },
+                { label: 'Sensory Inclusion', href: KULTURECITY_DONATE_URL, external: true },
                 { label: 'News & Blog', href: '/news' },
                 { label: 'Contact Us', href: '/contact' },
                 { label: 'FAQs', href: '/faqs' },

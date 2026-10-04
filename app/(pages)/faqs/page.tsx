@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import TicketsBand from '@/app/components/TicketsBand'
-import { TICKETS_URL } from '@/app/lib/links'
+import SensoryBand from '@/app/components/SensoryBand'
+import { TICKETS_URL, KULTURECITY_DONATE_URL } from '@/app/lib/links'
 
 export const metadata: Metadata = {
   title: 'FAQs · Korean Festival Houston',
@@ -103,6 +104,51 @@ const categories: Category[] = [
       {
         q: 'Is the Korean Festival pet-friendly?',
         a: 'Yes! Discovery Green is a pet-friendly park in Downtown Houston. Leashed pets are welcome!',
+      },
+    ],
+  },
+  {
+    label: 'Accessibility & Sensory Inclusion',
+    accent: '#1FAEDB',
+    text: '#ffffff',
+    items: [
+      {
+        q: 'Is the festival sensory friendly?',
+        a: (
+          <>
+            Yes — K-Fest is officially sensory-inclusive certified through{' '}
+            <a
+              href="https://www.kulturecity.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#1FAEDB] font-semibold hover:underline"
+            >
+              KultureCity
+            </a>
+            , a national nonprofit that helps venues and events support guests
+            with autism, PTSD, and other sensory needs. We want every family to
+            feel welcomed and supported at the festival.
+          </>
+        ),
+      },
+      {
+        q: 'How can I support the sensory activation?',
+        a: (
+          <>
+            Our sensory activation is funded entirely by donations through
+            KultureCity, not by ticket sales — admission to K-Fest stays free.
+            Every dollar goes directly toward making the festival accessible.{' '}
+            <a
+              href={KULTURECITY_DONATE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#1FAEDB] font-semibold hover:underline"
+            >
+              Donate to the K-Fest Sensory Activation
+            </a>
+            .
+          </>
+        ),
       },
     ],
   },
@@ -238,6 +284,9 @@ export default function Page() {
 
       {/* ── TICKETS ──────────────────────────────────────────────────────── */}
       <TicketsBand />
+
+      {/* ── SENSORY ACTIVATION ───────────────────────────────────────────── */}
+      <SensoryBand />
 
       {/* ── LOCATION / MAP ───────────────────────────────────────────────── */}
       <section className="bg-[#f5f0eb] py-16 border-t border-[#1a1a1a]/8">

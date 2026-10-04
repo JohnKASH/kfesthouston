@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Lanterns from '@/app/components/Lanterns'
 import TicketsBand from '@/app/components/TicketsBand'
+import SensoryBand from '@/app/components/SensoryBand'
 import { SITE_URL, TICKETS_URL } from '@/app/lib/links'
 
 // Event structured data — lets Google show rich results (dates, venue, free admission).
@@ -372,7 +373,7 @@ export default function HomePage() {
               href="/faqs"
               accent="#8B6FFB"
               title="FAQs"
-              description="Everything you need to know about parking, accessibility, sensory friendly hours, and getting the most out of your visit."
+              description="Everything you need to know about parking, accessibility, sensory inclusion, and getting the most out of your visit."
               icon={
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
                   <circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" />
@@ -382,6 +383,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── SENSORY ACTIVATION ───────────────────────────────────────────── */}
+      <SensoryBand
+        title="A Festival Where Every Family Belongs"
+        body="K-Fest is officially sensory-inclusive certified through KultureCity, so guests with autism, PTSD, and other sensory needs can take part comfortably. The sensory activation is funded entirely by donations — any amount helps us keep the festival welcoming for everyone."
+      />
 
       {/* ── SPONSOR BAND ─────────────────────────────────────────────────── */}
       <section className="bg-white py-16 border-y border-[#1a1a1a]/8">

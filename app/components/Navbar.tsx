@@ -3,9 +3,9 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { TICKETS_URL } from '../lib/links'
+import { TICKETS_URL, KULTURECITY_DONATE_URL } from '../lib/links'
 
-// Rotating announcement bar messages (tickets → scholarship → Instagram → volunteer).
+// Rotating announcement bar messages (tickets → sensory → scholarship → Instagram → volunteer).
 const banners = [
   <>
     🎟️ K-Fest 2026 tickets are live —{' '}
@@ -16,6 +16,18 @@ const banners = [
       className="underline font-semibold hover:text-white/80 transition-colors"
     >
       reserve free admission or upgrade to VIP
+    </a>
+    !
+  </>,
+  <>
+    💙 K-Fest is sensory-inclusive certified —{' '}
+    <a
+      href={KULTURECITY_DONATE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline font-semibold hover:text-white/80 transition-colors"
+    >
+      donate to our KultureCity sensory activation
     </a>
     !
   </>,

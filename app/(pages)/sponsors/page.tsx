@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import SensoryBand from '@/app/components/SensoryBand'
 
 export const metadata: Metadata = {
   title: 'Sponsors · Korean Festival Houston',
@@ -413,6 +414,13 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* ── SENSORY ACTIVATION ───────────────────────────────────────────── */}
+      <SensoryBand
+        title="Support the Sensory Activation"
+        body="Sponsorship keeps K-Fest free, and our KultureCity sensory activation keeps it accessible. That piece is funded entirely by donations — individuals and companies alike can chip in to help every family enjoy the festival."
+        label="Donate Through KultureCity →"
+      />
 
       {/* ── BECOME A SPONSOR CTA ─────────────────────────────────────────── */}
       <section className="bg-linear-to-br from-[#FBBF24] via-[#FB4E6D] to-[#8B6FFB] py-20">

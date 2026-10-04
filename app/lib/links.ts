@@ -11,6 +11,14 @@ export const SITE_URL = 'https://kfesthouston.org'
 export const TICKETS_URL = 'https://events.humanitix.com/koreanfestival2026'
 
 /**
+ * KultureCity fundraiser for the K-Fest sensory activation. KultureCity is the
+ * 501(c)(3) that certifies the festival as sensory inclusive and collects the
+ * donations, so this is always an external link.
+ */
+export const KULTURECITY_DONATE_URL =
+  'https://www.kulturecity.org/fundraiser/korean-festival-houston-sensory-activation/'
+
+/**
  * K-Fest volunteer application (JotForm).
  *
  * Applications closed on September 18, 2026, so nothing links to this right now
