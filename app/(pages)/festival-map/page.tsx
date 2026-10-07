@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import TicketsBand from '@/app/components/TicketsBand'
 import SensoryBand from '@/app/components/SensoryBand'
+import BrochureGallery from '@/app/components/BrochureGallery'
 
 export const metadata: Metadata = {
   title: 'Festival Map · Korean Festival Houston',
@@ -12,25 +13,22 @@ export const metadata: Metadata = {
 }
 
 /**
- * The 2026 festival site map.
+ * The 2026 festival site map — page 9 of the printed brochure.
  *
  * This route exists because printed signage from previous years carries QR
  * codes pointing at kfesthouston.com/festival-map — keep the path stable even
  * when the artwork changes from year to year.
  *
- * To publish the map: drop the artwork in `public/assets/map/`, then replace
- * `null` below with its path and real pixel dimensions. Until then the page
- * shows a "map coming soon" card with the venue info underneath, so a scanned
- * QR code still lands somewhere useful instead of a 404.
+ * Shown on its own above the brochure gallery so a scanned QR code puts the map
+ * on screen immediately, with no tapping. Set to `null` if a year's artwork
+ * isn't ready and the page falls back to a "map coming soon" card.
  */
-const festivalMap: { src: string; width: number; height: number; alt: string } | null = null
-// Example once the artwork is ready:
-// const festivalMap = {
-//   src: '/assets/map/festival-map-2026.png',
-//   width: 2000,
-//   height: 1400,
-//   alt: 'Map of the Korean Festival Houston 2026 grounds at Discovery Green',
-// }
+const festivalMap: { src: string; width: number; height: number; alt: string } | null = {
+  src: '/assets/Brochure/9.png',
+  width: 1366,
+  height: 768,
+  alt: 'Map of the Korean Festival Houston 2026 grounds showing food vendors, merchandise vendors, both stages, K-Village, the VIP tent, restrooms, and the information booth',
+}
 
 const quickFacts = [
   { emoji: '📍', label: 'Location', value: 'Discovery Green', accent: '#FB4E6D' },
@@ -179,6 +177,25 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ── BROCHURE ─────────────────────────────────────────────────────── */}
+      <section className="bg-[#f5f0eb] py-14 md:py-16 border-t border-[#1a1a1a]/8">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-8">
+            <span className="inline-block bg-[#8B6FFB] text-white text-[10px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full mb-5">
+              📖 Festival Program
+            </span>
+            <h2 className="font-['Cormorant_Garamond'] text-4xl md:text-5xl font-semibold text-[#1a1a1a]">
+              Browse the Brochure
+            </h2>
+            <p className="text-[#1a1a1a]/55 text-sm tracking-wide mt-2 max-w-xl mx-auto leading-relaxed">
+              The full printed program — stage schedules for both days, the
+              K-Showcase and dance competition line-ups, and the festival map.
+            </p>
+          </div>
+          <BrochureGallery />
+        </div>
+      </section>
+
       {/* ── SENSORY ACTIVATION ───────────────────────────────────────────── */}
       <SensoryBand
         title="Help Fund Our Sensory Activation"
@@ -264,7 +281,7 @@ export default function Page() {
       {/* ── TICKETS ──────────────────────────────────────────────────────── */}
       <TicketsBand
         title="Already Here? Upgrade Your Day"
-        body="Admission is free, so come as you are. If you'd rather watch the main stage from a reserved seat in the shade, VIP Tent passes are available online for today or the full weekend."
+        body="Admission is free, so come as you are. Need a break from the heat? A VIP pass gets you into the private VIP tent near the GRB entrance — seating, cooling stations, charging, and complimentary drinks."
         label="See Ticket Options →"
       />
 

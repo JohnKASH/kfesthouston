@@ -4,12 +4,16 @@ import { TICKETS_URL } from '../lib/links'
  * Reusable "get your tickets" call-to-action band.
  *
  * Admission to K-Fest is free, so the pitch is always two-part: reserve a free
- * ticket, or upgrade to the VIP Tent. Pass `title`/`body` to tune the copy for
+ * ticket, or upgrade to a VIP pass. Pass `title`/`body` to tune the copy for
  * the page it sits on; the button and link stay consistent everywhere.
+ *
+ * NOTE: the VIP tent is a private hospitality lounge near the GRB entrance —
+ * seating, cooling stations, charging, drinks, food tastings. It is NOT a
+ * stage-viewing area, so never describe it as a place to watch performances.
  */
 export default function TicketsBand({
   title = 'Free Admission — Reserve Your Spot',
-  body = 'K-Fest is free and open to everyone. Grab a free ticket so we can plan for you, or upgrade to the VIP Tent for reserved seating with the best view of the main stage.',
+  body = 'K-Fest is free and open to everyone. Grab a free ticket so we can plan for you, or upgrade to a VIP pass for access to the private VIP tent — seating, cooling stations, charging, complimentary drinks, and food tastings.',
   label = 'Get Your Tickets →',
 }: {
   title?: string

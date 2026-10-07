@@ -54,10 +54,14 @@ const categories: Category[] = [
         q: 'What is the VIP Tent, and how do I get in?',
         a: (
           <>
-            The VIP Tent is a shaded, reserved seating area with the best view of
-            the main stage — ideal if you want a guaranteed seat for the headliner
-            performances. Passes are available for Saturday, Sunday, or the full
-            weekend, and group packages are offered as well.{' '}
+            The VIP Tent is a private hospitality lounge near the George R. Brown
+            Convention Center entrance, included with any VIP pass. Inside you
+            get seating, cooling stations, charging stations, complimentary water
+            and soda, scheduled food tastings, and a VIP lanyard and tote bag.
+            Please note it is a lounge rather than a stage-viewing area — all
+            performances are watched from the festival grounds, free to everyone.
+            Passes are available for Saturday, Sunday, or the full weekend, with
+            group packages too.{' '}
             <a
               href={TICKETS_URL}
               target="_blank"

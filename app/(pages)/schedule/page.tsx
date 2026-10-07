@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import TicketsBand from '@/app/components/TicketsBand'
 
 export const metadata: Metadata = {
@@ -132,24 +133,30 @@ export default function Page() {
 
       {/* ── TICKETS ──────────────────────────────────────────────────────── */}
       <TicketsBand
-        title="Watch From the VIP Tent"
-        body="Every performance is free to watch. If you want a guaranteed seat with a clear view of the main stage all day, the VIP Tent is available as a one-day or full-weekend upgrade."
+        title="Every Performance Is Free to Watch"
+        body="No ticket is needed for any show on this schedule — grab a free RSVP so we can send you day-of updates. VIP passes add the private VIP tent, a good spot to cool off and recharge between sets."
         label="Get Tickets & VIP Passes →"
       />
 
       {/* ── CONTENT ──────────────────────────────────────────────────────── */}
       <section className="bg-[#faf8f5] py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
-          {/* Coming-soon notice */}
+          {/* The printed program carries the full stage-by-stage schedule. */}
           <div className="bg-white rounded-2xl border-l-4 border-[#FBBF24] shadow-sm px-6 py-5 mb-14">
             <div className="font-['Cormorant_Garamond'] text-2xl font-semibold text-[#1a1a1a] mb-1">
-              Full schedule coming soon!
+              The full 2026 schedule is here!
             </div>
             <p className="text-[#1a1a1a]/60 text-sm leading-relaxed tracking-wide">
-              The complete 2026 performance lineup is being finalized. In the
-              meantime, applications to perform are now open — apply below, and
-              follow our social media pages for the full schedule announcement!
+              Set times for both the Kroger Stage and Hyundai Stage, plus the
+              K-Showcase and K-Pop Dance Competition line-ups, are in the
+              festival program.
             </p>
+            <Link
+              href="/festival-map"
+              className="inline-block mt-4 bg-[#FBBF24] text-[#1a1a1a] text-[11px] font-bold tracking-[0.15em] uppercase px-6 py-3 rounded-full hover:bg-[#e8ac15] transition-colors"
+            >
+              📖 View the Program &amp; Map →
+            </Link>
           </div>
 
           {/* About stage programming */}

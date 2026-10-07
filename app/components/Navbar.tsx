@@ -72,6 +72,7 @@ const navItems = [
     label: 'About',
     dropdown: [
       { label: 'Festival History', href: '/about/history' },
+      { label: 'Festival Map', href: '/festival-map' },
       { label: 'Our Staff', href: '/about/staff' },
       { label: 'Volunteer with K-Fest', href: '/about/volunteer' },
       { label: 'KASH', href: 'https://kashouston.org', external: true },

@@ -64,7 +64,7 @@ const goldSponsors: Sponsor[] = [
     slug: 'at-america',
     designation: 'Gold Sponsor',
     description:
-      'aT America is the U.S. regional headquarters of Korea Agro-Fisheries & Food Trade Corporation, with branch offices in New York and Los Angeles. Founded in 1967, the government agency is entrusted with promoting the trade, exportation, and marketing of Korean foods and beverages around the world.',
+      'aT America serves as the U.S. regional headquarters of the Korea Agro-Fisheries & Food Trade Corporation (aT). Established in 1967, aT is a Korean government agency dedicated to promoting the trade, export, and marketing of Korean foods and beverages worldwide. As its Houston branch, aT Center Houston, works to expand the presence of Korean food and beverage products in the U.S. market, foster partnerships with local businesses, and introduce consumers to the quality and diversity of Korean food.',
   },
   {
     name: 'Seoulside Wings',

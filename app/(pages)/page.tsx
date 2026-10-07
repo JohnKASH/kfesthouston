@@ -211,7 +211,7 @@ export default function HomePage() {
               </Link>
             </div>
             <p className="text-white/45 text-[12px] tracking-wide mt-5">
-              Admission is free — reserve a free ticket, or upgrade to the VIP Tent.
+              Admission is free — reserve a free ticket, or add a VIP pass.
             </p>
           </div>
         </div>
@@ -238,7 +238,7 @@ export default function HomePage() {
       {/* ── TICKETS ──────────────────────────────────────────────────────── */}
       <TicketsBand
         title="Get Your K-Fest 2026 Tickets"
-        body="Admission is free, as it always has been — reserve your free ticket so we know you're coming. Want the best seat in the house? Upgrade to the VIP Tent for reserved seating right by the main stage, available for one day or the full weekend."
+        body="Admission is free, as it always has been — reserve your free ticket so we know you're coming. Want the full experience? A VIP pass adds the private VIP tent with seating, cooling stations, charging, complimentary drinks, and scheduled food tastings, for one day or the full weekend."
       />
 
       {/* ── ABOUT ────────────────────────────────────────────────────────── */}
