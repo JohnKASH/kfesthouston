@@ -181,3 +181,5 @@ If you need something in there changed, use **Task B** and let Claude do it.
 - **Ticket prices aren't written anywhere on the site** on purpose — they live on
   the Humanitix page so they can change without a website update. Same for the
   KultureCity fundraising total and vendor food prices.
+
+<!-- test push: 2026-10-08T02:32Z -->
