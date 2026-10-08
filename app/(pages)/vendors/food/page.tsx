@@ -49,6 +49,40 @@ const foodVendors = [
     type: 'Food',
     items: ['Tteokbokki', 'Bulgogi tacos', 'Kimchi french fries', 'Fried dumplings'],
   },
+  {
+    name: 'Le Sweet',
+    type: 'Dessert',
+    items: ['Tanghulu', 'Mochi', 'Yakult soda'],
+  },
+  {
+    name: 'Bori',
+    type: 'Food',
+    items: [
+      'Bulgogi, galbi (short rib) & spicy pork bowls',
+      'Japchae bowl · bibimbap · kimbap',
+      'Ramen with optional toppings',
+      'Seafood pancake',
+      'Tacos · dumplings',
+    ],
+  },
+  {
+    name: 'Seoulside Wings',
+    type: 'Food',
+    items: ['Korean fried wings — boneless & bone-in', 'Spicy pork rice bowls'],
+  },
+  {
+    name: 'Dalgona Luxe',
+    type: 'Dessert',
+    items: ['Dalgona candy', 'Korean shaved diamond ice (bingsu)'],
+  },
+  {
+    name: "Chi'Lantro",
+    type: 'Food',
+    items: [
+      'Rice bowls — tofu, chicken, or steak',
+      'Kimchi fries — veggie, chicken, or steak',
+    ],
+  },
 ]
 
 const foodCategories = [

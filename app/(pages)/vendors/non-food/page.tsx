@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 
 const typeStyles: Record<string, { bg: string; text: string }> = {
   Merch: { bg: '#8B6FFB', text: '#ffffff' },
+  Activity: { bg: '#10C9AC', text: '#0a4f40' },
   Promo: { bg: '#FBBF24', text: '#5a3d00' },
 }
 
@@ -89,10 +90,41 @@ const nonFoodVendors = [
     items: ['K-pop merch, stationery & character goods'],
   },
   {
-    name: 'Kroger',
-    type: 'Promo',
-    items: ['Title Sponsor'],
+    name: 'PUAC (민주평통)',
+    type: 'Merch',
+    items: ['Photo exhibition on the Korean War, North Korea & more'],
   },
+  {
+    name: 'Beau Trading',
+    type: 'Merch',
+    items: ['Sunglasses · keychains · hats · bracelets', 'Fans · chairs · charms'],
+  },
+  {
+    name: 'Froz Bites Treats',
+    type: 'Merch',
+    items: ['Pre-packaged freeze-dried treats'],
+  },
+  {
+    name: 'Velocity Sim Racing Lounge',
+    type: 'Activity',
+    items: ['Sim racing on a Korea map with Hyundai car sims'],
+  },
+  {
+    name: 'Photelier',
+    type: 'Activity',
+    items: ['Photobooth'],
+  },
+  { name: 'Kroger', type: 'Promo', items: ['Title Sponsor'] },
+  { name: 'aT Center', type: 'Promo', items: ['Sponsor'] },
+  { name: 'Consulate General of the Republic of Korea in Houston', type: 'Promo', items: ['Sponsor'] },
+  { name: "Ben & Jerry's", type: 'Promo', items: ['Sponsor'] },
+  { name: 'American Furniture Warehouse', type: 'Promo', items: ['Sponsor'] },
+  { name: 'Hyundai', type: 'Promo', items: ['Sponsor'] },
+  { name: 'Soundbox Studios', type: 'Promo', items: ['Partner'] },
+  { name: 'Yubi Studio', type: 'Promo', items: ['Partner'] },
+  { name: 'Houston Public Library', type: 'Promo', items: ['Partner'] },
+  { name: 'Han Narea', type: 'Promo', items: ['Partner'] },
+  { name: 'KultureCity', type: 'Promo', items: ['Partner'] },
 ]
 
 const categories = [
