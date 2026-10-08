@@ -5,8 +5,9 @@ Society of Houston. Live at **[kfesthouston.com](https://www.kfesthouston.com)**
 
 ## 👉 Need to update the site and don't write code?
 
-**Read [HANDOFF.md](./HANDOFF.md).** It walks through replacing brochure images
-and changing page text from a browser, with no local setup.
+**Read [HANDOFF.md](./HANDOFF.md).** Short version: open
+[claude.ai/code](https://claude.ai/code), pick this repo, say what you want
+changed. Claude makes the change and publishes it.
 
 ## Deployment
 

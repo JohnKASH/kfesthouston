@@ -1,185 +1,116 @@
-# Updating the K-Fest website (no coding required)
+# How to update the K-Fest website
 
-This guide is for someone who needs to change the website and has never written
-code. You only need a web browser and a GitHub account.
-
-**How the site works in one sentence:** the website lives in this GitHub repo,
-and **any change saved to the `main` branch automatically rebuilds and publishes
-the live site** at kfesthouston.com, usually within a couple of minutes.
-
-That means: you make a change → it goes live. There is no separate "publish"
-button, and no one needs to be at a computer with special software installed.
+You don't need to know how to code, and you don't need to install anything. You
+tell Claude what you want changed, in plain English, and it publishes it to the
+live site.
 
 ---
 
-## Before you start (one-time, 2 minutes)
+## Every time you want to change something
 
-You need a **GitHub account** that has been given access to this repository:
-`github.com/johnnam1121/kfesthouston`
+### 1. Go to [claude.ai/code](https://claude.ai/code)
 
-If you can open that link and see the files, you're ready. If you get a 404,
-ask the repo owner to add you as a collaborator
-(**Settings → Collaborators → Add people**).
+Sign in with the K-Fest account (`info@kashouston.org`).
 
----
+### 2. Pick the repository
 
-## Task A — Replace a brochure page or any image
+Click the repository selector under the message box and choose
+**johnnam1121/kfesthouston**.
 
-**This is the most common update, and it needs no AI and no code.**
+### 3. Say what you want changed
 
-The brochure pages live in `public/assets/Brochure/` and are named `1.png`,
-`2.png`, `3.png` … in the order they appear on the website.
+Type it like you'd say it to a person. Just be specific about *where* on the
+site it is:
 
-The website reads whatever is in that folder. Add a file, remove a file, or
-replace one — the gallery on the Festival Map page updates itself. **You never
-need to edit any code to change the brochure.**
+> On the FAQs page, change the parking answer to say the Avenida garage is $15
+> for the day.
 
-### To replace a page (e.g. a corrected schedule):
+> The Sunday closing time is wrong — it should be 7pm, not 8pm. Fix it
+> everywhere it appears on the site.
 
-1. Go to the folder:
-   https://github.com/johnnam1121/kfesthouston/tree/main/public/assets/Brochure
-2. Click **Add file → Upload files**.
-3. Drag in your new image. **The file name must exactly match the page you're
-   replacing** (e.g. `4.png` to replace page 4). Same name = replaces it.
-4. Scroll down, type a short note like `updated Saturday schedule`, and click
-   **Commit changes**.
-5. Wait ~2 minutes, then check kfesthouston.com/festival-map.
+> Replace the Jinro description on the sponsors page with this: "..."
 
-### To add a page:
+> Take the Kimchi Eating Contest off the schedule page.
 
-Same steps, but name it the next number (e.g. `10.png`). It appears at the end.
+### 4. That's it — Claude publishes it
 
-### To remove a page:
+Claude makes the change, checks the site still works, and pushes it live. The
+live site updates about two minutes later.
 
-Click the file → the **trash can** icon → **Commit changes**.
-
-### Image rules
-
-- **Format:** `.png` (`.jpg` and `.webp` also work)
-- **Size:** 1366 × 768 pixels (standard widescreen) so pages look consistent
-- **The festival map is `9.png`.** This one is special: it also shows up on its
-  own, large, at the top of the Festival Map page. If `9.png` isn't in the
-  folder, that section politely says "map coming soon" instead of breaking.
-
-> **Right now `9.png` is missing** — it was removed in the last update, so the
-> Festival Map page is showing the "coming soon" card. Upload the map artwork as
-> `9.png` and it will appear automatically in both places.
-
-### Other image folders
-
-- `public/assets/sponsors/` — sponsor logos
-- `public/assets/staff/` — staff photos
-- `public/assets/HomepageImages/` — homepage photos
+**You don't have to ask it to publish** — the repo tells Claude to do that
+automatically whenever you ask for a change. If you want to be sure, just say
+**"is it live?"** and it will check and tell you.
 
 ---
 
-## Task B — Change words, or anything else
+## Brochure pages, photos, and the festival map
 
-Use **Claude Code on the web**. You describe the change in plain English and
-Claude makes it for you.
+Same thing — say what you want and attach the image:
 
-1. Go to **[claude.ai/code](https://claude.ai/code)** and sign in.
-   (Requires a Pro, Max, or Team plan.)
-2. The first time only, it will ask you to connect GitHub — approve it and give
-   it access to the `kfesthouston` repository.
-3. Pick **kfesthouston** from the repository list.
-4. Type what you want changed, in normal English. Be specific about *where*:
+> Replace page 4 of the brochure with this new one.
 
-   > On the FAQs page, change the parking answer to say that the Avenida garage
-   > is $15 for the day.
+> Here's the festival map. Add it to the Festival Map page.
 
-   > The Sunday hours on the homepage are wrong — they should be 11am to 7pm,
-   > not 8pm. Please fix that everywhere it appears on the site.
+The brochure pages live in `public/assets/Brochure/`, named `1.png`, `2.png`,
+`3.png`… in the order they appear on the site. The website reads whatever is in
+that folder, so adding, replacing, or removing a page never needs a code change.
+**The festival map is `9.png`** — it also appears large at the top of the
+Festival Map page.
 
-   > Add Jinro as a Gold Sponsor on the sponsors page, with this description:
-   > "..."
+> ⚠️ **Right now `9.png` is missing**, so the Festival Map page shows a "map
+> coming soon" card. Give Claude the map artwork and ask it to add it.
 
-5. Claude makes the change and shows you what it did. If it's not right, just
-   reply and tell it what to fix.
-6. When you're happy, click **Create PR** (pull request).
-7. Click through to GitHub and press the green **Merge pull request** button,
-   then **Confirm merge**.
-8. That merge publishes it. Check the live site in ~2 minutes.
-
-**Tip:** ask Claude to show you the change before merging — "what will this look
-like on the page?" It can describe or screenshot it.
+Images should be **1366 × 768 pixels** so the pages look consistent.
 
 ---
 
-## Checking that your change went live
+## If something looks wrong
 
-1. Go to https://vercel.com and sign in with the account that owns the site.
-2. Open the **kfesthouston** project.
-3. The top entry under **Deployments** is your change.
-   - **Ready** (green) = it's live.
-   - **Error** (red) = something's wrong; see "If something breaks" below.
+**Nothing you do can permanently break the site.**
 
-If you don't have Vercel access, just load the page in a private/incognito
-window after a few minutes. (A normal window may show you a cached old copy —
-press **Ctrl+Shift+R** to force a refresh.)
-
----
-
-## If something breaks
-
-**Nothing you do here is permanent.** Every change can be undone in about 30
-seconds, and the previous version of the site is always recoverable.
-
-To undo the last change:
-
-1. Go to https://github.com/johnnam1121/kfesthouston/commits/main
-2. Click the most recent entry at the top.
-3. Click the **"..."** menu (top right) → **Revert**.
-4. Confirm. The site rebuilds back to how it was.
-
-If a change you merged caused an error and the site won't rebuild, the **live
-site stays on the last working version** — Vercel won't publish a broken build.
-So a failed deploy means "your change didn't go live," not "the site is down."
+- Change has a mistake? Just tell Claude: *"that's not right, it should say
+  7pm"* — it'll fix it and republish.
+- Want the last change gone? *"Undo the last change and publish that."*
+- If a change would have broken the site, **it never goes live at all.** The
+  previous version stays up. A failed change means "it didn't publish," not "the
+  site is down."
+- Still seeing the old version? Your browser is probably showing a cached copy.
+  Press **Ctrl+Shift+R**, or open the page in a private/incognito window.
 
 ---
 
-## Things to leave alone
+## One-time setup — do this *before* you need it
 
-Unless you know what you're doing, don't rename or delete these — the site won't
-build without them:
+The `info@kashouston.org` account needs:
 
-- the `app/` folder structure and any file named `page.tsx`
-- `package.json`, `next.config.ts`, `tsconfig.json`
-- `app/lib/` (shared settings like the ticket and donation links)
+1. **A Claude Pro, Max, or Team plan.** claude.ai/code does not work on the free
+   plan. This is the one thing that costs money, and nothing else will work
+   without it.
+2. **Access to the GitHub repo.** ✅ Already granted to info@kashouston.org.
+3. **GitHub connected to Claude.** The first time you open claude.ai/code it
+   asks you to sign in with GitHub — approve it. Happens once.
 
-If you need something in there changed, use **Task B** and let Claude do it.
-
----
-
-## Where things are, if you're curious
-
-| What | Where |
-| --- | --- |
-| Homepage | `app/(pages)/page.tsx` |
-| Festival map + brochure | `app/(pages)/festival-map/page.tsx` |
-| Performance schedule | `app/(pages)/schedule/page.tsx` |
-| Headliners | `app/(pages)/headliners/page.tsx` |
-| Food vendors | `app/(pages)/vendors/food/page.tsx` |
-| Non-food vendors | `app/(pages)/vendors/non-food/page.tsx` |
-| Sponsors | `app/(pages)/sponsors/page.tsx` |
-| FAQs | `app/(pages)/faqs/page.tsx` |
-| Volunteer | `app/(pages)/about/volunteer/page.tsx` |
-| Staff | `app/(pages)/about/staff/page.tsx` |
-| Top menu bar + announcement banner | `app/components/Navbar.tsx` |
-| Footer | `app/components/Footer.tsx` |
-| Ticket / donation links | `app/lib/links.ts` |
-| Brochure page captions | `app/lib/brochure.ts` |
+**Then do one harmless practice change**, like *"change the word 'Explore' to
+'Learn more' on the homepage cards, publish it, then change it back and publish
+again."* You'll find out the whole thing works while there's no pressure, rather
+than at 9pm the night before the festival.
 
 ---
 
-## A few facts worth knowing before you edit
+## Good to know before you edit
 
-- **Admission is free.** The site says so in a lot of places. Paid VIP passes are
-  sold through Humanitix.
-- **The VIP tent is a hospitality lounge, not a viewing area.** Guests cannot
-  watch the stage from it. Never describe it as a place to watch performances.
-- **Ticket prices aren't written anywhere on the site** on purpose — they live on
-  the Humanitix page so they can change without a website update. Same for the
-  KultureCity fundraising total and vendor food prices.
+- **Admission to the festival is free.** Paid VIP passes are sold separately on
+  Humanitix.
+- **The VIP tent is a lounge, not a place to watch the stage.** Guests cannot
+  watch performances from it — don't let any wording say otherwise.
+- **Prices aren't written on the website** on purpose. Ticket prices, donation
+  totals, and vendor food prices live on Humanitix and KultureCity so they stay
+  current without anyone touching the site.
 
-<!-- test push: 2026-10-08T02:32Z -->
+---
+
+## If you get stuck
+
+**Ask Claude, in the same chat window.** Say *"I'm stuck — the site still shows
+the old text"* or *"did that actually publish?"* It can see the repo and what was
+pushed, and it will tell you what happened.

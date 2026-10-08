@@ -4,12 +4,14 @@ import Link from 'next/link'
 import TicketsBand from '@/app/components/TicketsBand'
 import SensoryBand from '@/app/components/SensoryBand'
 import BrochureGallery from '@/app/components/BrochureGallery'
+import SurveyBand from '@/app/components/SurveyBand'
 import {
   getBrochurePages,
   getFestivalMapPage,
   PAGE_WIDTH,
   PAGE_HEIGHT,
 } from '@/app/lib/brochure'
+import { SURVEY_URL } from '@/app/lib/links'
 
 export const metadata: Metadata = {
   title: 'Festival Map · Korean Festival Houston',
@@ -90,6 +92,16 @@ export default function Page() {
             Korean Festival Houston takes over Discovery Green in Downtown
             Houston on October 10 &amp; 11, 2026 — here’s where everything is.
           </p>
+          {/* Survey link above the fold — the big ask is further down the page,
+              but this catches people who never scroll past the map. */}
+          <a
+            href={SURVEY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-7 bg-[#1a1a1a] text-white text-[11px] md:text-[12px] font-bold tracking-[0.15em] uppercase px-7 py-3.5 rounded-full shadow-md hover:bg-[#333] hover:-translate-y-0.5 transition-all"
+          >
+            📝 Take Our 2-Minute Survey →
+          </a>
         </div>
       </section>
 
@@ -178,6 +190,9 @@ export default function Page() {
           )}
         </div>
       </section>
+
+      {/* ── SURVEY ───────────────────────────────────────────────────────── */}
+      <SurveyBand />
 
       {/* ── BROCHURE ─────────────────────────────────────────────────────── */}
       <section className="bg-[#f5f0eb] py-14 md:py-16 border-t border-[#1a1a1a]/8">

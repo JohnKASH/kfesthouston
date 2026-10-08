@@ -19,6 +19,12 @@ export const KULTURECITY_DONATE_URL =
   'https://www.kulturecity.org/fundraiser/korean-festival-houston-sensory-activation/'
 
 /**
+ * K-Fest 2026 attendee survey (JotForm). Linked prominently from the festival
+ * map page, which is where the QR codes on the festival signage land.
+ */
+export const SURVEY_URL = 'https://form.jotform.com/262736410596058'
+
+/**
  * K-Fest volunteer application (JotForm).
  *
  * Applications closed on September 18, 2026, so nothing links to this right now
