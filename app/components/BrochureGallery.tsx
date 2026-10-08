@@ -2,79 +2,29 @@
 
 import { useRef, useState } from 'react'
 import Image from 'next/image'
+import type { BrochurePage } from '../lib/brochure'
 
-type Page = {
-  src: string
-  /** Short label shown under the image and on the thumbnail. */
-  label: string
-  alt: string
-}
-
-/**
- * The printed 2026 festival brochure, page by page.
- *
- * Deliberately does NOT wrap around: Previous is disabled on page 1 and Next is
- * disabled on page 9, so flipping through feels like a physical booklet rather
- * than an endless carousel.
- *
- * Page labels avoid repeating the year printed on the schedule pages — the
- * artwork reads "2025" on pages 4–8, which is a typo in the source file.
- */
-const pages: Page[] = [
-  {
-    src: '/assets/Brochure/1.png',
-    label: 'Cover',
-    alt: 'Korean Festival Houston 2026 brochure cover, presented by Kroger, with the festival sponsor logos',
-  },
-  {
-    src: '/assets/Brochure/2.png',
-    label: 'Letter from the Consulate',
-    alt: 'Welcome letter from Kyung-eun Lee, Consul General of the Republic of Korea in Houston',
-  },
-  {
-    src: '/assets/Brochure/3.png',
-    label: 'Letter from KASH',
-    alt: 'Welcome letter from Janet Hong, President of the Korean-American Society of Houston',
-  },
-  {
-    src: '/assets/Brochure/4.png',
-    label: 'Kroger Stage · Saturday',
-    alt: 'Kroger Stage Saturday performance schedule, including the headliner schedule with RE:WIND at 6:30 PM and Big Ocean at 7:30 PM',
-  },
-  {
-    src: '/assets/Brochure/5.png',
-    label: 'K-Showcase · Saturday',
-    alt: 'Kroger Stage Saturday K-Showcase line-up, 5 PM to 6 PM',
-  },
-  {
-    src: '/assets/Brochure/6.png',
-    label: 'Hyundai Stage · Saturday',
-    alt: 'Hyundai Stage Saturday performance schedule and K-Showcase line-up',
-  },
-  {
-    src: '/assets/Brochure/7.png',
-    label: 'Kroger Stage · Sunday',
-    alt: 'Kroger Stage Sunday performance schedule and the K-Pop Dance Competition line-up',
-  },
-  {
-    src: '/assets/Brochure/8.png',
-    label: 'Hyundai Stage · Sunday',
-    alt: 'Hyundai Stage Sunday performance schedule and K-Showcase line-up',
-  },
-  {
-    src: '/assets/Brochure/9.png',
-    label: 'Festival Map',
-    alt: 'Map of the Korean Festival Houston grounds showing food vendors, merchandise vendors, both stages, K-Village, the VIP tent, restrooms, and the information booth',
-  },
-]
-
+/** Brochure artwork is exported at 1366 x 768 (16:9). */
 const PAGE_WIDTH = 1366
 const PAGE_HEIGHT = 768
 
+/**
+ * The printed festival brochure, page by page.
+ *
+ * Pages come from `getBrochurePages()`, which reads them out of
+ * `public/assets/Brochure/` — so adding, replacing or removing artwork needs no
+ * change here.
+ *
+ * Deliberately does NOT wrap around: Previous is disabled on the first page and
+ * Next is disabled on the last, so flipping through feels like a physical
+ * booklet rather than an endless carousel.
+ */
 export default function BrochureGallery({
+  pages,
   /** Page to open on, 1-based. Defaults to the cover. */
   startPage = 1,
 }: {
+  pages: BrochurePage[]
   startPage?: number
 }) {
   const last = pages.length - 1
@@ -82,6 +32,8 @@ export default function BrochureGallery({
     Math.min(last, Math.max(0, startPage - 1)),
   )
   const touchStartX = useRef<number | null>(null)
+
+  if (pages.length === 0) return null
 
   const atStart = index === 0
   const atEnd = index === last

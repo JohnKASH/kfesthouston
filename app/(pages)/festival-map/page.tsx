@@ -4,6 +4,12 @@ import Link from 'next/link'
 import TicketsBand from '@/app/components/TicketsBand'
 import SensoryBand from '@/app/components/SensoryBand'
 import BrochureGallery from '@/app/components/BrochureGallery'
+import {
+  getBrochurePages,
+  getFestivalMapPage,
+  PAGE_WIDTH,
+  PAGE_HEIGHT,
+} from '@/app/lib/brochure'
 
 export const metadata: Metadata = {
   title: 'Festival Map · Korean Festival Houston',
@@ -13,22 +19,15 @@ export const metadata: Metadata = {
 }
 
 /**
- * The 2026 festival site map — page 9 of the printed brochure.
+ * This route exists because printed signage carries QR codes pointing at
+ * kfesthouston.com/festival-map — keep the path stable even when the artwork
+ * changes from year to year.
  *
- * This route exists because printed signage from previous years carries QR
- * codes pointing at kfesthouston.com/festival-map — keep the path stable even
- * when the artwork changes from year to year.
- *
- * Shown on its own above the brochure gallery so a scanned QR code puts the map
- * on screen immediately, with no tapping. Set to `null` if a year's artwork
- * isn't ready and the page falls back to a "map coming soon" card.
+ * The map and the brochure pages are both read from `public/assets/Brochure/`
+ * at build time, so updating them is a file operation — see app/lib/brochure.ts.
+ * If the map artwork isn't in that folder, this page shows a "map coming soon"
+ * card instead of a broken image.
  */
-const festivalMap: { src: string; width: number; height: number; alt: string } | null = {
-  src: '/assets/Brochure/9.png',
-  width: 1366,
-  height: 768,
-  alt: 'Map of the Korean Festival Houston 2026 grounds showing food vendors, merchandise vendors, both stages, K-Village, the VIP tent, restrooms, and the information booth',
-}
 
 const quickFacts = [
   { emoji: '📍', label: 'Location', value: 'Discovery Green', accent: '#FB4E6D' },
@@ -73,6 +72,9 @@ const VENUE_ADDRESS = '1500 McKinney St, Houston, TX 77010'
 const DIRECTIONS_URL = 'https://maps.google.com/?q=Discovery+Green+Houston+TX'
 
 export default function Page() {
+  const brochurePages = getBrochurePages()
+  const festivalMap = getFestivalMapPage()
+
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
@@ -130,8 +132,8 @@ export default function Page() {
                 <Image
                   src={festivalMap.src}
                   alt={festivalMap.alt}
-                  width={festivalMap.width}
-                  height={festivalMap.height}
+                  width={PAGE_WIDTH}
+                  height={PAGE_HEIGHT}
                   preload
                   sizes="(max-width: 1024px) 100vw, 1024px"
                   className="w-full h-auto"
@@ -192,7 +194,7 @@ export default function Page() {
               K-Showcase and dance competition line-ups, and the festival map.
             </p>
           </div>
-          <BrochureGallery />
+          <BrochureGallery pages={brochurePages} />
         </div>
       </section>
 

@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Korean Festival Houston
 
-## Getting Started
+The website for Korean Festival Houston (K-Fest), run by the Korean American
+Society of Houston. Live at **[kfesthouston.com](https://www.kfesthouston.com)**.
 
-First, run the development server:
+## 👉 Need to update the site and don't write code?
+
+**Read [HANDOFF.md](./HANDOFF.md).** It walks through replacing brochure images
+and changing page text from a browser, with no local setup.
+
+## Deployment
+
+Hosted on Vercel, connected to this repo. **Any commit to `main` rebuilds and
+publishes the live site automatically** — there is no manual deploy step. A
+failed build is not published, so the previous version stays live.
+
+## Stack
+
+- [Next.js 16](https://nextjs.org) (App Router, Turbopack)
+- React 19
+- Tailwind CSS v4
+- TypeScript
+
+> **Note:** this project uses Next.js 16, which has breaking changes from older
+> versions. Check `node_modules/next/dist/docs/` before relying on patterns from
+> memory. See [AGENTS.md](./AGENTS.md).
+
+## Local development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Before pushing:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npx tsc --noEmit   # type check
+npm run lint
+npm run build      # catches anything the first two miss
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project layout
 
-## Learn More
+```
+app/
+  (pages)/          one folder per route; page.tsx is the page itself
+  components/       shared UI (Navbar, Footer, TicketsBand, BrochureGallery…)
+  lib/              shared data and settings
+    links.ts        ticket + donation URLs, used site-wide
+    brochure.ts     reads the brochure pages out of public/assets/Brochure/
+public/assets/      images, organized by area
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Content that is deliberately not hardcoded
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Some things are intentionally kept off the site so they can change without a
+code deploy:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Not on the site | Lives at | Why |
+| --- | --- | --- |
+| Ticket + VIP prices | Humanitix event page | Tiers change |
+| Fundraising totals | KultureCity fundraiser page | Updates continuously |
+| Vendor food prices | — | Vendors change them on the day |
+| Brochure pages | `public/assets/Brochure/` | Added/removed as files, no code change |
