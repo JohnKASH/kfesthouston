@@ -10,7 +10,7 @@ import { SURVEY_URL } from '../lib/links'
  */
 export default function SurveyBand({
   title = 'How Was Your K-Fest?',
-  body = 'Tell us what you loved and what we should do better next year. It takes about two minutes, and it genuinely shapes the 2027 festival.',
+  body = 'Tell us what you loved and what we should do better next year. It only takes a few minutes, and it genuinely shapes the 2027 festival.',
   label = 'Take the Survey →',
 }: {
   title?: string
@@ -20,9 +20,6 @@ export default function SurveyBand({
   return (
     <section className="bg-[#FBBF24] py-14 md:py-16">
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <span className="inline-block bg-[#1a1a1a] text-[#FBBF24] text-[10px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full mb-5">
-          📝 2 Minutes
-        </span>
         <h2 className="font-['Cormorant_Garamond'] text-4xl md:text-5xl font-semibold text-[#1a1a1a] mb-4">
           {title}
         </h2>

@@ -100,7 +100,7 @@ export default function Page() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 mt-7 bg-[#1a1a1a] text-white text-[11px] md:text-[12px] font-bold tracking-[0.15em] uppercase px-7 py-3.5 rounded-full shadow-md hover:bg-[#333] hover:-translate-y-0.5 transition-all"
           >
-            📝 Take Our 2-Minute Survey →
+            📝 Take Our Survey →
           </a>
         </div>
       </section>
